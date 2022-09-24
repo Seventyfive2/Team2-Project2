@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: AXE
   m_EditorClassIdentifier: 
   primaryAttackStyle: 0
-  primaryDamage: 5
-  primaryRange: 1
-  primaryAtkSpeed: 1
+  primaryDamage: 10
+  primaryRange: 3
+  primaryAtkSpeed: 0.2
   primaryProjectile: {fileID: 0}
   secondaryAttackStyle: 0
-  secondaryDamage: 10
-  secondaryRange: 1
-  secondaryAtkSpeed: 1
+  secondaryDamage: 30
+  secondaryRange: 10
+  secondaryAtkSpeed: 10
   secondaryProjectile: {fileID: 0}

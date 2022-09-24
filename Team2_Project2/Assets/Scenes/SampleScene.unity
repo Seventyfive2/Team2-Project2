@@ -734,7 +734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be3ce7c9aacc65045b86f54de637414b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: 878f2826f27f56047b51d06e85e02c72, type: 2}
+  weapon: {fileID: 11400000, guid: 532539f3de7abc04da44fa13f2420035, type: 2}
   attackPos: {fileID: 1332677521}
   uiRefreshRate: 0.167
   primaryCooldownFill: {fileID: 1662052549}
