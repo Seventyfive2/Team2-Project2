@@ -1,15 +1,24 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour, IDamagable
 {
     [SerializeField] CharacterSO characterStats = null;
     private HealthSystem healthSystem;
 
+    [SerializeField] private Slider hpSlider;
+
     void Start()
     {
         healthSystem = new HealthSystem(characterStats.maxHealth);
 
+        healthSystem.OnHealthChanged += HealthSystem_OnHealthChanged;
         healthSystem.OnDeath += HealthSystem_OnDeath;
+    }
+
+    private void HealthSystem_OnHealthChanged(object sender, System.EventArgs e)
+    {
+        hpSlider.value = healthSystem.GetHealthPercent();
     }
 
     void Update()
