@@ -18,7 +18,10 @@ public class PlayerStats : MonoBehaviour, IDamagable
 
     private void HealthSystem_OnHealthChanged(object sender, System.EventArgs e)
     {
-        hpSlider.value = healthSystem.GetHealthPercent();
+        if(hpSlider != null)
+        {
+            hpSlider.value = healthSystem.GetHealthPercent();
+        }
     }
 
     void Update()
@@ -39,5 +42,13 @@ public class PlayerStats : MonoBehaviour, IDamagable
     private void HealthSystem_OnDeath(object sender, System.EventArgs e)
     {
         Debug.Log("Player Died");
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.GetComponent<ICollectable>() != null)
+        {
+            other.GetComponent<ICollectable>().Collected(gameObject);
+        }
     }
 }

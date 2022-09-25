@@ -18,6 +18,6 @@ public class WeaponSO : ScriptableObject
     public AttackStyle secondaryAttackStyle = AttackStyle.Melee;
     public int secondaryDamage = 10;
     public float secondaryRange = 1;
-    public int secondaryAtkSpeed = 1;
+    public float secondaryAtkSpeed = 1;
     [ConditionalValue("secondaryAttackStyle", Condition2 = "Projectile")] public GameObject secondaryProjectile;
 }

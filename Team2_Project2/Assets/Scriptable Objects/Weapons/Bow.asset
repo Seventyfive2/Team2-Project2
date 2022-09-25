@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75edccf2b79b3e64d958b49ab724cbf1, type: 3}
   m_Name: Bow
   m_EditorClassIdentifier: 
-  primaryAttackStyle: 1
+  primaryAttackStyle: 2
   primaryDamage: 5
   primaryRange: 1
   primaryAtkSpeed: 1
   primaryProjectile: {fileID: 0}
-  secondaryAttackStyle: 2
+  secondaryAttackStyle: 1
   secondaryDamage: 10
   secondaryRange: 1
   secondaryAtkSpeed: 1

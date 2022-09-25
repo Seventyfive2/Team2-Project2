@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.InputSystem.InputAction;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.XR;
-using UnityEngine.Windows;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -27,6 +23,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private PlayerInput pi = null;
 
     Vector3 velocity;
+    [SerializeField] private float gravity = -9.81f;
+    [SerializeField] private float fallMultiplier = 1.5f;
+    private bool isGrounded;
+    [SerializeField] private LayerMask whatIsGround;
+    [SerializeField] private Transform feetPos = null;
+    [SerializeField] float groundCheckRadius = .4f;
 
     #region Input Handlers
     public void Move(CallbackContext context)
@@ -100,6 +102,13 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         #endregion
+
+        isGrounded = Physics.CheckSphere(feetPos.position, groundCheckRadius, whatIsGround);
+
+        if (!isGrounded)
+        {
+            velocity.y += gravity * (fallMultiplier - 1) * Time.deltaTime;
+        }
     }
 
     void FixedUpdate()

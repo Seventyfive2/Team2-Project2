@@ -88,7 +88,10 @@ public class PlayerAttack : MonoBehaviour
                 }
                 break;
             case WeaponSO.AttackStyle.Projectile:
-                Instantiate(projectile, attackPos.position, Quaternion.identity);
+                if(projectile != null)
+                {
+                    Instantiate(projectile, attackPos.position, Quaternion.identity);
+                }
                 break;
         }
     }
