@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Scriptable Objects/New Weapon")]
 public class WeaponSO : ScriptableObject
 {
+    public GameObject weaponPrefab;
+
     public enum AttackStyle { Melee, Raycast, Projectile}
 
     [Header("Primary Stats")]

@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75edccf2b79b3e64d958b49ab724cbf1, type: 3}
   m_Name: Bow
   m_EditorClassIdentifier: 
+  weaponPrefab: {fileID: 3317823749142253822, guid: d4958227484245e4592c41ab2c02ad22, type: 3}
   primaryAttackStyle: 2
   primaryDamage: 5
   primaryRange: 1
-  primaryAtkSpeed: 1
-  primaryProjectile: {fileID: 0}
+  primaryAtkSpeed: 0.25
+  primaryProjectile: {fileID: 5047748523163412243, guid: 61ae91f7ea1fbbd48bbfc1db2315a3c6, type: 3}
   secondaryAttackStyle: 1
   secondaryDamage: 10
-  secondaryRange: 1
+  secondaryRange: 15
   secondaryAtkSpeed: 1
   secondaryProjectile: {fileID: 0}

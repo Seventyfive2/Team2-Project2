@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75edccf2b79b3e64d958b49ab724cbf1, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
+  weaponPrefab: {fileID: 355312524381552382, guid: b84d7ca3927758646a65731cc107aa76, type: 3}
   primaryAttackStyle: 0
   primaryDamage: 5
   primaryRange: 1
   primaryAtkSpeed: 1
   primaryProjectile: {fileID: 0}
-  secondaryAttackStyle: 2
+  secondaryAttackStyle: 0
   secondaryDamage: 10
   secondaryRange: 3
   secondaryAtkSpeed: 1

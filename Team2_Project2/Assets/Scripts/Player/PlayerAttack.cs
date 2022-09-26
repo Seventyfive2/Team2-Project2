@@ -90,7 +90,10 @@ public class PlayerAttack : MonoBehaviour
             case WeaponSO.AttackStyle.Projectile:
                 if(projectile != null)
                 {
-                    Instantiate(projectile, attackPos.position, Quaternion.identity);
+                    Projectile projectileValues = Instantiate(projectile, attackPos.position, transform.rotation).GetComponent<Projectile>();
+                    projectileValues.transform.position = attackPos.position;
+                    projectileValues.transform.rotation = attackPos.rotation;
+                    projectileValues.Setup(damage);
                 }
                 break;
         }

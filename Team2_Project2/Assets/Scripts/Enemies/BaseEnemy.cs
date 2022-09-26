@@ -52,6 +52,7 @@ public class BaseEnemy : MonoBehaviour, IDamagable
         //pathfinding.SetTarget(GameObject.Find("Player").transform);
         StartCoroutine(GetTarget());
         StartCoroutine(StateMachine());
+        attackTime = attackSpeed;
     }
 
     // Update is called once per frame
@@ -74,7 +75,7 @@ public class BaseEnemy : MonoBehaviour, IDamagable
                 attackTime = attackSpeed;
             }
         }
-        else if(attackTime > 0)
+        else if(attackTime > 0 && currentState == State.Attacking)
         {
             attackTime -= Time.deltaTime;
         }

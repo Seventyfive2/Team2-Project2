@@ -8,7 +8,7 @@ public class BaseBuilding : MonoBehaviour, IDamagable
     private HealthSystem healthSystem;
 
     [SerializeField] private int maxHealth;
-    private bool isDestroyed;
+    public bool isDestroyed;
 
     [Header("UI")]
     [SerializeField] private TMP_Text buildingTextName;
@@ -16,7 +16,7 @@ public class BaseBuilding : MonoBehaviour, IDamagable
 
     [Header("Components")]
     [SerializeField] private GameObject model;
-    [SerializeField] private Collider collider;
+    [SerializeField] private new Collider collider;
     [SerializeField] private NavMeshObstacle obstacle;
 
     // Start is called before the first frame update

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75edccf2b79b3e64d958b49ab724cbf1, type: 3}
   m_Name: AXE
   m_EditorClassIdentifier: 
+  weaponPrefab: {fileID: 8203073568141072114, guid: 6cd1ac9652a50da4485a86492f47c63d, type: 3}
   primaryAttackStyle: 0
   primaryDamage: 10
   primaryRange: 3
