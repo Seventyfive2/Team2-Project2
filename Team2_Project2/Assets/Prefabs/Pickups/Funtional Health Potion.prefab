@@ -4835,7 +4835,7 @@ GameObject:
   - component: {fileID: 804382022582396782}
   m_Layer: 0
   m_Name: Funtional Health Potion
-  m_TagString: Untagged
+  m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -65,7 +65,7 @@ public class BaseEnemy : MonoBehaviour, IDamagable
             {
                 for (int i = 0; i < meleeTargets.Length; i++)
                 {
-                    if (meleeTargets[i].transform.GetComponent<IDamagable>() != null && meleeTargets[i].CompareTag("Player"))
+                    if (meleeTargets[i].transform.GetComponent<IDamagable>() != null && meleeTargets[i].CompareTag("Player") || meleeTargets[i].CompareTag("Building"))
                     {
                         meleeTargets[i].transform.GetComponent<IDamagable>().TakeDamage(attackDamage);
                     }
@@ -166,7 +166,8 @@ public class BaseEnemy : MonoBehaviour, IDamagable
 
     private void HealthSystem_OnDeath(object sender, System.EventArgs e)
     {
-        LootManager.instance.GetGoldDrop(transform.position);
+        LootManager.instance.GetStandardDrops(transform.position);
+        WaveManager.instance.EnemyDefeated();
         Destroy(gameObject);
     }
     #endregion

@@ -3,17 +3,16 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     private int damage;
-    private enum TagToIgnore { Player, Enemies }
-    [SerializeField] private TagToIgnore tagToIgnore = TagToIgnore.Enemies;
 
-    public void Setup(int projectileDamage)
+    public void Setup(string projectileTage, int projectileDamage)
     {
+        tag = projectileTage;
         damage = projectileDamage;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(!other.CompareTag(tagToIgnore.ToString()))
+        if(!other.CompareTag(tag))
         {
             IDamagable target = other.GetComponent<IDamagable>();
             if (target != null)
@@ -22,6 +21,9 @@ public class Projectile : MonoBehaviour
             }
         }
 
-        Destroy(gameObject);
+        if (!other.CompareTag("Pickup"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
