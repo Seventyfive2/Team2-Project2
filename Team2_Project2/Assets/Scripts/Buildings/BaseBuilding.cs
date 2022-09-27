@@ -7,6 +7,7 @@ public class BaseBuilding : MonoBehaviour, IDamagable
 {
     private HealthSystem healthSystem;
 
+    [SerializeField] private string buildingName = "Building";
     [SerializeField] private int maxHealth;
     public bool isDestroyed;
 
@@ -20,9 +21,9 @@ public class BaseBuilding : MonoBehaviour, IDamagable
     [SerializeField] private NavMeshObstacle obstacle;
 
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
-        buildingTextName.text = name;
+        buildingTextName.text = buildingName;
 
         healthSystem = new HealthSystem(maxHealth);
 

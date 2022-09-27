@@ -20,7 +20,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform model = null;
     [SerializeField] private Transform attackParent = null;
     [SerializeField] private Camera cam = null;
-    [SerializeField] private PlayerInput pi = null;
 
     Vector3 velocity;
     [SerializeField] private float gravity = -9.81f;
@@ -115,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isControllable)
         {
-            controller.Move(moveInput * speed * Time.deltaTime + new Vector3(0.0f, velocity.y, 0.0f) * Time.deltaTime);
+            controller.Move(moveInput * speed * Time.deltaTime + new Vector3(0.0f, velocity.y, 0.0f));
         }
     }
 

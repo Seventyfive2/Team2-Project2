@@ -1,11 +1,11 @@
+using System;
 using UnityEngine;
 
 public class WatchTower : BaseBuilding
 {
-
-
-    void Start()
+    public override void Start()
     {
+        base.Start();
         WaveManager.instance.OnWaveSpawned += WaveManager_OnWaveSpawned;
     }
 
@@ -33,11 +33,5 @@ public class WatchTower : BaseBuilding
 
             Debug.Log(spawnNotification);
         }    
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

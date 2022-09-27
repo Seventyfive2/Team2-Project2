@@ -16,7 +16,7 @@ MonoBehaviour:
   primaryAttackStyle: 2
   primaryDamage: 5
   primaryRange: 1
-  primaryAtkSpeed: 0.25
+  primaryAtkSpeed: 0.3
   primaryProjectile: {fileID: 5047748523163412243, guid: 61ae91f7ea1fbbd48bbfc1db2315a3c6, type: 3}
   secondaryAttackStyle: 1
   secondaryDamage: 10

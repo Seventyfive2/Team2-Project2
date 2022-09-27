@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -23,7 +22,6 @@ public class PlayerAttack : MonoBehaviour
         StartCoroutine(UpdateCooldowns());
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(primaryCooldown > 0)
@@ -38,7 +36,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void PrimaryAttack(CallbackContext context)
     {
-        if(primaryCooldown <= 0 && context.phase == InputActionPhase.Performed)
+        if(primaryCooldown <= 0 && context.phase == InputActionPhase.Performed && weapon != null)
         {
             DoAttack(weapon.primaryAttackStyle, weapon.primaryDamage, weapon.primaryRange, weapon.primaryProjectile);
 
@@ -48,7 +46,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void SecondaryAttack(CallbackContext context)
     {
-        if (secondaryCooldown <= 0 && context.phase == InputActionPhase.Performed)
+        if (secondaryCooldown <= 0 && context.phase == InputActionPhase.Performed && weapon != null)
         {
             DoAttack(weapon.secondaryAttackStyle, weapon.secondaryDamage, weapon.secondaryRange, weapon.secondaryProjectile);
 
@@ -67,7 +65,7 @@ public class PlayerAttack : MonoBehaviour
                 {
                     for (int i = 0; i < meleeTargets.Length; i++)
                     {
-                        if (meleeTargets[i].transform.GetComponent<IDamagable>() != null && !meleeTargets[i].CompareTag("Player"))
+                        if (meleeTargets[i].transform.GetComponent<IDamagable>() != null && !meleeTargets[i].CompareTag("Player") && !meleeTargets[i].CompareTag("Building"))
                         {
                             meleeTargets[i].transform.GetComponent<IDamagable>().TakeDamage(damage);
                         }
@@ -80,7 +78,7 @@ public class PlayerAttack : MonoBehaviour
                 {
                     for (int i = 0; i < raycastTargets.Length; i++)
                     {
-                        if (raycastTargets[i].transform.GetComponent<IDamagable>() != null && !raycastTargets[i].transform.CompareTag("Player"))
+                        if (raycastTargets[i].transform.GetComponent<IDamagable>() != null && !raycastTargets[i].transform.CompareTag("Player") && !raycastTargets[i].transform.CompareTag("Building"))
                         {
                             raycastTargets[i].transform.GetComponent<IDamagable>().TakeDamage(damage);
                         }
@@ -93,7 +91,7 @@ public class PlayerAttack : MonoBehaviour
                     Projectile projectileValues = Instantiate(projectile, attackPos.position, transform.rotation).GetComponent<Projectile>();
                     projectileValues.transform.position = attackPos.position;
                     projectileValues.transform.rotation = attackPos.rotation;
-                    projectileValues.Setup(damage);
+                    projectileValues.Setup(tag,damage);
                 }
                 break;
         }
@@ -116,40 +114,46 @@ public class PlayerAttack : MonoBehaviour
     {
         while(true)
         {
-            primaryCooldownFill.fillAmount = primaryCooldown/ weapon.primaryAtkSpeed;
-            secondaryCooldownFill.fillAmount = secondaryCooldown/ weapon.secondaryAtkSpeed;
+            if(weapon != null)
+            {
+                primaryCooldownFill.fillAmount = primaryCooldown / weapon.primaryAtkSpeed;
+                secondaryCooldownFill.fillAmount = secondaryCooldown / weapon.secondaryAtkSpeed;
+            }
             yield return new WaitForSeconds(uiRefreshRate);
         }
     }
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        switch (weapon.primaryAttackStyle)
+        if(weapon != null)
         {
-            case WeaponSO.AttackStyle.Melee:
-            default:
-                Gizmos.DrawWireSphere(GetAttackPositionOffset(weapon.primaryRange), weapon.primaryRange);
-                break;
-            case WeaponSO.AttackStyle.Raycast:
-                Gizmos.DrawLine(attackPos.position, attackPos.position + Vector3.forward * weapon.primaryRange);
-                break;
-            case WeaponSO.AttackStyle.Projectile:
-                break;
-        }
+            Gizmos.color = Color.red;
+            switch (weapon.primaryAttackStyle)
+            {
+                case WeaponSO.AttackStyle.Melee:
+                default:
+                    Gizmos.DrawWireSphere(GetAttackPositionOffset(weapon.primaryRange), weapon.primaryRange);
+                    break;
+                case WeaponSO.AttackStyle.Raycast:
+                    Gizmos.DrawLine(attackPos.position, attackPos.position + Vector3.forward * weapon.primaryRange);
+                    break;
+                case WeaponSO.AttackStyle.Projectile:
+                    break;
+            }
 
-        Gizmos.color = Color.blue;
-        switch (weapon.secondaryAttackStyle)
-        {
-            case WeaponSO.AttackStyle.Melee:
-            default:
-                Gizmos.DrawWireSphere(GetAttackPositionOffset(weapon.secondaryRange), weapon.secondaryRange);
-                break;
-            case WeaponSO.AttackStyle.Raycast:
-                Gizmos.DrawLine(attackPos.position, attackPos.position + attackPos.forward * weapon.secondaryRange);
-                break;
-            case WeaponSO.AttackStyle.Projectile:
-                break;
+            Gizmos.color = Color.blue;
+            switch (weapon.secondaryAttackStyle)
+            {
+                case WeaponSO.AttackStyle.Melee:
+                default:
+                    Gizmos.DrawWireSphere(GetAttackPositionOffset(weapon.secondaryRange), weapon.secondaryRange);
+                    break;
+                case WeaponSO.AttackStyle.Raycast:
+                    Gizmos.DrawLine(attackPos.position, attackPos.position + attackPos.forward * weapon.secondaryRange);
+                    break;
+                case WeaponSO.AttackStyle.Projectile:
+                    break;
+            }
         }
     }
 }
