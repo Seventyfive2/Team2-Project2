@@ -6,13 +6,13 @@ public class PauseResume : MonoBehaviour
 {
 
     public GameObject PauseScreen;
-    public GameObject BeginScreen;
+    //public GameObject BeginScreen;
 
     bool GamePaused;
     // Start is called before the first frame update
     void Start()
     {
-        GamePaused = true;
+        //GamePaused = true;
     }
 
     // Update is called once per frame
@@ -26,7 +26,12 @@ public class PauseResume : MonoBehaviour
         {
             Time.timeScale = 1;
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseGame();
+        }
     }
+
 
     public void PauseGame()
     {
@@ -39,10 +44,11 @@ public class PauseResume : MonoBehaviour
         GamePaused = false;
         PauseScreen.SetActive(false);
     }
-    public void BeginGame()
+    /*public void BeginGame()
     {
         print("yes");
         GamePaused = false;
         BeginScreen.SetActive(false);
     }
+    */
 }
