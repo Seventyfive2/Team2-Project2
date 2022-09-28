@@ -53,6 +53,7 @@ public class WaveManager : MonoBehaviour
     private void Start()
     {
         SpawnWave(waveDetails[waveIndex]);
+        waveIndex++;
     }
 
     // Update is called once per frame
