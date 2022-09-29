@@ -22165,6 +22165,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3110170663442719214, guid: 13cc8f515ae4148459415aa149ca59f6, type: 3}
+      propertyPath: waveDetails.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110170663442719214, guid: 13cc8f515ae4148459415aa149ca59f6, type: 3}
+      propertyPath: waveDetails.Array.data[1].nbrOfMinions
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110170663442719214, guid: 13cc8f515ae4148459415aa149ca59f6, type: 3}
+      propertyPath: waveDetails.Array.data[1].nbrOfSpawnpoints
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 13cc8f515ae4148459415aa149ca59f6, type: 3}
