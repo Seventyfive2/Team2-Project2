@@ -40,6 +40,33 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Ability",
+                    "type": "Button",
+                    "id": "614d1d3f-b879-4dc3-be8a-0be5baeae71b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Item",
+                    "type": "Button",
+                    "id": "2892822e-4a3b-4cd7-81ad-f5d77ae2e3f4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Cycle Item",
+                    "type": "Button",
+                    "id": "37ef3351-089a-41ad-ad35-3e57fdbae3f7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -271,6 +298,39 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Secondary Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "453e9a88-3dfd-4d02-b272-13655ea52bb5",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ability",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8f417e94-0c29-4405-9e2a-5ba366e805cf",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Item",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5c12eeb3-96a7-4682-8476-b03a3c224672",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cycle Item",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

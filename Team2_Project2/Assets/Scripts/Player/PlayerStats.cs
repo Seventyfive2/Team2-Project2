@@ -1,32 +1,28 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour, IDamagable
 {
-    [SerializeField] CharacterSO characterStats = null;
-    private HealthSystem healthSystem;
+    private int baseMaxHealth = 10;
 
-    [SerializeField] private Slider hpSlider;
+
+    private HealthSystem healthSystem;
+    private PlayerUI ui;
 
     void Start()
     {
-        healthSystem = new HealthSystem(characterStats.maxHealth);
+        ui = GameObject.Find("Player Canvas").GetComponent<PlayerUI>();
+
+        healthSystem = new HealthSystem(baseMaxHealth);
 
         healthSystem.OnHealthChanged += HealthSystem_OnHealthChanged;
         healthSystem.OnDeath += HealthSystem_OnDeath;
+
+        ui.UpdateHealth(healthSystem.GetHealthPercent());
     }
 
     private void HealthSystem_OnHealthChanged(object sender, System.EventArgs e)
     {
-        if(hpSlider != null)
-        {
-            hpSlider.value = healthSystem.GetHealthPercent();
-        }
-    }
-
-    void Update()
-    {
-
+        ui.UpdateHealth(healthSystem.GetHealthPercent());
     }
 
     public void Heal(int amt)

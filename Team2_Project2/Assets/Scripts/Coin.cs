@@ -2,21 +2,12 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour, ICollectable
 {
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] private int coinValue = 1;
 
     public void Collected(GameObject collector)
     {
+        PlayerData.instance.coins += coinValue;
+        GameObject.Find("Player Canvas").GetComponent<PlayerUI>().UpdateCoins();
         Destroy(gameObject);
     }
 

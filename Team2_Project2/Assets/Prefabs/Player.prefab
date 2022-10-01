@@ -220,8 +220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dac659f110b1e5c479c27ee6d5cbf08e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterStats: {fileID: 11400000, guid: c0904de80412b3d489695e49832a3e54, type: 2}
-  hpSlider: {fileID: 0}
 --- !u!114 &6693652902418518201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,10 +233,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: 3d60a3b5290f8e04bbc4ef0b3acf6826, type: 2}
+  ability: {fileID: 0}
   attackPos: {fileID: 6693652902879828592}
   uiRefreshRate: 0.167
-  primaryCooldownFill: {fileID: 0}
-  secondaryCooldownFill: {fileID: 0}
 --- !u!143 &6693652902418518199
 CharacterController:
   m_ObjectHideFlags: 0
@@ -386,6 +383,54 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: a764e278-632b-4602-92a0-d17a20824675
     m_ActionName: Player/Heavy Attack[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6693652902418518201}
+        m_TargetAssemblyTypeName: PlayerAttack, Assembly-CSharp
+        m_MethodName: Ability
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 614d1d3f-b879-4dc3-be8a-0be5baeae71b
+    m_ActionName: Player/Ability[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6693652902418518192}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2892822e-4a3b-4cd7-81ad-f5d77ae2e3f4
+    m_ActionName: Player/Item[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6693652902418518192}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 37ef3351-089a-41ad-ad35-3e57fdbae3f7
+    m_ActionName: Player/Cycle Item[/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

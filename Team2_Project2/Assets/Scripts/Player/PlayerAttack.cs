@@ -1,24 +1,31 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 using static UnityEngine.InputSystem.InputAction;
 
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private WeaponSO weapon;
+    [SerializeField] private AbilitySO ability;
     [SerializeField] private Transform attackPos;
 
     private float primaryCooldown;
     private float secondaryCooldown;
+    private float abilityCooldown;
 
     [Header("UI")]
     [SerializeField] private float uiRefreshRate = .167f;
-    [SerializeField] private Image primaryCooldownFill;
-    [SerializeField] private Image secondaryCooldownFill;
+    private PlayerUI ui;
 
     void Start()
     {
+        if(PlayerData.instance.currentWeapon != null)
+        {
+            weapon = PlayerData.instance.currentWeapon;
+        }
+
+        ui = GameObject.Find("Player Canvas").GetComponent<PlayerUI>();
+
         StartCoroutine(UpdateCooldowns());
     }
 
@@ -51,6 +58,16 @@ public class PlayerAttack : MonoBehaviour
             DoAttack(weapon.secondaryAttackStyle, weapon.secondaryDamage, weapon.secondaryRange, weapon.secondaryProjectile);
 
             secondaryCooldown = weapon.secondaryAtkSpeed / 1;
+        }
+    }
+
+    public void Ability(CallbackContext context)
+    {
+        if (abilityCooldown <= 0 && context.phase == InputActionPhase.Performed && ability != null)
+        {
+            ability.UseAbility(transform,attackPos);
+
+            abilityCooldown = ability.cooldown / 1;
         }
     }
 
@@ -101,8 +118,12 @@ public class PlayerAttack : MonoBehaviour
     {
         weapon = newWeapon;
 
+        PlayerData.instance.currentWeapon = newWeapon;
+
         primaryCooldown = 0;
         secondaryCooldown = 0;
+
+        ui.ChangeWeapon(newWeapon.primaryCooldownImage, newWeapon.secondaryCooldownImage);
     }
 
     public Vector3 GetAttackPositionOffset(float range)
@@ -116,8 +137,7 @@ public class PlayerAttack : MonoBehaviour
         {
             if(weapon != null)
             {
-                primaryCooldownFill.fillAmount = primaryCooldown / weapon.primaryAtkSpeed;
-                secondaryCooldownFill.fillAmount = secondaryCooldown / weapon.secondaryAtkSpeed;
+                ui.UpdateCooldowns(primaryCooldown / weapon.primaryAtkSpeed, secondaryCooldown / weapon.secondaryAtkSpeed, abilityCooldown);
             }
             yield return new WaitForSeconds(uiRefreshRate);
         }
@@ -152,6 +172,27 @@ public class PlayerAttack : MonoBehaviour
                     Gizmos.DrawLine(attackPos.position, attackPos.position + attackPos.forward * weapon.secondaryRange);
                     break;
                 case WeaponSO.AttackStyle.Projectile:
+                    break;
+            }
+        }
+
+        if(ability != null)
+        {
+            Gizmos.color = Color.magenta;
+            switch (ability.hitDetectionStyle)
+            {
+                case AbilitySO.HitDetectionStyle.Melee:
+                    Gizmos.DrawWireSphere(attackPos.position, ability.range);
+                    break;
+                case AbilitySO.HitDetectionStyle.AroundPlayer:
+                    Gizmos.DrawWireSphere(transform.position, ability.range);
+                    break;
+                case AbilitySO.HitDetectionStyle.Raycast:
+                    Gizmos.DrawLine(attackPos.position, attackPos.position + attackPos.forward * ability.range);
+                    break;
+                case AbilitySO.HitDetectionStyle.Projectile:
+                    break;
+                default:
                     break;
             }
         }

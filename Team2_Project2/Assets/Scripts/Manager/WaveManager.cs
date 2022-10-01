@@ -24,7 +24,7 @@ public class WaveManager : MonoBehaviour
         }
     }
 
-    [SerializeField] private UnityEvent wavesCompleted;
+    [SerializeField] private UnityEvent allWavesCompleted;
 
     [SerializeField] private ShufflebagItem<Transform>[] spawnPoints;
 
@@ -100,9 +100,9 @@ public class WaveManager : MonoBehaviour
             }
             else
             {
-                if(wavesCompleted != null)
+                if(allWavesCompleted != null)
                 {
-                    wavesCompleted.Invoke();
+                    allWavesCompleted.Invoke();
                 }
             }
         }

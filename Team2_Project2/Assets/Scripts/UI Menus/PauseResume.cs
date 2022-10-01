@@ -18,17 +18,9 @@ public class PauseResume : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GamePaused)
-        {
-            Time.timeScale = 0;
-        }
-        else
-        {
-            Time.timeScale = 1;
-        }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            PauseGame();
+            ToggleGameState();
         }
     }
 
@@ -37,12 +29,25 @@ public class PauseResume : MonoBehaviour
     {
         GamePaused = true;
         PauseScreen.SetActive(true);
-
+        Time.timeScale = 0;
     }
     public void ResumeGame()
     {
         GamePaused = false;
         PauseScreen.SetActive(false);
+        Time.timeScale = 1;
+    }
+
+    public void ToggleGameState()
+    {
+        if(GamePaused)
+        {
+            ResumeGame();
+        }
+        else
+        {
+            PauseGame();
+        }
     }
     /*public void BeginGame()
     {
