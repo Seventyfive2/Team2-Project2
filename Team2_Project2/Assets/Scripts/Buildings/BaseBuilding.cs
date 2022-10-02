@@ -10,6 +10,8 @@ public class BaseBuilding : MonoBehaviour, IDamagable
     [SerializeField] private string buildingName = "Building";
     [SerializeField] private int maxHealth;
     public bool isDestroyed;
+    private BuildingData buildingData;
+    [SerializeField] private Sprite buildingSprite;
 
     [Header("UI")]
     [SerializeField] private TMP_Text buildingTextName;
@@ -30,6 +32,15 @@ public class BaseBuilding : MonoBehaviour, IDamagable
         healthSystem.OnDeath += HealthSystem_OnDeath;
         healthSystem.OnHealthChanged += HealthSystem_OnHealthChanged;
         healthSlider.value = healthSystem.GetHealthPercent();
+
+        FindBuildingStatus();
+
+        if(buildingData != null)
+        {
+            TakeDamage(buildingData.healthSystem.GetMissingHealth());
+        }
+
+        TakeDamage(25);
     }
 
     // Update is called once per frame
@@ -64,5 +75,20 @@ public class BaseBuilding : MonoBehaviour, IDamagable
         model.SetActive(false);
         obstacle.enabled = false;
         collider.enabled = false;
+    }
+
+    public void FindBuildingStatus()
+    {
+        for (int i = 0; i < PlayerData.instance.buildingStatus.Count; i++)
+        {
+           if(PlayerData.instance.buildingStatus[i].name == buildingName)
+           {
+                buildingData = PlayerData.instance.buildingStatus[i];
+                return;
+           }
+        }
+
+        buildingData = new BuildingData(buildingName, healthSystem, buildingSprite);
+        PlayerData.instance.buildingStatus.Add(buildingData);
     }
 }

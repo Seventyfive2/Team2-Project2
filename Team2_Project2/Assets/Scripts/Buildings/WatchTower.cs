@@ -6,7 +6,10 @@ public class WatchTower : BaseBuilding
     public override void Start()
     {
         base.Start();
-        WaveManager.instance.OnWaveSpawned += WaveManager_OnWaveSpawned;
+        if(WaveManager.instance != null)
+        {
+            WaveManager.instance.OnWaveSpawned += WaveManager_OnWaveSpawned;
+        }
     }
 
     private void WaveManager_OnWaveSpawned(object sender, WaveManager.WaveSpawnedEventArgs e)

@@ -104,6 +104,11 @@ public class WaveManager : MonoBehaviour
                 {
                     allWavesCompleted.Invoke();
                 }
+
+                if(PlayerData.instance != null)
+                {
+                    PlayerData.instance.LevelEnded();
+                }
             }
         }
     }

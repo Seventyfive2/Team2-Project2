@@ -24,6 +24,11 @@ public class HealthSystem
         return (float) health / maxHealth;
     }
 
+    public int GetMissingHealth()
+    {
+        return maxHealth - health;
+    }
+
     public void Damage(int amt)
     {
         health -= amt;
@@ -39,6 +44,12 @@ public class HealthSystem
     public void Heal(int amt)
     {
         health += amt;
+        if (health > maxHealth) health = maxHealth;
+        if (OnHealthChanged != null) OnHealthChanged(this, EventArgs.Empty);
+    }
+    public void HealMax()
+    {
+        health = maxHealth;
         if (health > maxHealth) health = maxHealth;
         if (OnHealthChanged != null) OnHealthChanged(this, EventArgs.Empty);
     }
