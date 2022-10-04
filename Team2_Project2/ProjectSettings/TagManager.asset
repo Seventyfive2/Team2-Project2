@@ -5,8 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  - Building
   - Pickup
+  - Projectile
   layers:
   - Default
   - TransparentFX

@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponToGive: {fileID: 11400000, guid: 3d60a3b5290f8e04bbc4ef0b3acf6826, type: 2}
+  newPickup: {fileID: 29021432781071403, guid: 072184dd36f133a45998e627edfd5557, type: 3}
+  itemTrigger: {fileID: 6476624819669131080}
 --- !u!65 &6476624819669131080
 BoxCollider:
   m_ObjectHideFlags: 0

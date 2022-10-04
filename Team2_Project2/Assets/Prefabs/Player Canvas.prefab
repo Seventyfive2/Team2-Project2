@@ -1096,6 +1096,7 @@ MonoBehaviour:
     parentObject: {fileID: 3978390158814625658}
     image: {fileID: 6271663295395136460}
     fill: {fileID: 2973225233341665979}
+  hasAbility: 0
   itemImage: {fileID: 3956285328268335534}
   itemCountText: {fileID: 8356787381436978599}
   itemVisualParent: {fileID: 6437446807857375224}

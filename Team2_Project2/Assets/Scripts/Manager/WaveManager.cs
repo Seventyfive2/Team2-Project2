@@ -28,12 +28,13 @@ public class WaveManager : MonoBehaviour
 
     [SerializeField] private ShufflebagItem<Transform>[] spawnPoints;
 
-    [SerializeField] private GameObject[] minionPrefabs;
+    [SerializeField] private WeightedItem<GameObject>[] minionPrefabs;
 
     [SerializeField] private WeightedItem<GameObject>[] specialEnemies;
 
     [SerializeField] private int waveSize;
     [SerializeField] private int enemiesLeft;
+    [SerializeField] private int totalEnemies;
 
     [Range(0,1)][SerializeField] private float wavePercentage = .75f;
 
@@ -74,7 +75,7 @@ public class WaveManager : MonoBehaviour
         }
         for (int i = 0; i < wave.nbrOfMinions; i++)
         {
-            Instantiate(GalaxyRandom.GetRandomFromList(minionPrefabs), GalaxyRandom.GetRandomFromList(activeSpawnpoints).position, Quaternion.identity);
+            Instantiate(GalaxyRandom.GetRandomWeightedValue(minionPrefabs), GalaxyRandom.GetRandomFromList(activeSpawnpoints).position, Quaternion.identity);
         }
         for (int i = 0; i < wave.nbrOfSpecialEnemies; i++)
         {
@@ -83,6 +84,7 @@ public class WaveManager : MonoBehaviour
 
         waveSize = wave.nbrOfMinions + wave.nbrOfSpecialEnemies;
         enemiesLeft = waveSize;
+        totalEnemies += waveSize;
 
         if (OnWaveSpawned != null) OnWaveSpawned(this, new WaveSpawnedEventArgs(waveSize, spawnpointInfo));
     }
@@ -90,6 +92,7 @@ public class WaveManager : MonoBehaviour
     public void EnemyDefeated()
     {
         enemiesLeft--;
+        totalEnemies--;
 
         if((float)enemiesLeft / waveSize <= 1 - wavePercentage)
         {
@@ -100,14 +103,17 @@ public class WaveManager : MonoBehaviour
             }
             else
             {
-                if(allWavesCompleted != null)
+                if(totalEnemies <= 0)
                 {
-                    allWavesCompleted.Invoke();
-                }
+                    if (allWavesCompleted != null)
+                    {
+                        allWavesCompleted.Invoke();
+                    }
 
-                if(PlayerData.instance != null)
-                {
-                    PlayerData.instance.LevelEnded();
+                    if (PlayerData.instance != null)
+                    {
+                        PlayerData.instance.LevelEnded();
+                    }
                 }
             }
         }

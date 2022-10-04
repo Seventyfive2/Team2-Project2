@@ -17,7 +17,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if(enemy.GetEnemyState() == BaseEnemy.State.Moving && target != null)
         {
-            agent.destination = GetRandomPositionAround(target.position,.5f);
+            agent.destination = GetRandomPositionAround(target.position, 1f);
         }
     }
 

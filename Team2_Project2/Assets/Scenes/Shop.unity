@@ -199,6 +199,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 38211272}
   m_CullTransparentMesh: 1
+--- !u!114 &64212252 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2843389110478187261, guid: f0ac7a6b3ac5f19428e86828be600a90, type: 3}
+  m_PrefabInstance: {fileID: 1196602258}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81eebff47a17584089c856f73527cc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &68461950
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,9 +1092,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1273959310}
-        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
-        m_MethodName: AddCoins
+      - m_Target: {fileID: 64212252}
+        m_TargetAssemblyTypeName: PlayerData, Assembly-CSharp
+        m_MethodName: LevelEnded
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 64212252}
+        m_TargetAssemblyTypeName: PlayerData, Assembly-CSharp
+        m_MethodName: LoadNextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2258,6 +2281,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2843389110478187261, guid: f0ac7a6b3ac5f19428e86828be600a90, type: 3}
+      propertyPath: levelIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9215032413861336976, guid: f0ac7a6b3ac5f19428e86828be600a90, type: 3}
       propertyPath: m_Name
       value: DataHolder
@@ -2306,30 +2333,22 @@ MonoBehaviour:
   entryPrefab: {fileID: 1408323673131397495, guid: 28b3ee69b174ab44cbadf16eb74e9ecc, type: 3}
   weapons:
   - itemName: Sword
-    itemVisual: {fileID: 0}
     item: {fileID: 11400000, guid: 3d60a3b5290f8e04bbc4ef0b3acf6826, type: 2}
   - itemName: Bow
-    itemVisual: {fileID: 0}
     item: {fileID: 11400000, guid: 878f2826f27f56047b51d06e85e02c72, type: 2}
   - itemName: Axe
-    itemVisual: {fileID: 0}
     item: {fileID: 11400000, guid: 532539f3de7abc04da44fa13f2420035, type: 2}
   abilities:
   - itemName: Shield
-    itemVisual: {fileID: 0}
     item: {fileID: 11400000, guid: d9bdea71c8cf4544d842d44e9a2c71d3, type: 2}
   - itemName: Shockwave
-    itemVisual: {fileID: 0}
     item: {fileID: 11400000, guid: 43de7be851e81ba4d9a392e26f931906, type: 2}
   items:
   - itemName: Health Potion
-    itemVisual: {fileID: 0}
     item: {fileID: 11400000, guid: fe63dfca677117c4488089092b3e29cd, type: 2}
   - itemName: Speed Potion
-    itemVisual: {fileID: 0}
     item: {fileID: 11400000, guid: 695c87773e852df4e8d31f51dd34161d, type: 2}
   - itemName: Bomb
-    itemVisual: {fileID: 0}
     item: {fileID: 11400000, guid: f9499b74059b31b42b253e537d7048e2, type: 2}
   goldPerHealthMissing: 5
 --- !u!4 &1273959311

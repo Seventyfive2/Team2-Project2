@@ -13,13 +13,16 @@ MonoBehaviour:
   m_Name: Bow
   m_EditorClassIdentifier: 
   weaponPrefab: {fileID: 3317823749142253822, guid: d4958227484245e4592c41ab2c02ad22, type: 3}
+  weaponCost: 20
   primaryAttackStyle: 2
   primaryDamage: 5
   primaryRange: 1
   primaryAtkSpeed: 0.3
   primaryProjectile: {fileID: 5047748523163412243, guid: 61ae91f7ea1fbbd48bbfc1db2315a3c6, type: 3}
-  secondaryAttackStyle: 1
+  primaryCooldownImage: {fileID: 0}
+  secondaryAttackStyle: 2
   secondaryDamage: 10
   secondaryRange: 15
   secondaryAtkSpeed: 1
-  secondaryProjectile: {fileID: 0}
+  secondaryProjectile: {fileID: 6089667417269744202, guid: bb517250ffe0df74eaf64eb1c257540f, type: 3}
+  secondaryCooldownImage: {fileID: 0}

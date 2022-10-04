@@ -14,7 +14,7 @@ public class PlayerUI : MonoBehaviour
     [SerializeField] private CoolDownVisual primaryVisual;
     [SerializeField] private CoolDownVisual secondaryVisual;
     [SerializeField] private CoolDownVisual abilityVisual;
-    private bool hasAbility = false;
+    [SerializeField] private bool hasAbility = false;
 
     [Header("Item")]
     [SerializeField] private Image itemImage;
@@ -32,13 +32,17 @@ public class PlayerUI : MonoBehaviour
         hpSlider.value = healthPercent;
     }
 
-    public void UpdateCooldowns(float primaryCooldown, float secondaryCooldown, float abilityCooldown)
+    public void UpdateCooldowns(float primaryCooldown, float secondaryCooldown, float abilityCooldown = 0)
     {
         primaryVisual.ChangeFill(primaryCooldown);
         secondaryVisual.ChangeFill(secondaryCooldown);
         if(hasAbility)
         {
             abilityVisual.ChangeFill(abilityCooldown);
+        }
+        if(hasItem)
+        {
+            itemVisualParent.SetActive(true);
         }
     }
 
@@ -59,6 +63,7 @@ public class PlayerUI : MonoBehaviour
         if (hasAbility)
         {
             abilityVisual.image.sprite = abilitySprite;
+            abilityVisual.parentObject.SetActive(true);
         }
         else
         {
@@ -69,7 +74,7 @@ public class PlayerUI : MonoBehaviour
     public void ChangeItem(Sprite itemSprite, int amount, bool hasItem = true)
     {
         this.hasItem = hasItem;
-        if (hasAbility)
+        if (hasItem)
         {
             itemImage.sprite = itemSprite;
             itemCountText.text = amount.ToString();

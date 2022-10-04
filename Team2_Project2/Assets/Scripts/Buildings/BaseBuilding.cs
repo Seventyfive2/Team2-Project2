@@ -22,7 +22,6 @@ public class BaseBuilding : MonoBehaviour, IDamagable
     [SerializeField] private new Collider collider;
     [SerializeField] private NavMeshObstacle obstacle;
 
-    // Start is called before the first frame update
     public virtual void Start()
     {
         buildingTextName.text = buildingName;
@@ -40,13 +39,7 @@ public class BaseBuilding : MonoBehaviour, IDamagable
             TakeDamage(buildingData.healthSystem.GetMissingHealth());
         }
 
-        TakeDamage(25);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //TakeDamage(25);
     }
 
     public bool GetBuildingState()

@@ -169,7 +169,7 @@ Transform:
   - {fileID: 3110170662644966595}
   - {fileID: 3110170663612022414}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3110170663442719214
 MonoBehaviour:
@@ -185,9 +185,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveDetails:
   - nbrOfSpawnpoints: 1
-    nbrOfMinions: 5
-    nbrOfSpecialEnemies: 0
-  wavesCompleted:
+    nbrOfMinions: 10
+    nbrOfSpecialEnemies: 1
+  allWavesCompleted:
     m_PersistentCalls:
       m_Calls: []
   spawnPoints:
@@ -200,8 +200,19 @@ MonoBehaviour:
   - returnValue: {fileID: 3110170663612022414}
     inBag: 0
   minionPrefabs:
-  - {fileID: 7486499534250798636, guid: 8f57c03b3ad23904d8843de15d42adf2, type: 3}
-  specialEnemies: []
+  - weight: 2
+    returnValue: {fileID: 7486499534250798636, guid: 8f57c03b3ad23904d8843de15d42adf2, type: 3}
+  - weight: 1
+    returnValue: {fileID: 5847963764061697156, guid: 18391c9274a99f34db79526f3d18cd0c, type: 3}
+  - weight: 2
+    returnValue: {fileID: 541210161696201478, guid: 836c7a950ff9a214d8c64af118c956b7, type: 3}
+  - weight: 1
+    returnValue: {fileID: 4258933476115429692, guid: 635f47bfcf88abf4ca04f64f9462ac63, type: 3}
+  specialEnemies:
+  - weight: 1
+    returnValue: {fileID: 8026539220803202970, guid: 05570059af6a3704488532dc7a5ef346, type: 3}
+  - weight: 9
+    returnValue: {fileID: 2867943904727908749, guid: 3b891a6f071e3a84eaa2b12b2ece4168, type: 3}
   waveSize: 0
   enemiesLeft: 0
   wavePercentage: 0.75

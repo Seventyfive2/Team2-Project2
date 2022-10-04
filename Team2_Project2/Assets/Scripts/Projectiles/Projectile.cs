@@ -1,16 +1,16 @@
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Projectile : MonoBehaviour, ISetup
 {
-    private int damage;
+    [HideInInspector] public int damage;
 
-    public void Setup(string projectileTage, int projectileDamage)
+    public virtual void Setup(string projectileTage, int projectileDamage, float range = 1, bool activate = false)
     {
         tag = projectileTage;
         damage = projectileDamage;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public virtual void OnTriggerEnter(Collider other)
     {
         if(!other.CompareTag(tag))
         {
@@ -21,7 +21,7 @@ public class Projectile : MonoBehaviour
             }
         }
 
-        if (!other.CompareTag("Pickup"))
+        if (!other.CompareTag("Pickup") && !other.CompareTag(tag))
         {
             Destroy(gameObject);
         }

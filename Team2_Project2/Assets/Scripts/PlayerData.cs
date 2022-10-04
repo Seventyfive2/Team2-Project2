@@ -1,15 +1,21 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerData : MonoBehaviour
 {
     public static PlayerData instance;
 
     public int coins;
+    [Header("Player Equipment")]
     public WeaponSO currentWeapon;
     public AbilitySO currentAbility;
+
+    public ItemStack selectedItem;
+    public List<ItemStack> items;
+
+    public string[] nextLevel;
+    public int levelIndex = 0;
 
     [Header("Player Upgrades")]
     public PlayerAttribute[] attributes;
@@ -28,11 +34,42 @@ public class PlayerData : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        DontDestroyOnLoad(instance);
+    }
+
+    public void AddItem(ItemSO newItem, int amt)
+    {
+        bool stackItems = false;
+        ItemStack stackToAdd = null;
+
+        for (int i = 0; i < items.Count; i++)
+        {
+            if (items[i].item == newItem)
+            {
+                stackItems = true;
+                stackToAdd = items[i];
+            }
+        }
+
+        if (!stackItems)
+        {
+            items.Add(new ItemStack(newItem, 1));
+        }
+        else
+        {
+            stackToAdd.amtHeld += amt;
+        }
+    }
+
+    public void LoadNextLevel()
+    {
+        SceneManager.LoadScene(nextLevel[levelIndex]);
     }
 
     public void LevelEnded()
     {
-
+        levelIndex++;
     }
 }
 

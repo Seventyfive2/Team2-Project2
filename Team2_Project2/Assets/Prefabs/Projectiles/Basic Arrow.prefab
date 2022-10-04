@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5047748523163412242}
   m_Layer: 6
   m_Name: Basic Arrow
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,7 +48,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b6f0a4af1265f44aaa166e6e1c1c121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToIgnore: 0
 --- !u!65 &5047748523163412244
 BoxCollider:
   m_ObjectHideFlags: 0

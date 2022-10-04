@@ -11,16 +11,16 @@ public class StraightProjectile : MonoBehaviour
 
     public Rigidbody rb;
 
-    void Start()
+    void OnEnable()
     {
         time = lifeTime;
         rb = GetComponent<Rigidbody>();
         rb.velocity = transform.forward * speed;
+        Destroy(gameObject, time);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnDrawGizmos()
     {
-        
+        Gizmos.DrawLine(transform.position, transform.position + transform.forward);
     }
 }

@@ -20,10 +20,12 @@ public class BaseEnemy : MonoBehaviour, IDamagable
 
     [Header("Stats")]
     [SerializeField] private int maxHealth = 1;
-    [SerializeField] private int attackDamage = 2;
-    [SerializeField] private float attackRange = 1f;
+    public int attackDamage = 2;
+    public float attackRange = 1f;
     [SerializeField] private float attackSpeed = 1f;
     private float attackTime = 0f;
+
+    [SerializeField] private bool prioritizeBuilding = false;
 
     [Header("UI")]
     [SerializeField] private GameObject enemyCanvas;
@@ -31,7 +33,7 @@ public class BaseEnemy : MonoBehaviour, IDamagable
     [SerializeField] private Slider healthSlider;
 
     [Header("Components")]
-    [SerializeField] private EnemyMovement pathfinding;
+    public EnemyMovement pathfinding;
 
     void Awake()
     {
@@ -60,24 +62,21 @@ public class BaseEnemy : MonoBehaviour, IDamagable
     {
         if(currentState == State.Attacking && attackTime <= 0)
         {
-            Collider[] meleeTargets = Physics.OverlapSphere(GetAttackPosition(), attackRange);
-            if (meleeTargets.Length != 0)
-            {
-                for (int i = 0; i < meleeTargets.Length; i++)
-                {
-                    if (meleeTargets[i].transform.GetComponent<IDamagable>() != null && meleeTargets[i].CompareTag("Player") || meleeTargets[i].CompareTag("Building"))
-                    {
-                        meleeTargets[i].transform.GetComponent<IDamagable>().TakeDamage(attackDamage);
-                    }
-                }
-
-                Debug.Log("Attack");
-                attackTime = attackSpeed;
-            }
+            Attack();
+            attackTime = attackSpeed;
         }
         else if(attackTime > 0 && currentState == State.Attacking)
         {
             attackTime -= Time.deltaTime;
+        }
+
+        if(enemyCanvas.activeInHierarchy)
+        {
+            Vector3 lookDir = Vector3.forward;
+            float angle = Mathf.Atan2(lookDir.x, lookDir.z) * Mathf.Rad2Deg;
+            Quaternion qt = Quaternion.AngleAxis(angle, Vector3.up);
+
+            enemyCanvas.transform.rotation = qt;
         }
     }
 
@@ -87,7 +86,7 @@ public class BaseEnemy : MonoBehaviour, IDamagable
         {
             //float distanceToTarget = Vector3.Distance(GetAttackPosition(), pathfinding.GetTarget().position);
 
-            Collider[] colliders = Physics.OverlapSphere(GetAttackPosition(), attackRange);
+            Collider[] colliders = GetTargetsInRange();
 
             List<Collider> colliderList = GalaxyRandom.ConvertToList(colliders);
 
@@ -110,7 +109,7 @@ public class BaseEnemy : MonoBehaviour, IDamagable
     }
 
 
-    IEnumerator GetTarget()
+    public virtual IEnumerator GetTarget()
     {
         while (true)
         {
@@ -121,7 +120,8 @@ public class BaseEnemy : MonoBehaviour, IDamagable
             {
                 for (int i = 0; i < targets.Length; i++)
                 {
-                    if (targets[i].transform.GetComponent<AggroSystem>() != null && targets[i].gameObject != gameObject)
+                    AggroSystem aggro = targets[i].transform.GetComponent<AggroSystem>();
+                    if (aggro != null && targets[i].gameObject != gameObject)
                     {
                         if(targets[i].GetComponent<BaseBuilding>() != null)
                         {
@@ -131,13 +131,36 @@ public class BaseEnemy : MonoBehaviour, IDamagable
                             }
                         }
 
+
                         if (highestThreat == null)
                         {
                             highestThreat = targets[i].transform;
                         }
-                        else if (targets[i].transform.GetComponent<AggroSystem>().threatLevel > highestThreat.GetComponent<AggroSystem>().threatLevel)
+                        else
                         {
-                            highestThreat = targets[i].transform;
+                            //Gets adjusted aggro level
+                            int tl = aggro.GetThreatLevel();
+
+                            if (aggro.isBuilding && prioritizeBuilding)
+                            {
+                                tl = aggro.GetThreatLevel(true);
+                            }
+
+                            //Finds aggro level to beat
+                            AggroSystem highestAggro = highestThreat.GetComponent<AggroSystem>();
+
+                            int htl = highestAggro.GetThreatLevel();
+
+                            if (highestAggro.isBuilding && prioritizeBuilding)
+                            {
+                                htl = highestAggro.GetThreatLevel(true);
+                            }
+
+                            //Compares aggro level
+                            if (tl > htl)
+                            {
+                                highestThreat = targets[i].transform;
+                            }
                         }
                     }
                 }
@@ -145,6 +168,26 @@ public class BaseEnemy : MonoBehaviour, IDamagable
 
             pathfinding.SetTarget(highestThreat);
             yield return new WaitForSeconds(targetRefreshRate);
+        }
+    }
+
+    public virtual Collider[] GetTargetsInRange()
+    {
+        return Physics.OverlapSphere(GetAttackPosition(), attackRange);
+    }
+
+    public virtual void Attack()
+    {
+        Collider[] meleeTargets = Physics.OverlapSphere(GetAttackPosition(), attackRange);
+        if (meleeTargets.Length != 0)
+        {
+            for (int i = 0; i < meleeTargets.Length; i++)
+            {
+                if (meleeTargets[i].transform.GetComponent<IDamagable>() != null && meleeTargets[i].CompareTag("Player"))
+                {
+                    meleeTargets[i].transform.GetComponent<IDamagable>().TakeDamage(attackDamage);
+                }
+            }
         }
     }
 
@@ -164,7 +207,7 @@ public class BaseEnemy : MonoBehaviour, IDamagable
         healthSlider.value = healthSystem.GetHealthPercent();
     }
 
-    private void HealthSystem_OnDeath(object sender, System.EventArgs e)
+    public virtual void HealthSystem_OnDeath(object sender, System.EventArgs e)
     {
         LootManager.instance.GetStandardDrops(transform.position);
         WaveManager.instance.EnemyDefeated();
@@ -182,7 +225,7 @@ public class BaseEnemy : MonoBehaviour, IDamagable
         return transform.position + transform.forward * attackRange;
     }
 
-    private void OnDrawGizmosSelected()
+    public virtual void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(GetAttackPosition(), attackRange);
     }
