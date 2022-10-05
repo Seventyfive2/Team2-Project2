@@ -71,6 +71,11 @@ public class PlayerData : MonoBehaviour
     {
         levelIndex++;
     }
+
+    public void OnLevelWasLoaded(int level)
+    {
+        Time.timeScale = 1;
+    }
 }
 
 [System.Serializable]

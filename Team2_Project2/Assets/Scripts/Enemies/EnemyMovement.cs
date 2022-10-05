@@ -7,6 +7,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private NavMeshAgent agent;
 
     private BaseEnemy enemy;
+    public bool canMove = true;
 
     void Start()
     {
@@ -15,7 +16,7 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-        if(enemy.GetEnemyState() == BaseEnemy.State.Moving && target != null)
+        if(enemy.GetEnemyState() == BaseEnemy.State.Moving && target != null && canMove)
         {
             agent.destination = GetRandomPositionAround(target.position, 1f);
         }

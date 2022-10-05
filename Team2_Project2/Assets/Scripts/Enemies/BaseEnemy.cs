@@ -14,11 +14,11 @@ public class BaseEnemy : MonoBehaviour, IDamagable
 
     [SerializeField] private float stateRefreshRate = .5f;
     [SerializeField] private float targetRefreshRate = .5f;
+    [SerializeField] private float deathAnimLength = 1.67f;
 
     public enum State { Idle, Moving, Attacking }
     private State currentState = State.Idle;
-
-    
+    private bool isAlive = true;
 
     [Header("Stats")]
     [SerializeField] private int maxHealth = 1;
@@ -66,29 +66,32 @@ public class BaseEnemy : MonoBehaviour, IDamagable
     // Update is called once per frame
     void Update()
     {
-        if(currentState == State.Attacking && attackTime <= 0)
+        if(isAlive)
         {
-            Attack();
-            attackTime = attackSpeed;
-        }
-        else if(attackTime > 0 && currentState == State.Attacking)
-        {
-            attackTime -= Time.deltaTime;
-        }
+            if (currentState == State.Attacking && attackTime <= 0)
+            {
+                Attack();
+                attackTime = attackSpeed;
+            }
+            else if (attackTime > 0 && currentState == State.Attacking)
+            {
+                attackTime -= Time.deltaTime;
+            }
 
-        if(enemyCanvas.activeInHierarchy)
-        {
-            Vector3 lookDir = Vector3.forward;
-            float angle = Mathf.Atan2(lookDir.x, lookDir.z) * Mathf.Rad2Deg;
-            Quaternion qt = Quaternion.AngleAxis(angle, Vector3.up);
+            if (enemyCanvas.activeInHierarchy)
+            {
+                Vector3 lookDir = Vector3.forward;
+                float angle = Mathf.Atan2(lookDir.x, lookDir.z) * Mathf.Rad2Deg;
+                Quaternion qt = Quaternion.AngleAxis(angle, Vector3.up);
 
-            enemyCanvas.transform.rotation = qt;
+                enemyCanvas.transform.rotation = qt;
+            }
         }
     }
 
     IEnumerator StateMachine()
     {
-        while (true)
+        while (isAlive)
         {
             //float distanceToTarget = Vector3.Distance(GetAttackPosition(), pathfinding.GetTarget().position);
 
@@ -126,7 +129,7 @@ public class BaseEnemy : MonoBehaviour, IDamagable
 
     public virtual IEnumerator GetTarget()
     {
-        while (true)
+        while (isAlive)
         {
             Transform highestThreat = null;
 
@@ -228,6 +231,9 @@ public class BaseEnemy : MonoBehaviour, IDamagable
 
     public virtual void HealthSystem_OnDeath(object sender, System.EventArgs e)
     {
+        isAlive = false;
+        pathfinding.canMove = false;
+
         if(enemyAnim != null)
         {
             enemyAnim.SetBool("Dead", true);
@@ -235,7 +241,10 @@ public class BaseEnemy : MonoBehaviour, IDamagable
 
         LootManager.instance.GetStandardDrops(transform.position);
         WaveManager.instance.EnemyDefeated();
-        //Destroy(gameObject);
+
+        pathfinding.GetAgent().ResetPath();
+
+        Destroy(gameObject, deathAnimLength);
     }
     #endregion
 
