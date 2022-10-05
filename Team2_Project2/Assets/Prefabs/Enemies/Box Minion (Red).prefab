@@ -104,8 +104,8 @@ MonoBehaviour:
   isSpecialEnemy: 0
   stateRefreshRate: 0.5
   targetRefreshRate: 0.5
-  redBoxAnim: {fileID: 9211525132576310971}
-  maxHealth: 100
+  deathAnimLength: 1.67
+  maxHealth: 1
   attackDamage: 2
   attackRange: 1
   attackSpeed: 2
@@ -114,6 +114,7 @@ MonoBehaviour:
   enemyTextName: {fileID: 7486499534785019813}
   healthSlider: {fileID: 7486499534066006670}
   pathfinding: {fileID: 7486499534250797523}
+  enemyAnim: {fileID: 0}
 --- !u!95 &9211525132576310971
 Animator:
   serializedVersion: 4

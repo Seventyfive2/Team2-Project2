@@ -22,6 +22,8 @@ public class PlayerAttack : MonoBehaviour
     private float secondaryCooldown;
     private float abilityCooldown;
 
+    [SerializeField] private PlayerMovement movement;
+
     [Header("UI")]
     [SerializeField] private float uiRefreshRate = .167f;
     private PlayerUI ui;
@@ -77,84 +79,96 @@ public class PlayerAttack : MonoBehaviour
 
     public void PrimaryAttack(CallbackContext context)
     {
-        if(context.phase == InputActionPhase.Performed)
+        if(movement.isControllable)
         {
-            if(usingItem)
+            if (context.phase == InputActionPhase.Performed)
             {
-                usingItem = false;
-                selectedItem.item.UseItem(transform.position, tag);
-                selectedItem.amtHeld--;
-                ui.ChangeItemAmount(selectedItem.amtHeld);
-            }
-            else if (primaryCooldown <= 0 && weapon != null)
-            {
-                DoAttack(weapon.primaryAttackStyle, GetBoostedDamage(weapon.primaryDamage), weapon.primaryRange, weapon.primaryProjectile);
+                if (usingItem)
+                {
+                    usingItem = false;
+                    selectedItem.item.UseItem(transform.position, tag);
+                    selectedItem.amtHeld--;
+                    ui.ChangeItemAmount(selectedItem.amtHeld);
+                }
+                else if (primaryCooldown <= 0 && weapon != null)
+                {
+                    DoAttack(weapon.primaryAttackStyle, GetBoostedDamage(weapon.primaryDamage), weapon.primaryRange, weapon.primaryProjectile);
 
-                primaryCooldown = weapon.primaryAtkSpeed / 1;
+                    primaryCooldown = weapon.primaryAtkSpeed / 1;
+                }
             }
         }
     }
 
     public void SecondaryAttack(CallbackContext context)
     {
-        if (secondaryCooldown <= 0 && context.phase == InputActionPhase.Performed && weapon != null)
+        if(movement.isControllable)
         {
-            DoAttack(weapon.secondaryAttackStyle, GetBoostedDamage(weapon.secondaryDamage), weapon.secondaryRange, weapon.secondaryProjectile);
+            if (secondaryCooldown <= 0 && context.phase == InputActionPhase.Performed && weapon != null)
+            {
+                DoAttack(weapon.secondaryAttackStyle, GetBoostedDamage(weapon.secondaryDamage), weapon.secondaryRange, weapon.secondaryProjectile);
 
-            secondaryCooldown = weapon.secondaryAtkSpeed / 1;
+                secondaryCooldown = weapon.secondaryAtkSpeed / 1;
+            }
         }
     }
 
     public void Ability(CallbackContext context)
     {
-        if (abilityCooldown <= 0 && context.phase == InputActionPhase.Performed && ability != null)
+        if (movement.isControllable)
         {
-            switch (ability.hitDetectionStyle)
+            if (abilityCooldown <= 0 && context.phase == InputActionPhase.Performed && ability != null)
             {
-                case HitDetectionStyle.FrontOfPlayer:
-                default:
-                    ability.UseAbility(attackPos.position, tag, GetBoostedDamage(ability.damage));
-                    break;
-                case HitDetectionStyle.AroundPlayer:
-                    ability.UseAbility(transform.position, tag, GetBoostedDamage(ability.damage));
-                    break;
-                case HitDetectionStyle.AtCursor:
-                    Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-                    Vector3 input = Vector3.zero;
+                switch (ability.hitDetectionStyle)
+                {
+                    case HitDetectionStyle.FrontOfPlayer:
+                    default:
+                        ability.UseAbility(attackPos.position, tag, GetBoostedDamage(ability.damage));
+                        break;
+                    case HitDetectionStyle.AroundPlayer:
+                        ability.UseAbility(transform.position, tag, GetBoostedDamage(ability.damage));
+                        break;
+                    case HitDetectionStyle.AtCursor:
+                        Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+                        Vector3 input = Vector3.zero;
 
-                    if (Physics.Raycast(ray, out RaycastHit raycastHit))
-                    {
-                        input = raycastHit.point;
-                    }
+                        if (Physics.Raycast(ray, out RaycastHit raycastHit))
+                        {
+                            input = raycastHit.point;
+                        }
 
-                    ability.UseAbility(input, tag, GetBoostedDamage(ability.damage));
-                    break;
+                        ability.UseAbility(input, tag, GetBoostedDamage(ability.damage));
+                        break;
+                }
+
+
+                abilityCooldown = ability.cooldown / 1;
             }
-            
-
-            abilityCooldown = ability.cooldown / 1;
         }
     }
 
     public void UseItem(CallbackContext context)
     {
-        if(context.phase == InputActionPhase.Performed && selectedItem.item != null)
+        if(movement.isControllable)
         {
-            if(selectedItem.amtHeld > 0)
+            if (context.phase == InputActionPhase.Performed && selectedItem.item != null)
             {
-                switch (selectedItem.item.activationMethod)
+                if (selectedItem.amtHeld > 0)
                 {
-                    case ActivationMethod.UseOnPlayer:
-                        selectedItem.item.UseItem(transform.position, tag);
+                    switch (selectedItem.item.activationMethod)
+                    {
+                        case ActivationMethod.UseOnPlayer:
+                            selectedItem.item.UseItem(transform.position, tag);
 
-                        selectedItem.amtHeld--;
-                        ui.ChangeItemAmount(selectedItem.amtHeld);
-                        break;
-                    case ActivationMethod.UseAtCursor:
-                        usingItem = !usingItem;
-                        break;
-                    default:
-                        break;
+                            selectedItem.amtHeld--;
+                            ui.ChangeItemAmount(selectedItem.amtHeld);
+                            break;
+                        case ActivationMethod.UseAtCursor:
+                            usingItem = !usingItem;
+                            break;
+                        default:
+                            break;
+                    }
                 }
             }
         }
@@ -162,6 +176,10 @@ public class PlayerAttack : MonoBehaviour
 
     public void SwitchItem(CallbackContext context)
     {
+        if (movement.isControllable)
+        {
+
+        }
         if (context.phase == InputActionPhase.Performed)
         {
             if(usingItem)

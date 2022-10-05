@@ -35,7 +35,7 @@ Transform:
   - {fileID: 7090350951083160401}
   - {fileID: 5219437422109874302}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 47, z: 0}
 --- !u!114 &8335556636416523474
 MonoBehaviour:
@@ -55,7 +55,7 @@ MonoBehaviour:
   buildingSprite: {fileID: 0}
   buildingTextName: {fileID: 7090350950382919219}
   healthSlider: {fileID: 7090350951897242392}
-  model: {fileID: 0}
+  model: {fileID: 4838266786645082820}
   collider: {fileID: 8335556636416523500}
   obstacle: {fileID: 8335556636416523503}
 --- !u!114 &8335556636416523475
@@ -311,6 +311,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 52bd0218d1a2d06428e57bf8c5bbf959, type: 3}
+--- !u!1 &4838266786645082820 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 52bd0218d1a2d06428e57bf8c5bbf959, type: 3}
+  m_PrefabInstance: {fileID: 5757170237380247445}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5219437422109874302 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 52bd0218d1a2d06428e57bf8c5bbf959, type: 3}

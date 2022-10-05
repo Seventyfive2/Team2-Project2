@@ -1,12 +1,16 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerStats : MonoBehaviour, IDamagable
 {
     private int baseMaxHealth = 10;
 
+    [SerializeField] private UnityEvent playerDiedEvent;
 
     private HealthSystem healthSystem;
     private PlayerUI ui;
+
+    [SerializeField] private PlayerMovement movement;
 
     void Start()
     {
@@ -37,7 +41,11 @@ public class PlayerStats : MonoBehaviour, IDamagable
 
     private void HealthSystem_OnDeath(object sender, System.EventArgs e)
     {
-        Debug.Log("Player Died");
+        movement.isControllable = false;
+        if (playerDiedEvent != null)
+        {
+            playerDiedEvent.Invoke();
+        }
     }
 
     public void OnTriggerEnter(Collider other)

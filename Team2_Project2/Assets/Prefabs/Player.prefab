@@ -199,6 +199,7 @@ MonoBehaviour:
     amtHeld: 0
   items: []
   attackPos: {fileID: 6693652902879828592}
+  movement: {fileID: 6693652902418518196}
   uiRefreshRate: 0.167
 --- !u!143 &6693652902418518199
 CharacterController:
@@ -439,6 +440,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dac659f110b1e5c479c27ee6d5cbf08e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerDiedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  movement: {fileID: 6693652902418518196}
 --- !u!114 &1938853910
 MonoBehaviour:
   m_ObjectHideFlags: 0
