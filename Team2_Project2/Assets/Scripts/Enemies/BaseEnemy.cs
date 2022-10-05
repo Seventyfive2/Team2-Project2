@@ -18,6 +18,8 @@ public class BaseEnemy : MonoBehaviour, IDamagable
     public enum State { Idle, Moving, Attacking }
     private State currentState = State.Idle;
 
+    private Animator redBoxAnim;
+
     [Header("Stats")]
     [SerializeField] private int maxHealth = 1;
     public int attackDamage = 2;
@@ -37,6 +39,9 @@ public class BaseEnemy : MonoBehaviour, IDamagable
 
     void Awake()
     {
+
+        redBoxAnim = GetComponent<Animator>();
+
         healthSystem = new HealthSystem(maxHealth);
 
         healthSystem.OnDeath += HealthSystem_OnDeath;
@@ -99,10 +104,12 @@ public class BaseEnemy : MonoBehaviour, IDamagable
             else if(targetInRange)
             {
                 currentState = State.Attacking;
+                redBoxAnim.SetBool("Attack", true);
             }
             else if(!targetInRange)
             {
                 currentState = State.Moving;
+                redBoxAnim.SetBool("Attack", false);
             }
             yield return new WaitForSeconds(stateRefreshRate);
         }
@@ -194,6 +201,7 @@ public class BaseEnemy : MonoBehaviour, IDamagable
     #region Health Functions
     public void TakeDamage(int damage)
     {
+        redBoxAnim.SetBool("Damaged", true);
         healthSystem.Damage(damage);
     }
 
@@ -209,9 +217,10 @@ public class BaseEnemy : MonoBehaviour, IDamagable
 
     public virtual void HealthSystem_OnDeath(object sender, System.EventArgs e)
     {
+        redBoxAnim.SetBool("Dead", true);
         LootManager.instance.GetStandardDrops(transform.position);
         WaveManager.instance.EnemyDefeated();
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
     #endregion
 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7486499534250797522}
   - component: {fileID: 7486499534250797523}
   - component: {fileID: 7486499534250797527}
+  - component: {fileID: 9211525132576310971}
   m_Layer: 0
   m_Name: Box Minion (Red)
   m_TagString: Enemy
@@ -103,14 +104,36 @@ MonoBehaviour:
   isSpecialEnemy: 0
   stateRefreshRate: 0.5
   targetRefreshRate: 0.5
-  maxHealth: 1
+  redBoxAnim: {fileID: 9211525132576310971}
+  maxHealth: 100
   attackDamage: 2
   attackRange: 1
   attackSpeed: 2
+  prioritizeBuilding: 0
   enemyCanvas: {fileID: 7486499534344524480}
   enemyTextName: {fileID: 7486499534785019813}
   healthSlider: {fileID: 7486499534066006670}
   pathfinding: {fileID: 7486499534250797523}
+--- !u!95 &9211525132576310971
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7486499534250798636}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: ab49f3cef633f1d4c84f8c46ec6c0b74, type: 3}
+  m_Controller: {fileID: 9100000, guid: c08aaa60f4d5c2845ab15e958fc9331b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &4184025589626041900
 PrefabInstance:
   m_ObjectHideFlags: 0
