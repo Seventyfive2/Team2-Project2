@@ -14,6 +14,13 @@ public class RangedEnemy : BaseEnemy
 
     public override void Attack()
     {
+        Vector3 aim = pathfinding.GetTarget().position;
+        Vector3 vectorToTarget = aim - transform.position;
+        float angle = Mathf.Atan2(vectorToTarget.x, vectorToTarget.z) * Mathf.Rad2Deg;
+        Quaternion qt = Quaternion.AngleAxis(angle, Vector3.up);
+
+        transform.rotation = qt;
+
         Projectile projectileValues = Instantiate(projectile, attackPos.position, transform.rotation).GetComponent<Projectile>();
         projectileValues.transform.position = attackPos.position;
         projectileValues.transform.rotation = attackPos.rotation;

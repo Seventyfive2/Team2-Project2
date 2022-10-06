@@ -7,6 +7,8 @@ public class WaveManager : MonoBehaviour
 {
     public static WaveManager instance;
 
+
+    public bool autoStart = true;
     [SerializeField] private WaveDetails[] waveDetails;
     private int waveIndex = 0;
 
@@ -27,6 +29,9 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private UnityEvent allWavesCompleted;
 
     [SerializeField] private ShufflebagItem<Transform>[] spawnPoints;
+
+    public GameObject boss;
+    public Transform bossSpawn;
 
     [SerializeField] private WeightedItem<GameObject>[] minionPrefabs;
 
@@ -53,8 +58,11 @@ public class WaveManager : MonoBehaviour
 
     private void Start()
     {
-        SpawnWave(waveDetails[waveIndex]);
-        waveIndex++;
+        if(autoStart)
+        {
+            SpawnWave(waveDetails[waveIndex]);
+            waveIndex++;
+        }
     }
 
     // Update is called once per frame
@@ -89,6 +97,17 @@ public class WaveManager : MonoBehaviour
         if (OnWaveSpawned != null) OnWaveSpawned(this, new WaveSpawnedEventArgs(waveSize, spawnpointInfo));
     }
 
+    public void SpawnIndex(int index)
+    {
+        SpawnWave(waveDetails[index]);
+    }
+
+
+    public void SpawnBoss()
+    {
+        Instantiate(boss, bossSpawn.position, Quaternion.identity);
+    }
+
     public void EnemyDefeated()
     {
         enemiesLeft--;
@@ -96,7 +115,7 @@ public class WaveManager : MonoBehaviour
 
         if((float)enemiesLeft / waveSize <= 1 - wavePercentage)
         {
-            if(waveIndex < waveDetails.Length)
+            if(waveIndex < waveDetails.Length && autoStart)
             {
                 SpawnWave(waveDetails[waveIndex]);
                 waveIndex++;

@@ -9,11 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6603637077654111235}
-  - component: {fileID: 9186959082330522967}
   - component: {fileID: 2387648458853037476}
   - component: {fileID: 8399656083028395980}
   - component: {fileID: 8953500213053390776}
-  - component: {fileID: 424703493332843604}
+  - component: {fileID: 1416278482075351925}
   m_Layer: 0
   m_Name: Charge Beetle (Red)
   m_TagString: Enemy
@@ -38,20 +37,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
---- !u!136 &9186959082330522967
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2867943904727908749}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &2387648458853037476
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -88,6 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   agent: {fileID: 2387648458853037476}
+  canMove: 1
 --- !u!114 &8953500213053390776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,28 +90,38 @@ MonoBehaviour:
   isSpecialEnemy: 1
   stateRefreshRate: 0.5
   targetRefreshRate: 0.5
+  deathAnimLength: 1.67
   maxHealth: 50
   attackDamage: 2
-  attackRange: 4
-  attackSpeed: 2
+  attackRange: 2
+  attackSpeed: 0.5
   prioritizeBuilding: 0
+  lockedInState: 0
   enemyCanvas: {fileID: 6326910118306034116}
   enemyTextName: {fileID: 6326910117530033313}
   healthSlider: {fileID: 6326910119119329674}
   pathfinding: {fileID: 8399656083028395980}
---- !u!65 &424703493332843604
-BoxCollider:
+  enemyAnim: {fileID: 0}
+  rb: {fileID: 1416278482075351925}
+  chargeStartup: 1
+  chargeRecovery: 0.5
+  chargeSpeed: 5
+--- !u!54 &1416278482075351925
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2867943904727908749}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 1.89, z: 4.58}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &736467772426605864
 PrefabInstance:
   m_ObjectHideFlags: 0

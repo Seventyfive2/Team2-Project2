@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &855609714037976855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2749662427919949611}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2749662427919949611
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855609714037976855}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.421, z: 0.608}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8069758611656378339}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4339709073324179959
 GameObject:
   m_ObjectHideFlags: 0
@@ -34,6 +65,7 @@ Transform:
   m_Children:
   - {fileID: 3551594481238380041}
   - {fileID: 7812085247792643837}
+  - {fileID: 2749662427919949611}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
@@ -87,6 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   agent: {fileID: 3755351573313485732}
+  canMove: 1
 --- !u!114 &4761216929867902639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,22 +129,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 4339709073324179959}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 452849e5d0cea0445ad33021bf40d83d, type: 3}
+  m_Script: {fileID: 11500000, guid: daebf786fb0f411478adc4f97530964f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: Beholder
   isSpecialEnemy: 1
   stateRefreshRate: 0.5
   targetRefreshRate: 0.5
+  deathAnimLength: 1.67
   maxHealth: 100
   attackDamage: 2
-  attackRange: 1
-  attackSpeed: 2
+  attackRange: 7
+  attackSpeed: 4
   prioritizeBuilding: 0
+  lockedInState: 0
   enemyCanvas: {fileID: 3551594481238380046}
   enemyTextName: {fileID: 3551594482006025067}
   healthSlider: {fileID: 3551594482588296768}
   pathfinding: {fileID: 2018844271227292107}
+  enemyAnim: {fileID: 0}
+  projectiles:
+  - {fileID: 2713197397289134470, guid: 21614baed533c194788c45a84734d6c0, type: 3}
+  - {fileID: 3250977957859116897, guid: bc895b8161297e2418c7a4f4675a6e24, type: 3}
+  - {fileID: 5547592836791235659, guid: 6c67929a832fd5f40a3deb70226eec37, type: 3}
+  melee:
+  - {fileID: 8795951393423490385, guid: a00d89587ab930744b1f1182d3737eaf, type: 3}
+  attackPos: {fileID: 2749662427919949611}
+  meleeRange: 2.5
+  meleeDamage: 10
 --- !u!1001 &1253641239444468206
 PrefabInstance:
   m_ObjectHideFlags: 0

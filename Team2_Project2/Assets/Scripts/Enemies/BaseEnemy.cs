@@ -29,6 +29,8 @@ public class BaseEnemy : MonoBehaviour, IDamagable
 
     [SerializeField] private bool prioritizeBuilding = false;
 
+    public bool lockedInState;
+
     [Header("UI")]
     [SerializeField] private GameObject enemyCanvas;
     [SerializeField] private TMP_Text enemyTextName;
@@ -93,35 +95,37 @@ public class BaseEnemy : MonoBehaviour, IDamagable
     {
         while (isAlive)
         {
-            //float distanceToTarget = Vector3.Distance(GetAttackPosition(), pathfinding.GetTarget().position);
-
-            Collider[] colliders = GetTargetsInRange();
-
-            List<Collider> colliderList = GalaxyRandom.ConvertToList(colliders);
-
-            bool targetInRange = colliderList.Contains(pathfinding.GetTarget().GetComponent<Collider>());
-
-            if (pathfinding.GetTarget() == null)
+            if(!lockedInState)
             {
-                currentState = State.Idle;
-            }
-            else if(targetInRange)
-            {
-                currentState = State.Attacking;
+                Collider[] colliders = GetTargetsInRange();
 
-                if(enemyAnim != null)
+                List<Collider> colliderList = GalaxyRandom.ConvertToList(colliders);
+
+                bool targetInRange = colliderList.Contains(pathfinding.GetTarget().GetComponent<Collider>());
+
+                if (pathfinding.GetTarget() == null)
                 {
-                    enemyAnim.SetBool("Attack", true);
+                    currentState = State.Idle;
+                }
+                else if (targetInRange)
+                {
+                    currentState = State.Attacking;
+
+                    if (enemyAnim != null)
+                    {
+                        enemyAnim.SetBool("Attack", true);
+                    }
+                }
+                else if (!targetInRange)
+                {
+                    currentState = State.Moving;
+                    if (enemyAnim != null)
+                    {
+                        enemyAnim.SetBool("Attack", false);
+                    }
                 }
             }
-            else if(!targetInRange)
-            {
-                currentState = State.Moving;
-                if (enemyAnim != null)
-                {
-                    enemyAnim.SetBool("Attack", false);
-                }
-            }
+            
             yield return new WaitForSeconds(stateRefreshRate);
         }
     }
@@ -231,20 +235,23 @@ public class BaseEnemy : MonoBehaviour, IDamagable
 
     public virtual void HealthSystem_OnDeath(object sender, System.EventArgs e)
     {
-        isAlive = false;
-        pathfinding.canMove = false;
-
-        if(enemyAnim != null)
+        if(isAlive)
         {
-            enemyAnim.SetBool("Dead", true);
+            isAlive = false;
+            pathfinding.canMove = false;
+
+            if (enemyAnim != null)
+            {
+                enemyAnim.SetBool("Dead", true);
+            }
+
+            LootManager.instance.GetStandardDrops(transform.position);
+            WaveManager.instance.EnemyDefeated();
+
+            pathfinding.GetAgent().ResetPath();
+
+            Destroy(gameObject, deathAnimLength);
         }
-
-        LootManager.instance.GetStandardDrops(transform.position);
-        WaveManager.instance.EnemyDefeated();
-
-        pathfinding.GetAgent().ResetPath();
-
-        Destroy(gameObject, deathAnimLength);
     }
     #endregion
 

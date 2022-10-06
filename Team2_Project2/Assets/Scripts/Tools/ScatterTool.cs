@@ -89,6 +89,7 @@ public class ScatterTool : MonoBehaviour
 
                 //Gets random transform values
                 Vector3 randomPosition = GetRandomVector3(-xDistFromCenter, xDistFromCenter, yOffset, yOffset, -zDistFromCenter, zDistFromCenter);
+                randomPosition += transform.position;
                 Vector3 randomRotation = new Vector3(0, Random.Range(0, rotationRange), 0);
                 Vector3 randomScale = Vector3.one * Random.Range(minScale, maxScale);
 
