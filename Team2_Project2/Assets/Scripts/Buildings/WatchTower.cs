@@ -34,6 +34,7 @@ public class WatchTower : BaseBuilding
                 }
             }
 
+            GameObject.Find("Player Canvas").GetComponent<PlayerUI>().TriggerNotification(spawnNotification);
             Debug.Log(spawnNotification);
         }    
     }

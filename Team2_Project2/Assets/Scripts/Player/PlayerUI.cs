@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
 
 public class PlayerUI : MonoBehaviour
 {
@@ -22,9 +23,19 @@ public class PlayerUI : MonoBehaviour
     [SerializeField] private GameObject itemVisualParent;
     private bool hasItem = false;
 
+    [Header("Notification")]
+    [SerializeField] private TMP_Text notificationText = null;
+    private Color notificationTextColor;
+
+    private Vector3 startVector;
+    private Vector3 targetVector;
+
     public void Start()
     {
         UpdateCoins();
+
+        notificationTextColor = notificationText.color;
+        notificationText.transform.parent.gameObject.SetActive(false);
     }
 
     public void UpdateHealth(float healthPercent)
@@ -89,6 +100,38 @@ public class PlayerUI : MonoBehaviour
     public void ChangeItemAmount(int amount)
     {
         itemCountText.text = amount.ToString();
+    }
+
+    public void TriggerNotification(string text, float displayTime = 1.5f)
+    {
+        notificationText.text = text;
+        notificationText.color = notificationTextColor;
+        notificationText.transform.parent.gameObject.SetActive(true);
+
+        targetVector = ColorValues(Color.clear);
+        startVector = ColorValues(notificationTextColor);
+
+        StartCoroutine(FadeText(displayTime));
+    }
+
+    IEnumerator FadeText(float fadeWait)
+    {
+        yield return new WaitForSeconds(fadeWait);
+
+        //StartLerping();
+
+        notificationText.transform.parent.gameObject.SetActive(false);
+    }
+
+    public Vector3 ColorValues(Color color)
+    {
+        Vector3 vector = new Vector3(1, 1, 1);
+
+        vector.x = color.r;
+        vector.y = color.g;
+        vector.z = color.b;
+
+        return vector;
     }
 }
 

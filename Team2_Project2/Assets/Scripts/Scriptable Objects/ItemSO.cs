@@ -4,6 +4,7 @@ using UnityEngine;
 public class ItemSO : ScriptableObject
 {
     public int cost = 20;
+    public int maxHeld = 5;
     public int damage = 2;
     public float range = 1;
     public Sprite uiImage;

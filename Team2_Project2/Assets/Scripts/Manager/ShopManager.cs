@@ -23,11 +23,13 @@ public class ShopManager : MonoBehaviour
 
     [SerializeField] private int goldPerHealthMissing = 5;
 
+    [SerializeField] private string[] levelNames;
+
     void Start()
     {
         playerData = PlayerData.instance;
-        //playerData.coins = 100;
-        CoinsSpent();
+        
+        CoinsChanged();
 
         ShowTab(0);
 
@@ -117,7 +119,31 @@ public class ShopManager : MonoBehaviour
 
         newEntry.buyButton.onClick.AddListener(() => BuyConsumable(item));
 
-        newEntry.Initialize(sprite, name, price);
+        newEntry.Initialize(sprite, name, price, true);
+
+        bool inPlayerInv = false;
+
+        for (int i = 0; i < playerData.items.Count; i++)
+        {
+            if(playerData.items[i].item == item)
+            {
+                newEntry.itemAmt.text = playerData.items[i].GetAmountHeld();
+
+                inPlayerInv = true;
+                if (playerData.items[i].IsFull())
+                {
+                    newEntry.buyButton.interactable = false;
+                    newEntry.itemPrice.text = "Maxed";
+                }
+
+                break;
+            }
+        }
+
+        if(!inPlayerInv)
+        {
+            newEntry.itemAmt.text = "Held " + 0 + "/" + item.maxHeld;
+        }
     }
     public void CreateUpgradeEntry(Sprite sprite, string name, int price, PlayerAttribute attribute)
     {
@@ -125,7 +151,21 @@ public class ShopManager : MonoBehaviour
 
         newEntry.buyButton.onClick.AddListener(() => BuyUpgrade(attribute));
 
-        newEntry.Initialize(sprite, name, price);
+        newEntry.Initialize(sprite, name, price, true);
+
+        for (int i = 0; i < playerData.attributes.Length; i++)
+        {
+            if(playerData.attributes[i] == attribute)
+            {
+                newEntry.itemAmt.text = playerData.attributes[i].UpgradeLevel();
+
+                if (playerData.attributes[i].IsMaxed())
+                {
+                    newEntry.buyButton.interactable = false;
+                    newEntry.itemPrice.text = "Max Level";
+                }
+            }
+        }
     }
     public void CreateBuildingEntry(Sprite sprite, string name, int price, BuildingData building)
     {
@@ -135,7 +175,7 @@ public class ShopManager : MonoBehaviour
 
         newEntry.slider.value = building.healthSystem.GetHealthPercent();
 
-        newEntry.Initialize(sprite, name, price, true);
+        newEntry.Initialize(sprite, name, price, false, true);
     }
     #endregion
 
@@ -146,7 +186,7 @@ public class ShopManager : MonoBehaviour
         {
             playerData.coins -= weapon.weaponCost;
             playerData.currentWeapon = weapon;
-            CoinsSpent();
+            CoinsChanged();
             ShowTab(0);
         }
     }
@@ -157,7 +197,7 @@ public class ShopManager : MonoBehaviour
         {
             playerData.coins -= ability.cost;
             playerData.currentAbility = ability;
-            CoinsSpent();
+            CoinsChanged();
             ShowTab(1);
         }
     }
@@ -167,8 +207,8 @@ public class ShopManager : MonoBehaviour
         if (playerData.coins >= item.cost)
         {
             playerData.coins -= item.cost;
-            playerData.AddItem(item, 1);
-            CoinsSpent();
+            playerData.AddItem(item, 1, item.maxHeld);
+            CoinsChanged();
             ShowTab(2);
         }
     }
@@ -179,7 +219,7 @@ public class ShopManager : MonoBehaviour
         {
             attribute.upgradeAmt++;
             playerData.coins -= attribute.costToUpgrade;
-            CoinsSpent();
+            CoinsChanged();
             ShowTab(3);
         }
     }
@@ -191,13 +231,13 @@ public class ShopManager : MonoBehaviour
         {
             data.healthSystem.HealMax();
             playerData.coins -= cost;
-            CoinsSpent();
+            CoinsChanged();
             ShowTab(4);
         }
     }
     #endregion
 
-    public void CoinsSpent()
+    public void CoinsChanged()
     {
         coinText.text = cointName + " " + playerData.coins;
     }
@@ -205,7 +245,12 @@ public class ShopManager : MonoBehaviour
     public void AddCoins()
     {
         playerData.coins += 100;
-        CoinsSpent();
+        CoinsChanged();
+    }
+
+    public void LoadNextLevel()
+    {
+        playerData.LoadNextLevel(levelNames[playerData.levelsCompleted]);
     }
 }
 

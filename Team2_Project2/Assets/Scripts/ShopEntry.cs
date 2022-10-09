@@ -9,12 +9,18 @@ public class ShopEntry : MonoBehaviour
     public TMP_Text itemPrice;
     public Button buyButton;
     public Slider slider;
+    public TMP_Text itemAmt;
 
-    public void Initialize(Sprite sprite, string name, int price, bool useSlider = false)
+    public void Initialize(Sprite sprite, string name, int price, bool useAmt = false ,bool useSlider = false)
     {
         itemImage.sprite = sprite;
         itemNameText.text = name;
         itemPrice.text = "Price: " + price;
+
+        if(useAmt)
+        {
+            itemAmt.gameObject.SetActive(true);
+        }
 
         if(useSlider)
         {

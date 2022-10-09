@@ -16,7 +16,9 @@ public class PlayerStats : MonoBehaviour, IDamagable
     {
         ui = GameObject.Find("Player Canvas").GetComponent<PlayerUI>();
 
-        healthSystem = new HealthSystem(baseMaxHealth);
+        PlayerAttribute playerHealth = PlayerData.instance.GetAttribute("Health");
+
+        healthSystem = new HealthSystem(baseMaxHealth + playerHealth.GetStatIncrease());
 
         healthSystem.OnHealthChanged += HealthSystem_OnHealthChanged;
         healthSystem.OnDeath += HealthSystem_OnDeath;

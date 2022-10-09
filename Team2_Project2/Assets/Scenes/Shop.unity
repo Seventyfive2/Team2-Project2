@@ -199,17 +199,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 38211272}
   m_CullTransparentMesh: 1
---- !u!114 &64212252 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2843389110478187261, guid: f0ac7a6b3ac5f19428e86828be600a90, type: 3}
-  m_PrefabInstance: {fileID: 1196602258}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e81eebff47a17584089c856f73527cc9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &68461950
 GameObject:
   m_ObjectHideFlags: 0
@@ -997,13 +986,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shop
       objectReference: {fileID: 0}
-    - target: {fileID: 8239783982335997423, guid: 7074a96b1ec8e914fb3f5541f04e8149, type: 3}
-      propertyPath: m_AnchorMax.x
+    - target: {fileID: 7174713488120799610, guid: 7074a96b1ec8e914fb3f5541f04e8149, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8239783982335997423, guid: 7074a96b1ec8e914fb3f5541f04e8149, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.505
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239783982335997423, guid: 7074a96b1ec8e914fb3f5541f04e8149, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -1092,20 +1085,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 64212252}
-        m_TargetAssemblyTypeName: PlayerData, Assembly-CSharp
-        m_MethodName: LevelEnded
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 64212252}
-        m_TargetAssemblyTypeName: PlayerData, Assembly-CSharp
+      - m_Target: {fileID: 1273959310}
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
         m_MethodName: LoadNextLevel
         m_Mode: 1
         m_Arguments:
@@ -2217,6 +2198,9 @@ MonoBehaviour:
   - itemName: Bomb
     item: {fileID: 11400000, guid: f9499b74059b31b42b253e537d7048e2, type: 2}
   goldPerHealthMissing: 5
+  levelNames:
+  - Level_1
+  - Level_2
 --- !u!4 &1273959311
 Transform:
   m_ObjectHideFlags: 0

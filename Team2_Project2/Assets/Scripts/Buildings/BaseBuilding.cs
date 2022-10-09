@@ -39,7 +39,7 @@ public class BaseBuilding : MonoBehaviour, IDamagable
             TakeDamage(buildingData.healthSystem.GetMissingHealth());
         }
 
-        //TakeDamage(25);
+        TakeDamage(25);
     }
 
     public bool GetBuildingState()

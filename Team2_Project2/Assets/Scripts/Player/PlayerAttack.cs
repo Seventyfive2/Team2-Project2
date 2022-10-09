@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using static AbilitySO;
 using static ItemSO;
-using static UnityEditor.PlayerSettings;
 using static UnityEngine.InputSystem.InputAction;
 
 public class PlayerAttack : MonoBehaviour
@@ -23,6 +22,7 @@ public class PlayerAttack : MonoBehaviour
     private float abilityCooldown;
 
     [SerializeField] private PlayerMovement movement;
+    private PlayerAttribute playerDamage;
 
     [Header("UI")]
     [SerializeField] private float uiRefreshRate = .167f;
@@ -45,6 +45,8 @@ public class PlayerAttack : MonoBehaviour
             items = PlayerData.instance.items;
             selectedItem = items[0];
         }
+
+        playerDamage = PlayerData.instance.GetAttribute("Damage");
 
         ui = GameObject.Find("Player Canvas").GetComponent<PlayerUI>();
 
@@ -278,13 +280,13 @@ public class PlayerAttack : MonoBehaviour
         }
         else
         {
-            stackToAdd.amtHeld += amt;
+            stackToAdd.StackChange(amt);
         }
     }
 
     public int GetBoostedDamage(int damage)
     {
-        int result = damage;
+        int result = damage + playerDamage.GetStatIncrease();
 
         return result; 
     }
@@ -382,11 +384,33 @@ public class ItemStack
 {
     public ItemSO item;
     public int amtHeld;
+    public int maxAmt;
 
-    public ItemStack(ItemSO item, int amtHeld)
+    public ItemStack(ItemSO item, int amtHeld, int maxAmt = 1)
     {
         this.item = item;
         this.amtHeld = amtHeld;
+        this.maxAmt = maxAmt;
+    }
+
+    public void StackChange(int amt)
+    {
+        amtHeld += amt;
+
+        if(amtHeld > maxAmt)
+        {
+            amtHeld = maxAmt;
+        }
+    }
+
+    public string GetAmountHeld()
+    {
+        return "Held " + amtHeld + "/" + maxAmt;
+    }
+
+    public bool IsFull()
+    {
+        return amtHeld >= maxAmt;
     }
 }
 

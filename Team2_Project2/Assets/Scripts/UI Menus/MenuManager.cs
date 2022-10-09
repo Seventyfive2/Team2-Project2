@@ -10,6 +10,7 @@ public class MenuManager: MonoBehaviour
     public void OnPlayButtonClick()
     {
         //ButtonClick();
+        PlayerData.instance.NewGame();
         SceneManager.LoadScene("Level_1");
 
     }

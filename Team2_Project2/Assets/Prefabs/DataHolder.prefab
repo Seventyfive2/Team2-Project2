@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2843389110478187261
 MonoBehaviour:
@@ -47,42 +47,43 @@ MonoBehaviour:
   coins: 0
   currentWeapon: {fileID: 0}
   currentAbility: {fileID: 0}
+  levelsCompleted: 0
   selectedItem:
     item: {fileID: 0}
     amtHeld: 0
+    maxAmt: 0
   items: []
-  nextLevel:
-  - Level_1
-  - Shop
-  - Level_2
-  - Shop
-  levelIndex: 0
   attributes:
   - name: Health
     upgradeAmt: 0
     maxUpgradeAmt: 5
+    statIncreasePerLevel: 10
     costToUpgrade: 25
     shopSprite: {fileID: 0}
   - name: Damage
     upgradeAmt: 0
     maxUpgradeAmt: 5
+    statIncreasePerLevel: 5
     costToUpgrade: 25
     shopSprite: {fileID: 0}
   - name: Speed
     upgradeAmt: 0
     maxUpgradeAmt: 5
+    statIncreasePerLevel: 1
     costToUpgrade: 25
     shopSprite: {fileID: 0}
   damage:
     name: 
     upgradeAmt: 0
     maxUpgradeAmt: 5
+    statIncreasePerLevel: 5
     costToUpgrade: 25
     shopSprite: {fileID: 0}
   speed:
     name: 
     upgradeAmt: 0
     maxUpgradeAmt: 5
+    statIncreasePerLevel: 5
     costToUpgrade: 25
     shopSprite: {fileID: 0}
   buildingStatus: []

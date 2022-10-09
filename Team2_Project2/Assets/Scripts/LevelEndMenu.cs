@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelEndMenu : MonoBehaviour
 {
     public GameObject endScreen;
 
-    public void LoadNextLevel()
+    public void LoadNextLevel(string sceneName)
     {
-        PlayerData.instance.LoadNextLevel();
+        PlayerData.instance.LoadNextLevel(sceneName);
     }
 }

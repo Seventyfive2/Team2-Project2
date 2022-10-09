@@ -11,16 +11,12 @@ public class PlayerData : MonoBehaviour
     public WeaponSO currentWeapon;
     public AbilitySO currentAbility;
 
+    public int levelsCompleted = 0;
+
     public ItemStack selectedItem;
     public List<ItemStack> items;
 
-    public string[] nextLevel;
-    public int levelIndex = 0;
-
-    [Header("Player Upgrades")]
     public PlayerAttribute[] attributes;
-    public PlayerAttribute damage;
-    public PlayerAttribute speed;
 
     public List<BuildingData> buildingStatus;
 
@@ -38,7 +34,7 @@ public class PlayerData : MonoBehaviour
         DontDestroyOnLoad(instance);
     }
 
-    public void AddItem(ItemSO newItem, int amt)
+    public void AddItem(ItemSO newItem, int amt, int maxAmt = 1)
     {
         bool stackItems = false;
         ItemStack stackToAdd = null;
@@ -54,7 +50,7 @@ public class PlayerData : MonoBehaviour
 
         if (!stackItems)
         {
-            items.Add(new ItemStack(newItem, 1));
+            items.Add(new ItemStack(newItem, 1, maxAmt));
         }
         else
         {
@@ -62,19 +58,50 @@ public class PlayerData : MonoBehaviour
         }
     }
 
-    public void LoadNextLevel()
+    public void LoadNextLevel(string sceneName)
     {
-        SceneManager.LoadScene(nextLevel[levelIndex]);
+        SceneManager.LoadScene(sceneName);
     }
 
     public void LevelEnded()
     {
-        levelIndex++;
+        levelsCompleted++;
     }
 
     public void OnLevelWasLoaded(int level)
     {
         Time.timeScale = 1;
+    }
+
+    public PlayerAttribute GetAttribute(string attributeName)
+    {
+        for (int i = 0; i < attributes.Length; i++)
+        {
+            if (attributes[i].name == attributeName)
+            {
+                return attributes[i];
+            }
+        }
+
+        return new PlayerAttribute();
+    }
+
+    public void NewGame()
+    {
+        coins = 0;
+        levelsCompleted = 0;
+
+        currentWeapon = null;
+        currentAbility = null;
+        items.Clear();
+        selectedItem = null;
+
+        for (int i = 0; i < attributes.Length; i++)
+        {
+            attributes[i].upgradeAmt = 0;
+        }
+
+        buildingStatus.Clear();
     }
 }
 
@@ -100,6 +127,23 @@ public class PlayerAttribute
     public int upgradeAmt = 0;
     public int maxUpgradeAmt = 5;
 
+    public int statIncreasePerLevel = 5;
+
     public int costToUpgrade = 25;
     public Sprite shopSprite;
+
+    public string UpgradeLevel()
+    {
+        return "Level " + upgradeAmt + "/" + maxUpgradeAmt;
+    }
+
+    public bool IsMaxed()
+    {
+        return upgradeAmt >= maxUpgradeAmt;
+    }
+
+    public int GetStatIncrease()
+    {
+        return upgradeAmt * statIncreasePerLevel;
+    }
 }

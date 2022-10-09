@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Bomb
   m_EditorClassIdentifier: 
   cost: 20
+  maxHeld: 2
   damage: 20
   range: 2.5
   uiImage: {fileID: 0}

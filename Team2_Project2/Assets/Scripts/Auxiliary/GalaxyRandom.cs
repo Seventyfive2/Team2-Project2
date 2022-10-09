@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +7,16 @@ public class GalaxyRandom
     {
         List<T> output = new List<T>();
         output.AddRange(array);
+        return output;
+    }
+
+    public static T[] ConvertToArray<T>(List<T> list)
+    {
+        T[] output = new T[list.Count];
+        for (int i = 0; i < list.Count; i++)
+        {
+            output[i] = list[i];
+        }
         return output;
     }
 

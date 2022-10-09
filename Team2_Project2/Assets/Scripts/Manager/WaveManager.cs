@@ -7,8 +7,8 @@ public class WaveManager : MonoBehaviour
 {
     public static WaveManager instance;
 
-
     public bool autoStart = true;
+    private bool hasBoss = false;
     [SerializeField] private WaveDetails[] waveDetails;
     private int waveIndex = 0;
 
@@ -27,11 +27,13 @@ public class WaveManager : MonoBehaviour
     }
 
     [SerializeField] private UnityEvent allWavesCompleted;
+    [SerializeField] private UnityEvent bossDefeated;
 
-    [SerializeField] private ShufflebagItem<Transform>[] spawnPoints;
+    [SerializeField] private ShufflebagItem<SpawnPointInfo>[] spawnPoints;
 
     public GameObject boss;
     public Transform bossSpawn;
+    private GameObject currentBoss;
 
     [SerializeField] private WeightedItem<GameObject>[] minionPrefabs;
 
@@ -65,36 +67,28 @@ public class WaveManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SpawnWave(WaveDetails wave)
     {
-        List<Transform> activeSpawnpoints = new List<Transform>();
-        SpawnPointInfo[] spawnpointInfo = new SpawnPointInfo[wave.nbrOfSpawnpoints];
+        List<SpawnPointInfo> activeSpawnpoints = new List<SpawnPointInfo>();
 
         for (int i = 0; i < wave.nbrOfSpawnpoints; i++)
         {
             activeSpawnpoints.Add(GalaxyRandom.GetValueFromShufflebag(spawnPoints));
-            spawnpointInfo[i] = activeSpawnpoints[i].GetComponent<SpawnPointInfo>();
         }
         for (int i = 0; i < wave.nbrOfMinions; i++)
         {
-            Instantiate(GalaxyRandom.GetRandomWeightedValue(minionPrefabs), GalaxyRandom.GetRandomFromList(activeSpawnpoints).position, Quaternion.identity);
+            Instantiate(GalaxyRandom.GetRandomWeightedValue(minionPrefabs), GalaxyRandom.GetRandomFromList(activeSpawnpoints).GetSpawnPosition(), Quaternion.identity);
         }
         for (int i = 0; i < wave.nbrOfSpecialEnemies; i++)
         {
-            Instantiate(GalaxyRandom.GetRandomWeightedValue(specialEnemies), GalaxyRandom.GetRandomFromList(activeSpawnpoints).position, Quaternion.identity);
+            Instantiate(GalaxyRandom.GetRandomWeightedValue(specialEnemies), GalaxyRandom.GetRandomFromList(activeSpawnpoints).GetSpawnPosition(), Quaternion.identity);
         }
 
         waveSize = wave.nbrOfMinions + wave.nbrOfSpecialEnemies;
         enemiesLeft = waveSize;
         totalEnemies += waveSize;
 
-        if (OnWaveSpawned != null) OnWaveSpawned(this, new WaveSpawnedEventArgs(waveSize, spawnpointInfo));
+        if (OnWaveSpawned != null) OnWaveSpawned(this, new WaveSpawnedEventArgs(waveSize, GalaxyRandom.ConvertToArray(activeSpawnpoints)));
     }
 
     public void SpawnIndex(int index)
@@ -105,7 +99,8 @@ public class WaveManager : MonoBehaviour
 
     public void SpawnBoss()
     {
-        Instantiate(boss, bossSpawn.position, Quaternion.identity);
+        currentBoss = Instantiate(boss, bossSpawn.position, Quaternion.identity);
+        hasBoss = true;
     }
 
     public void EnemyDefeated()
@@ -124,14 +119,24 @@ public class WaveManager : MonoBehaviour
             {
                 if(totalEnemies <= 0)
                 {
-                    if (allWavesCompleted != null)
+                    if (allWavesCompleted != null && !hasBoss)
                     {
                         allWavesCompleted.Invoke();
+
+                        if (PlayerData.instance != null)
+                        {
+                            PlayerData.instance.LevelEnded();
+                        }
                     }
 
-                    if (PlayerData.instance != null)
+                    if (allWavesCompleted != null && hasBoss && currentBoss == null)
                     {
-                        PlayerData.instance.LevelEnded();
+                        bossDefeated.Invoke();
+
+                        if (PlayerData.instance != null)
+                        {
+                            PlayerData.instance.LevelEnded();
+                        }
                     }
                 }
             }
