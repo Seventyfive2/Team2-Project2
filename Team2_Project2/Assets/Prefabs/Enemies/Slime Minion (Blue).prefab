@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4258933476115431106}
   - component: {fileID: 4258933476115431107}
   - component: {fileID: 4258933476115431111}
+  - component: {fileID: 9023090959621846457}
   m_Layer: 0
   m_Name: Slime Minion (Blue)
   m_TagString: Enemy
@@ -35,7 +36,7 @@ Transform:
   - {fileID: 4258933476159374807}
   - {fileID: 6290446124514156796}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!136 &4258933476115431105
 CapsuleCollider:
@@ -87,6 +88,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   agent: {fileID: 4258933476115431106}
+  runFromPlayer: 0
+  canMove: 1
 --- !u!114 &4258933476115431111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,17 +106,40 @@ MonoBehaviour:
   isSpecialEnemy: 0
   stateRefreshRate: 0.5
   targetRefreshRate: 0.5
+  deathAnimLength: 1.67
   maxHealth: 1
   attackDamage: 2
   attackRange: 2.5
   attackSpeed: 2
   prioritizeBuilding: 1
+  lockedInState: 0
   enemyCanvas: {fileID: 4258933476159374800}
   enemyTextName: {fileID: 4258933476658030773}
   healthSlider: {fileID: 4258933478045117854}
   pathfinding: {fileID: 4258933476115431107}
+  enemyAnim: {fileID: 9023090959621846457}
   projectile: {fileID: 1160795806228179883, guid: 2753c70b71d594d4c998621b7d3854fc, type: 3}
   attackPos: {fileID: 4258933476115431104}
+--- !u!95 &9023090959621846457
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4258933476115429692}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 56dd4edec19a3b04195448769c085dfc, type: 3}
+  m_Controller: {fileID: 9100000, guid: 54df139e86a21df4d87898796e59cb18, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &6295328439624442366
 PrefabInstance:
   m_ObjectHideFlags: 0

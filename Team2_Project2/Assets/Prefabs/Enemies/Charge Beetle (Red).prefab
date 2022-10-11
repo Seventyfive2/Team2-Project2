@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8399656083028395980}
   - component: {fileID: 8953500213053390776}
   - component: {fileID: 1416278482075351925}
+  - component: {fileID: 1755342151625336251}
   m_Layer: 0
   m_Name: Charge Beetle (Red)
   m_TagString: Enemy
@@ -73,6 +74,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   agent: {fileID: 2387648458853037476}
+  runFromPlayer: 0
   canMove: 1
 --- !u!114 &8953500213053390776
 MonoBehaviour:
@@ -105,6 +107,7 @@ MonoBehaviour:
   rb: {fileID: 1416278482075351925}
   chargeStartup: 1
   chargeRecovery: 0.5
+  chargeDuration: 1
   chargeSpeed: 5
 --- !u!54 &1416278482075351925
 Rigidbody:
@@ -122,6 +125,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &1755342151625336251
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2867943904727908749}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 66ca9bf0145725543a1e8a693589f362, type: 3}
+  m_Controller: {fileID: 9100000, guid: 9d2c34223e1ad344a8547020bd8a4c88, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &736467772426605864
 PrefabInstance:
   m_ObjectHideFlags: 0

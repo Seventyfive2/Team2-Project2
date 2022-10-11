@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5847963764061696890}
   - component: {fileID: 5847963764061696891}
   - component: {fileID: 5847963764061696895}
+  - component: {fileID: 3597559886151036781}
   m_Layer: 0
   m_Name: Box Minion (Blue)
   m_TagString: Enemy
@@ -87,6 +88,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   agent: {fileID: 5847963764061696890}
+  runFromPlayer: 0
+  canMove: 1
 --- !u!114 &5847963764061696895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,15 +106,38 @@ MonoBehaviour:
   isSpecialEnemy: 0
   stateRefreshRate: 0.5
   targetRefreshRate: 0.5
+  deathAnimLength: 1.67
   maxHealth: 1
   attackDamage: 2
   attackRange: 1
   attackSpeed: 2
   prioritizeBuilding: 1
+  lockedInState: 0
   enemyCanvas: {fileID: 5847963764290095208}
   enemyTextName: {fileID: 5847963764654695693}
   healthSlider: {fileID: 5847963764011573286}
   pathfinding: {fileID: 5847963764061696891}
+  enemyAnim: {fileID: 3597559886151036781}
+--- !u!95 &3597559886151036781
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5847963764061697156}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: ab49f3cef633f1d4c84f8c46ec6c0b74, type: 3}
+  m_Controller: {fileID: 9100000, guid: c08aaa60f4d5c2845ab15e958fc9331b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &927146400199240836
 PrefabInstance:
   m_ObjectHideFlags: 0
