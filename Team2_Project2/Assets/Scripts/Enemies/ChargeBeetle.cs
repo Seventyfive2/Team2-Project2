@@ -14,6 +14,7 @@ public class ChargeBeetle : BaseEnemy
     public float chargeRecovery = .5f;
     public float chargeDuration = 1;
     public float chargeSpeed = 5f;
+    public float chargeDecel = 2.5f;
 
     public override Collider[] GetTargetsInRange()
     {
@@ -27,9 +28,9 @@ public class ChargeBeetle : BaseEnemy
 
     public void FixedUpdate()
     {
-        if(isCharging)
+        if(!isCharging)
         {
-            rb.velocity = direction * chargeSpeed * Time.time;
+            rb.velocity -= direction * chargeDecel * Time.time;
         }
     }
 
@@ -46,6 +47,7 @@ public class ChargeBeetle : BaseEnemy
         targetPosition = pathfinding.GetTargetPosition();
         direction = (targetPosition - transform.position).normalized;
         isCharging = true;
+        rb.velocity = direction * chargeSpeed * Time.time;
 
         yield return new WaitForSeconds(chargeDuration);
 

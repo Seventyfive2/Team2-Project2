@@ -12,6 +12,7 @@ public class StraightProjectile : MonoBehaviour
     public Rigidbody rb;
 
     public GameObject landposition;
+    private GameObject landref;
     public LayerMask targetMask;
 
     void OnEnable()
@@ -25,8 +26,8 @@ public class StraightProjectile : MonoBehaviour
         {
             if(Physics.Raycast(transform.position,transform.forward, out RaycastHit hit, targetMask))
             {
-                Debug.Log(hit.transform.position);
-                Instantiate(landposition,hit.transform.position,Quaternion.identity);
+                //Debug.Log(hit.transform.position);
+                landref = Instantiate(landposition,hit.point+ (Vector3.up * .1f),Quaternion.identity);
             }
         }
     }
@@ -34,5 +35,10 @@ public class StraightProjectile : MonoBehaviour
     public void OnDrawGizmos()
     {
         Gizmos.DrawLine(transform.position, transform.position + transform.forward);
+    }
+
+    public void OnDestroy()
+    {
+        Destroy(landref);
     }
 }

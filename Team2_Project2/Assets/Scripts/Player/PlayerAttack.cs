@@ -91,6 +91,11 @@ public class PlayerAttack : MonoBehaviour
 
         ui = GameObject.Find("Player Canvas").GetComponent<PlayerUI>();
 
+        if(weapon != null)
+        {
+            ui.ChangeWeapon(weapon.primaryCooldownImage, weapon.secondaryCooldownImage);
+        }
+
         if (ability != null)
         {
             ui.ChangeAbility(ability.cooldownImage);
@@ -378,7 +383,7 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.DrawLine(attackPos.position, attackPos.position + attackPos.forward);
 

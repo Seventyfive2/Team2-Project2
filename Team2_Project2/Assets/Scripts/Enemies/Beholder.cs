@@ -53,16 +53,16 @@ public class Beholder : BaseEnemy
     {
         base.Update();
 
-        if (Vector3.Distance(transform.position, pathfinding.GetTarget().position) > attackRange)
+        if (Vector3.Distance(attackPos.position, pathfinding.GetTargetPosition()) <= attackRange)
         {
-            Vector3 direction = (pathfinding.GetTarget().position + Vector3.up * -.5f) - attackPos.position;
+            Vector3 direction = (pathfinding.GetTargetPosition() - Vector3.up) - attackPos.position;
 
-            Vector3 newDirection = Vector3.RotateTowards(attackPos.forward, direction, 10 * Time.deltaTime, 0f);
+            Vector3 newDirection = Vector3.RotateTowards(attackPos.forward, direction, 100 * Time.deltaTime, 0f);
 
             attackPos.rotation = Quaternion.LookRotation(newDirection);
         }
 
-        meleeWarning.SetActive(!(Vector3.Distance(transform.position, pathfinding.GetTarget().position) > meleeRange));
+        meleeWarning.SetActive(Vector3.Distance(transform.position, pathfinding.GetTarget().position) <= meleeRange);
     }
 
     public override void OnDrawGizmosSelected()
@@ -72,5 +72,7 @@ public class Beholder : BaseEnemy
         Gizmos.DrawWireSphere(transform.position, meleeRange);
         Gizmos.color = Color.magenta;
         Gizmos.DrawLine(attackPos.position, attackPos.position + attackPos.forward*attackRange);
+
+        //Gizmos.DrawWireSphere(pathfinding.GetTargetPosition(), 1);
     }
 }
