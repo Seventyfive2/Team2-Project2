@@ -139,8 +139,7 @@ MonoBehaviour:
   isSpecialEnemy: 1
   stateRefreshRate: 0.5
   targetRefreshRate: 0.5
-  deathAnimLength: 1.67
-  maxHealth: 100
+  maxHealth: 50
   attackDamage: 2
   attackRange: 7
   attackSpeed: 4
@@ -150,8 +149,12 @@ MonoBehaviour:
   enemyCanvas: {fileID: 3551594481238380046}
   enemyTextName: {fileID: 3551594482006025067}
   healthSlider: {fileID: 3551594482588296768}
-  pathfinding: {fileID: 2018844271227292107}
   enemyAnim: {fileID: 7812085247782752541}
+  attackParameter: Attack
+  damageParameter: Damaged
+  deathParameter: Dead
+  deathAnimLength: 1.67
+  pathfinding: {fileID: 2018844271227292107}
   warning: {fileID: 5331720684246038402}
   projectiles:
   - {fileID: 2713197397289134470, guid: 21614baed533c194788c45a84734d6c0, type: 3}

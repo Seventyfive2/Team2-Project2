@@ -13,13 +13,16 @@ MonoBehaviour:
   m_Name: Sword
   m_EditorClassIdentifier: 
   weaponPrefab: {fileID: 355312524381552382, guid: b84d7ca3927758646a65731cc107aa76, type: 3}
+  weaponCost: 20
   primaryAttackStyle: 0
-  primaryDamage: 5
-  primaryRange: 1
-  primaryAtkSpeed: 0.25
+  primaryDamage: 1
+  primaryRange: 1.5
+  primaryAtkSpeed: 0.2
   primaryProjectile: {fileID: 0}
+  primaryCooldownImage: {fileID: 0}
   secondaryAttackStyle: 0
-  secondaryDamage: 10
-  secondaryRange: 3
-  secondaryAtkSpeed: 1
+  secondaryDamage: 3
+  secondaryRange: 2
+  secondaryAtkSpeed: 3
   secondaryProjectile: {fileID: 0}
+  secondaryCooldownImage: {fileID: 0}
