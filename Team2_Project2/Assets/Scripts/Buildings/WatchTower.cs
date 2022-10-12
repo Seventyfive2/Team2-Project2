@@ -3,10 +3,12 @@ using UnityEngine;
 
 public class WatchTower : BaseBuilding
 {
+    private PlayerUI playerUI;
     public override void Start()
     {
         base.Start();
-        if(WaveManager.instance != null)
+        playerUI = GameObject.Find("Player Canvas").GetComponent<PlayerUI>();
+        if (WaveManager.instance != null)
         {
             WaveManager.instance.OnWaveSpawned += WaveManager_OnWaveSpawned;
         }
@@ -34,7 +36,7 @@ public class WatchTower : BaseBuilding
                 }
             }
 
-            GameObject.Find("Player Canvas").GetComponent<PlayerUI>().TriggerNotification(spawnNotification);
+            playerUI.TriggerNotification(spawnNotification);
             Debug.Log(spawnNotification);
         }    
     }
