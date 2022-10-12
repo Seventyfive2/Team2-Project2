@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75edccf2b79b3e64d958b49ab724cbf1, type: 3}
+  m_Name: Pitchfork
+  m_EditorClassIdentifier: 
+  weaponPrefab: {fileID: 8314901595278481959, guid: b4d0f82eedb95f543ab0961de54f43fd, type: 3}
+  weaponCost: 20
+  primaryAttackStyle: 1
+  primaryDamage: 3
+  primaryRange: 2
+  primaryAtkSpeed: 0.7
+  primaryProjectile: {fileID: 0}
+  primaryCooldownImage: {fileID: 0}
+  secondaryAttackStyle: 2
+  secondaryDamage: 10
+  secondaryRange: 20
+  secondaryAtkSpeed: 8
+  secondaryProjectile: {fileID: 5133226077379640553, guid: 59636d6dd7bcaed4b830e301d245ab05, type: 3}
+  secondaryCooldownImage: {fileID: 0}
