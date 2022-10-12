@@ -147,11 +147,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6693652902418518195}
+  - component: {fileID: 4639817824028251307}
+  - component: {fileID: 6693652902418518196}
   - component: {fileID: 6693652902418518201}
+  - component: {fileID: 6693652902418518200}
   - component: {fileID: 6693652902418518199}
   - component: {fileID: 6693652902418518198}
-  - component: {fileID: 6693652902418518196}
-  - component: {fileID: 6693652902418518200}
   - component: {fileID: 1938853910}
   m_Layer: 0
   m_Name: Player
@@ -180,6 +181,57 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4639817824028251307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6693652902418518192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d78a7a75ccacc841b634d2e6d6feb1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 7433298572492801709}
+  moveFoward: Forward
+  moveBackward: Backward
+  moveSideways: Sideways
+  attack: Attack
+  special: Special
+  item: UseItem
+  takeDamage: Take Damage
+  playerDeath: Died
+  movement: {fileID: 6693652902418518196}
+  combat: {fileID: 6693652902418518201}
+  stats: {fileID: 6693652902418518200}
+--- !u!114 &6693652902418518196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6693652902418518192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641dd6eca39394d4b9326e4f8230b75e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isControllable: 1
+  speed: 7
+  moveInput: {x: 0, y: 0, z: 0}
+  aimInput: {x: 0, y: 0, z: 0}
+  controller: {fileID: 6693652902418518199}
+  model: {fileID: 801302675961082963}
+  attackParent: {fileID: 6693652902739842072}
+  cam: {fileID: 6693652902577978514}
+  gravity: -9.81
+  fallMultiplier: 1.5
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 8
+  feetPos: {fileID: 268855279}
+  groundCheckRadius: 0.4
 --- !u!114 &6693652902418518201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,6 +257,22 @@ MonoBehaviour:
   swingModel: {fileID: 4469753961807371192, guid: a2d979b4df095184f89a18a972def7c2, type: 3}
   effectDuration: 0.1
   uiRefreshRate: 0.1
+--- !u!114 &6693652902418518200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6693652902418518192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dac659f110b1e5c479c27ee6d5cbf08e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerDiedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  movement: {fileID: 6693652902418518196}
 --- !u!143 &6693652902418518199
 CharacterController:
   m_ObjectHideFlags: 0
@@ -405,49 +473,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &6693652902418518196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6693652902418518192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 641dd6eca39394d4b9326e4f8230b75e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isControllable: 1
-  speed: 7
-  moveInput: {x: 0, y: 0, z: 0}
-  aimInput: {x: 0, y: 0, z: 0}
-  controller: {fileID: 6693652902418518199}
-  model: {fileID: 801302675961082963}
-  attackParent: {fileID: 6693652902739842072}
-  cam: {fileID: 6693652902577978514}
-  gravity: -9.81
-  fallMultiplier: 1.5
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 8
-  feetPos: {fileID: 268855279}
-  groundCheckRadius: 0.4
---- !u!114 &6693652902418518200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6693652902418518192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dac659f110b1e5c479c27ee6d5cbf08e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerDiedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  movement: {fileID: 6693652902418518196}
 --- !u!114 &1938853910
 MonoBehaviour:
   m_ObjectHideFlags: 0

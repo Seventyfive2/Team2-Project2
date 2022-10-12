@@ -106,18 +106,23 @@ MonoBehaviour:
   isSpecialEnemy: 1
   stateRefreshRate: 0.5
   targetRefreshRate: 0.5
-  deathAnimLength: 1.67
   maxHealth: 20
   attackDamage: 2
   attackRange: 1
   attackSpeed: 2
+  attackTime: 0
   prioritizeBuilding: 0
   lockedInState: 0
   enemyCanvas: {fileID: 8026539220844270454}
   enemyTextName: {fileID: 8026539221284994579}
   healthSlider: {fileID: 8026539222195501880}
+  enemyAnim: {fileID: 6829400544540358684}
+  attackParameter: Attack
+  damageParameter: Damaged
+  deathParameter: Dead
+  deathAnimLength: 1.67
   pathfinding: {fileID: 8026539220803201125}
-  enemyAnim: {fileID: 0}
+  warning: {fileID: 0}
   nbrOfCoins: 10
   nbrOfItems: 3
 --- !u!1001 &1951913061904217858
@@ -179,6 +184,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 379cfb6848589a948b84691a4df3bed9, type: 3}
+--- !u!95 &6829400544540358684 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5030645071554350878, guid: 379cfb6848589a948b84691a4df3bed9, type: 3}
+  m_PrefabInstance: {fileID: 1951913061904217858}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6829400544549345242 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5030645071562137816, guid: 379cfb6848589a948b84691a4df3bed9, type: 3}

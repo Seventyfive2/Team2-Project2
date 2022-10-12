@@ -1,6 +1,7 @@
 using UnityEngine;
 using static UnityEngine.InputSystem.InputAction;
 using UnityEngine.InputSystem;
+using System;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -28,6 +29,19 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask whatIsGround;
     [SerializeField] private Transform feetPos = null;
     [SerializeField] float groundCheckRadius = .4f;
+
+    public event EventHandler<PlayerMoveEventArgs> OnPlayerMove;
+
+    public class PlayerMoveEventArgs : EventArgs
+    {
+        public enum moveDirection { Foward, Backward, Sideways }
+        public moveDirection curDirection;
+
+        public PlayerMoveEventArgs(Vector2 direction)
+        {
+            
+        }
+    }
 
     #region Input Handlers
     public void Move(CallbackContext context)
@@ -115,6 +129,9 @@ public class PlayerMovement : MonoBehaviour
         if (isControllable)
         {
             controller.Move(moveInput * speed * Time.deltaTime + new Vector3(0.0f, velocity.y, 0.0f));
+
+            Vector2 moveDirection = Vector2.zero;
+            if (OnPlayerMove != null) OnPlayerMove(this, new PlayerMoveEventArgs(moveDirection));
         }
     }
 
