@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: e970a1daecaa2f7499edb76bef5a2091, type: 2}
 --- !u!1001 &4155877
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -134,6 +134,14 @@ PrefabInstance:
     - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
       propertyPath: m_Name
       value: Fence Type2 03 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 441386, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
       propertyPath: m_RootOrder
@@ -202,6 +210,14 @@ PrefabInstance:
     - target: {fileID: 7409881535837442963, guid: 303461167179ef746b25af7e4ae5d949, type: 3}
       propertyPath: m_Name
       value: Props_Barrel_1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7409881535837442963, guid: 303461167179ef746b25af7e4ae5d949, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7409881535837442963, guid: 303461167179ef746b25af7e4ae5d949, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7899031532594088233, guid: 303461167179ef746b25af7e4ae5d949, type: 3}
       propertyPath: m_RootOrder
@@ -397,6 +413,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_Crack
       objectReference: {fileID: 0}
+    - target: {fileID: 608065332002283313, guid: c9b39dbb5780a124eaf52424cf971832, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 608065332002283313, guid: c9b39dbb5780a124eaf52424cf971832, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: c9b39dbb5780a124eaf52424cf971832, type: 3}
@@ -455,6 +479,14 @@ PrefabInstance:
     - target: {fileID: 8874214115969718196, guid: 0468f27d1edbdac47ac2c1f1af58674a, type: 3}
       propertyPath: m_Name
       value: Corn_Field
+      objectReference: {fileID: 0}
+    - target: {fileID: 8874214115969718196, guid: 0468f27d1edbdac47ac2c1f1af58674a, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8874214115969718196, guid: 0468f27d1edbdac47ac2c1f1af58674a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -552,6 +584,14 @@ PrefabInstance:
     - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
       propertyPath: m_Name
       value: Fence Type2 03
+      objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 441386, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
       propertyPath: m_RootOrder
@@ -923,6 +963,14 @@ PrefabInstance:
     - target: {fileID: 149186, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
       propertyPath: m_Name
       value: Fence Type4 Big (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 149186, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 149186, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 442534, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
       propertyPath: m_RootOrder
@@ -1296,6 +1344,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence Type4 Big (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 149186, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 149186, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 442534, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1458,6 +1514,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vooden_Barrel (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8064113153433566034, guid: 1577a51f2ebf155438ad431e44edd054, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064113153433566034, guid: 1577a51f2ebf155438ad431e44edd054, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 1577a51f2ebf155438ad431e44edd054, type: 3}
@@ -1540,6 +1604,14 @@ PrefabInstance:
     - target: {fileID: 149186, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
       propertyPath: m_Name
       value: Fence Type4 Big (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 149186, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 149186, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 442534, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
       propertyPath: m_RootOrder
@@ -1643,6 +1715,14 @@ PrefabInstance:
     - target: {fileID: 8056788787882937003, guid: c1cad0a248d20c34fada0f5b3279ea88, type: 3}
       propertyPath: m_Name
       value: Bank_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056788787882937003, guid: c1cad0a248d20c34fada0f5b3279ea88, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056788787882937003, guid: c1cad0a248d20c34fada0f5b3279ea88, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -1795,6 +1875,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barn_02
       objectReference: {fileID: 0}
+    - target: {fileID: 1591672877148277468, guid: f0f11450893997e4dbb6f01190fea511, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591672877148277468, guid: f0f11450893997e4dbb6f01190fea511, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2115867882158837862, guid: f0f11450893997e4dbb6f01190fea511, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1853,6 +1941,14 @@ PrefabInstance:
     - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
       propertyPath: m_Name
       value: Fence Type2 03 (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 441386, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
       propertyPath: m_RootOrder
@@ -1966,6 +2062,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vooden_Barrel
       objectReference: {fileID: 0}
+    - target: {fileID: 8064113153433566034, guid: 1577a51f2ebf155438ad431e44edd054, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064113153433566034, guid: 1577a51f2ebf155438ad431e44edd054, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 1577a51f2ebf155438ad431e44edd054, type: 3}
@@ -1986,7 +2090,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &284409423
 Transform:
@@ -2078,6 +2182,14 @@ PrefabInstance:
     - target: {fileID: 7409881535837442963, guid: 303461167179ef746b25af7e4ae5d949, type: 3}
       propertyPath: m_Name
       value: Props_Barrel_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7409881535837442963, guid: 303461167179ef746b25af7e4ae5d949, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7409881535837442963, guid: 303461167179ef746b25af7e4ae5d949, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7899031532594088233, guid: 303461167179ef746b25af7e4ae5d949, type: 3}
       propertyPath: m_RootOrder
@@ -2291,6 +2403,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: House_03
       objectReference: {fileID: 0}
+    - target: {fileID: 9033905963983700685, guid: 184d205ad7b7e484ca73918442247db1, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033905963983700685, guid: 184d205ad7b7e484ca73918442247db1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 184d205ad7b7e484ca73918442247db1, type: 3}
@@ -2310,6 +2430,14 @@ PrefabInstance:
     - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
       propertyPath: m_Name
       value: Fence Type2 03 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 441386, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
       propertyPath: m_RootOrder
@@ -2423,6 +2551,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: House_04
       objectReference: {fileID: 0}
+    - target: {fileID: 7566858372805507505, guid: 2014f532e36a21e4fa7048bc7e4b60e8, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7566858372805507505, guid: 2014f532e36a21e4fa7048bc7e4b60e8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7082245996921709323, guid: 2014f532e36a21e4fa7048bc7e4b60e8, type: 3}
@@ -2511,6 +2647,14 @@ PrefabInstance:
     - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
       propertyPath: m_Name
       value: Fence Type2 03 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 441386, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
       propertyPath: m_RootOrder
@@ -2789,6 +2933,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bank_02
       objectReference: {fileID: 0}
+    - target: {fileID: 2337379337128318803, guid: 7a2294f24c802c24e9494529f96a9ca3, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2337379337128318803, guid: 7a2294f24c802c24e9494529f96a9ca3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3115324030067887593, guid: 7a2294f24c802c24e9494529f96a9ca3, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2892,6 +3044,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stand_Orange
       objectReference: {fileID: 0}
+    - target: {fileID: 5288811301072493470, guid: f2a879fb0ab02e24091b2ade1c8d3ce8, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5288811301072493470, guid: f2a879fb0ab02e24091b2ade1c8d3ce8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: f2a879fb0ab02e24091b2ade1c8d3ce8, type: 3}
@@ -2911,6 +3071,14 @@ PrefabInstance:
     - target: {fileID: 149186, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
       propertyPath: m_Name
       value: Fence Type4 Big (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 149186, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 149186, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 442534, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
       propertyPath: m_RootOrder
@@ -3165,6 +3333,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: RockGrey1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 157192, guid: 84a240cf1c5ef5f4d8ff048828a60d97, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 157192, guid: 84a240cf1c5ef5f4d8ff048828a60d97, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 95
+      objectReference: {fileID: 0}
     - target: {fileID: 428530, guid: 84a240cf1c5ef5f4d8ff048828a60d97, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -3279,6 +3455,14 @@ PrefabInstance:
     - target: {fileID: 849216810289730125, guid: def968192fd81424483a976346f52b66, type: 3}
       propertyPath: m_Name
       value: House_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 849216810289730125, guid: def968192fd81424483a976346f52b66, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 849216810289730125, guid: def968192fd81424483a976346f52b66, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -3565,6 +3749,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence Type4 Big (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 149186, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 149186, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 442534, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -3785,6 +3977,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Billet_01
       objectReference: {fileID: 0}
+    - target: {fileID: 286966770671926047, guid: fa8a60abea1cd9446bd9b098babe43bb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 286966770671926047, guid: fa8a60abea1cd9446bd9b098babe43bb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 626090978298421669, guid: fa8a60abea1cd9446bd9b098babe43bb, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -3900,6 +4100,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box_02 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5129442236857904303, guid: e37d55d9adae8724c9dcf1dff5b67578, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5129442236857904303, guid: e37d55d9adae8724c9dcf1dff5b67578, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: e37d55d9adae8724c9dcf1dff5b67578, type: 3}
@@ -3914,6 +4122,14 @@ PrefabInstance:
     - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
       propertyPath: m_Name
       value: Fence Type2 03 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 441386, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
       propertyPath: m_RootOrder
@@ -3997,6 +4213,14 @@ PrefabInstance:
     - target: {fileID: 1074510935149524, guid: 543ba2233306d00479ef5713d436c12e, type: 3}
       propertyPath: m_Name
       value: PT_Medieval_Tree_1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074510935149524, guid: 543ba2233306d00479ef5713d436c12e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074510935149524, guid: 543ba2233306d00479ef5713d436c12e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4184716620995200, guid: 543ba2233306d00479ef5713d436c12e, type: 3}
       propertyPath: m_RootOrder
@@ -4564,6 +4788,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vooden_Barrel (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8064113153433566034, guid: 1577a51f2ebf155438ad431e44edd054, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064113153433566034, guid: 1577a51f2ebf155438ad431e44edd054, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 1577a51f2ebf155438ad431e44edd054, type: 3}
@@ -4790,6 +5022,14 @@ PrefabInstance:
     - target: {fileID: 3194572283127358436, guid: dadc5d356bf1d214bb2e29c57c636430, type: 3}
       propertyPath: m_Name
       value: Windmill
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194572283127358436, guid: dadc5d356bf1d214bb2e29c57c636430, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194572283127358436, guid: dadc5d356bf1d214bb2e29c57c636430, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4914460449143150025, guid: dadc5d356bf1d214bb2e29c57c636430, type: 3}
       propertyPath: m_Size.x
@@ -5061,6 +5301,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bank_01
       objectReference: {fileID: 0}
+    - target: {fileID: 8056788787882937003, guid: c1cad0a248d20c34fada0f5b3279ea88, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056788787882937003, guid: c1cad0a248d20c34fada0f5b3279ea88, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: c1cad0a248d20c34fada0f5b3279ea88, type: 3}
@@ -5182,6 +5430,14 @@ PrefabInstance:
     - target: {fileID: 7190989728183158723, guid: 1b9e59d5bb6f48643b2067fd21e8c7b7, type: 3}
       propertyPath: m_Name
       value: Water_Tank
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190989728183158723, guid: 1b9e59d5bb6f48643b2067fd21e8c7b7, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190989728183158723, guid: 1b9e59d5bb6f48643b2067fd21e8c7b7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7530114932162387321, guid: 1b9e59d5bb6f48643b2067fd21e8c7b7, type: 3}
       propertyPath: m_RootOrder
@@ -6108,6 +6364,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence Type2 03 (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 441386, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -6175,6 +6439,14 @@ PrefabInstance:
     - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
       propertyPath: m_Name
       value: Fence Type2 03 (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 441386, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
       propertyPath: m_RootOrder
@@ -6292,6 +6564,10 @@ PrefabInstance:
     - target: {fileID: 6677800893096610614, guid: 3b774b376e8083d478c3a82e434b537b, type: 3}
       propertyPath: m_Name
       value: CartGrown
+      objectReference: {fileID: 0}
+    - target: {fileID: 6677800893096610614, guid: 3b774b376e8083d478c3a82e434b537b, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -6643,6 +6919,14 @@ PrefabInstance:
     - target: {fileID: 7409881535837442963, guid: 303461167179ef746b25af7e4ae5d949, type: 3}
       propertyPath: m_Name
       value: Props_Barrel_1 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7409881535837442963, guid: 303461167179ef746b25af7e4ae5d949, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7409881535837442963, guid: 303461167179ef746b25af7e4ae5d949, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7899031532594088233, guid: 303461167179ef746b25af7e4ae5d949, type: 3}
       propertyPath: m_RootOrder
@@ -7477,6 +7761,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wood_Car
       objectReference: {fileID: 0}
+    - target: {fileID: 2032747138085375153, guid: 9acd46bf5bf85774e88502a8be84d200, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032747138085375153, guid: 9acd46bf5bf85774e88502a8be84d200, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9acd46bf5bf85774e88502a8be84d200, type: 3}
@@ -7757,6 +8049,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence Type2 03 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 441386, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -7996,6 +8296,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bushes_03 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2520461301341533580, guid: d9206355b7757244ab0f522bf6836655, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2520461301341533580, guid: d9206355b7757244ab0f522bf6836655, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3004370028492812086, guid: d9206355b7757244ab0f522bf6836655, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -8232,6 +8540,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence Type2 03 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 441386, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -8299,6 +8615,14 @@ PrefabInstance:
     - target: {fileID: 1074510935149524, guid: 543ba2233306d00479ef5713d436c12e, type: 3}
       propertyPath: m_Name
       value: PT_Medieval_Tree_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074510935149524, guid: 543ba2233306d00479ef5713d436c12e, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074510935149524, guid: 543ba2233306d00479ef5713d436c12e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4184716620995200, guid: 543ba2233306d00479ef5713d436c12e, type: 3}
       propertyPath: m_RootOrder
@@ -8434,6 +8758,14 @@ PrefabInstance:
     - target: {fileID: 149186, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
       propertyPath: m_Name
       value: Fence Type4 Big (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 149186, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 149186, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 442534, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
       propertyPath: m_RootOrder
@@ -8645,6 +8977,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Billet_02
       objectReference: {fileID: 0}
+    - target: {fileID: 7688200129740519689, guid: c650f48a4e81a7e408855add77a63f05, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7688200129740519689, guid: c650f48a4e81a7e408855add77a63f05, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: c650f48a4e81a7e408855add77a63f05, type: 3}
@@ -8775,6 +9115,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pedestal
       objectReference: {fileID: 0}
+    - target: {fileID: 1734547811495020114, guid: 627cc11a2a7d3dc46a52c576e188b880, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734547811495020114, guid: 627cc11a2a7d3dc46a52c576e188b880, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1394298013750910184, guid: 627cc11a2a7d3dc46a52c576e188b880, type: 3}
@@ -8797,6 +9145,14 @@ PrefabInstance:
     - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
       propertyPath: m_Name
       value: Fence Type2 03 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 441386, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
       propertyPath: m_RootOrder
@@ -9244,6 +9600,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence Type2 03 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 441386, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -9311,6 +9675,14 @@ PrefabInstance:
     - target: {fileID: 149186, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
       propertyPath: m_Name
       value: Fence Type4 Big (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 149186, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 149186, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 442534, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
       propertyPath: m_RootOrder
@@ -9542,6 +9914,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence Type2 03 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 441386, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -9609,6 +9989,14 @@ PrefabInstance:
     - target: {fileID: 1516569621904350102, guid: 6afd93558491a644aa321f16633b1586, type: 3}
       propertyPath: m_Name
       value: House_07
+      objectReference: {fileID: 0}
+    - target: {fileID: 1516569621904350102, guid: 6afd93558491a644aa321f16633b1586, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1516569621904350102, guid: 6afd93558491a644aa321f16633b1586, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2179778115582132524, guid: 6afd93558491a644aa321f16633b1586, type: 3}
       propertyPath: m_RootOrder
@@ -9934,6 +10322,14 @@ PrefabInstance:
     - target: {fileID: 669849545131876602, guid: 362fec71bbd77ae45a2dab264844e7c9, type: 3}
       propertyPath: m_Name
       value: Stone_05
+      objectReference: {fileID: 0}
+    - target: {fileID: 669849545131876602, guid: 362fec71bbd77ae45a2dab264844e7c9, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 669849545131876602, guid: 362fec71bbd77ae45a2dab264844e7c9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -10270,6 +10666,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence Type4 Small
       objectReference: {fileID: 0}
+    - target: {fileID: 102524, guid: da8e893168526164591f81d60c0e06b1, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 102524, guid: da8e893168526164591f81d60c0e06b1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 409248, guid: da8e893168526164591f81d60c0e06b1, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -10434,6 +10838,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence Type2 03 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 441386, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -10501,6 +10913,14 @@ PrefabInstance:
     - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
       propertyPath: m_Name
       value: Fence Type2 03 (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 441386, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
       propertyPath: m_RootOrder
@@ -10573,6 +10993,14 @@ PrefabInstance:
     - target: {fileID: 157192, guid: 84a240cf1c5ef5f4d8ff048828a60d97, type: 3}
       propertyPath: m_Name
       value: RockGrey1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 157192, guid: 84a240cf1c5ef5f4d8ff048828a60d97, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 157192, guid: 84a240cf1c5ef5f4d8ff048828a60d97, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 95
       objectReference: {fileID: 0}
     - target: {fileID: 428530, guid: 84a240cf1c5ef5f4d8ff048828a60d97, type: 3}
       propertyPath: m_RootOrder
@@ -10959,6 +11387,14 @@ PrefabInstance:
     - target: {fileID: 2520461301341533580, guid: d9206355b7757244ab0f522bf6836655, type: 3}
       propertyPath: m_Name
       value: Bushes_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 2520461301341533580, guid: d9206355b7757244ab0f522bf6836655, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2520461301341533580, guid: d9206355b7757244ab0f522bf6836655, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3004370028492812086, guid: d9206355b7757244ab0f522bf6836655, type: 3}
       propertyPath: m_RootOrder
@@ -11386,6 +11822,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: RockGrey1
       objectReference: {fileID: 0}
+    - target: {fileID: 157192, guid: 84a240cf1c5ef5f4d8ff048828a60d97, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 157192, guid: 84a240cf1c5ef5f4d8ff048828a60d97, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 95
+      objectReference: {fileID: 0}
     - target: {fileID: 428530, guid: 84a240cf1c5ef5f4d8ff048828a60d97, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -11565,6 +12009,14 @@ PrefabInstance:
     - target: {fileID: 7409881535837442963, guid: 303461167179ef746b25af7e4ae5d949, type: 3}
       propertyPath: m_Name
       value: Props_Barrel_1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7409881535837442963, guid: 303461167179ef746b25af7e4ae5d949, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7409881535837442963, guid: 303461167179ef746b25af7e4ae5d949, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7899031532594088233, guid: 303461167179ef746b25af7e4ae5d949, type: 3}
       propertyPath: m_RootOrder
@@ -11853,6 +12305,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wood_Car
       objectReference: {fileID: 0}
+    - target: {fileID: 2032747138085375153, guid: 9acd46bf5bf85774e88502a8be84d200, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032747138085375153, guid: 9acd46bf5bf85774e88502a8be84d200, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9acd46bf5bf85774e88502a8be84d200, type: 3}
@@ -12082,6 +12542,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock_01
       objectReference: {fileID: 0}
+    - target: {fileID: 5275652781249614370, guid: cfb04594231799d4092ee0064447ce94, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275652781249614370, guid: cfb04594231799d4092ee0064447ce94, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6182452670827713600, guid: cfb04594231799d4092ee0064447ce94, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -12156,6 +12624,14 @@ PrefabInstance:
     - target: {fileID: 8336935774542790754, guid: 03a4b6dd68764bf4bb8e193c2daa0e7a, type: 3}
       propertyPath: m_Name
       value: Billet_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 8336935774542790754, guid: 03a4b6dd68764bf4bb8e193c2daa0e7a, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8336935774542790754, guid: 03a4b6dd68764bf4bb8e193c2daa0e7a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8717119804545096408, guid: 03a4b6dd68764bf4bb8e193c2daa0e7a, type: 3}
       propertyPath: m_RootOrder
@@ -12260,6 +12736,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Empty_Field
       objectReference: {fileID: 0}
+    - target: {fileID: 5395795509339391793, guid: 343d63e58c0d2c14b851888112f2b650, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5395795509339391793, guid: 343d63e58c0d2c14b851888112f2b650, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 343d63e58c0d2c14b851888112f2b650, type: 3}
@@ -12279,6 +12763,14 @@ PrefabInstance:
     - target: {fileID: 2520461301341533580, guid: d9206355b7757244ab0f522bf6836655, type: 3}
       propertyPath: m_Name
       value: Bushes_03 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2520461301341533580, guid: d9206355b7757244ab0f522bf6836655, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2520461301341533580, guid: d9206355b7757244ab0f522bf6836655, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3004370028492812086, guid: d9206355b7757244ab0f522bf6836655, type: 3}
       propertyPath: m_RootOrder
@@ -12523,6 +13015,14 @@ PrefabInstance:
     - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
       propertyPath: m_Name
       value: Fence Type2 03 (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 441386, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
       propertyPath: m_RootOrder
@@ -12870,6 +13370,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence Type4 Big
       objectReference: {fileID: 0}
+    - target: {fileID: 149186, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 149186, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 442534, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -12938,6 +13446,14 @@ PrefabInstance:
     - target: {fileID: 149186, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
       propertyPath: m_Name
       value: Fence Type4 Big (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 149186, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 149186, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 442534, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
       propertyPath: m_RootOrder
@@ -13230,6 +13746,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence Type2 03 (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 441386, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -13490,6 +14014,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box_02 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5129442236857904303, guid: e37d55d9adae8724c9dcf1dff5b67578, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5129442236857904303, guid: e37d55d9adae8724c9dcf1dff5b67578, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: e37d55d9adae8724c9dcf1dff5b67578, type: 3}
@@ -13568,6 +14100,14 @@ PrefabInstance:
     - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
       propertyPath: m_Name
       value: Fence Type2 03 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 111856, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 441386, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
       propertyPath: m_RootOrder
@@ -13699,6 +14239,14 @@ PrefabInstance:
     - target: {fileID: 8074311531355921043, guid: 4e869812f3388dd4689f33234315f9e5, type: 3}
       propertyPath: m_Name
       value: Tree_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 8074311531355921043, guid: 4e869812f3388dd4689f33234315f9e5, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8074311531355921043, guid: 4e869812f3388dd4689f33234315f9e5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8882900712690745385, guid: 4e869812f3388dd4689f33234315f9e5, type: 3}
       propertyPath: m_RootOrder
@@ -13923,6 +14471,14 @@ PrefabInstance:
     - target: {fileID: 149186, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
       propertyPath: m_Name
       value: Fence Type4 Big (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 149186, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 149186, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 442534, guid: 6c7e01809ee343847a660faeaa78d718, type: 3}
       propertyPath: m_RootOrder
@@ -14419,9 +14975,21 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 907633299}
     m_Modifications:
+    - target: {fileID: 778169069124325639, guid: a7ebb2d62037c6f44be85b88fabc33d4, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 778169069124325639, guid: a7ebb2d62037c6f44be85b88fabc33d4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 928123256355871806, guid: a7ebb2d62037c6f44be85b88fabc33d4, type: 3}
       propertyPath: m_Name
       value: Well
+      objectReference: {fileID: 0}
+    - target: {fileID: 928123256355871806, guid: a7ebb2d62037c6f44be85b88fabc33d4, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5824877813129206470, guid: a7ebb2d62037c6f44be85b88fabc33d4, type: 3}
       propertyPath: m_RootOrder
@@ -14634,6 +15202,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: House_01
       objectReference: {fileID: 0}
+    - target: {fileID: 2836201952261829258, guid: 9ec9a389e33c64a418c1a821a228a8b5, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2836201952261829258, guid: 9ec9a389e33c64a418c1a821a228a8b5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3177260995062376496, guid: 9ec9a389e33c64a418c1a821a228a8b5, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -14710,6 +15286,14 @@ PrefabInstance:
     - target: {fileID: 4017959717926633342, guid: 3ee41b4affb3dc94586979509002914b, type: 3}
       propertyPath: m_Name
       value: Wooden_Case
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017959717926633342, guid: 3ee41b4affb3dc94586979509002914b, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017959717926633342, guid: 3ee41b4affb3dc94586979509002914b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4362151578927900100, guid: 3ee41b4affb3dc94586979509002914b, type: 3}
       propertyPath: m_RootOrder
