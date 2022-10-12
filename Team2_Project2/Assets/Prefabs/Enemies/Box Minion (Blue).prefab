@@ -86,10 +86,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102ea1c0e19a98a4abd7c82c641079ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 1
+  runFromPlayer: 0
+  didtanceToRun: 4
   target: {fileID: 0}
   agent: {fileID: 5847963764061696890}
-  runFromPlayer: 0
-  canMove: 1
 --- !u!114 &5847963764061696895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,18 +107,23 @@ MonoBehaviour:
   isSpecialEnemy: 0
   stateRefreshRate: 0.5
   targetRefreshRate: 0.5
-  deathAnimLength: 1.67
-  maxHealth: 1
+  maxHealth: 2
   attackDamage: 2
   attackRange: 1
   attackSpeed: 2
+  attackTime: 0
   prioritizeBuilding: 1
   lockedInState: 0
   enemyCanvas: {fileID: 5847963764290095208}
   enemyTextName: {fileID: 5847963764654695693}
   healthSlider: {fileID: 5847963764011573286}
-  pathfinding: {fileID: 5847963764061696891}
   enemyAnim: {fileID: 3597559886151036781}
+  attackParameter: Attack
+  damageParameter: Damaged
+  deathParameter: Dead
+  deathAnimLength: 1.67
+  pathfinding: {fileID: 5847963764061696891}
+  warning: {fileID: 0}
 --- !u!95 &3597559886151036781
 Animator:
   serializedVersion: 4

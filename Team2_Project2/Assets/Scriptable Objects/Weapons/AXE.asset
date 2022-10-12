@@ -13,13 +13,16 @@ MonoBehaviour:
   m_Name: AXE
   m_EditorClassIdentifier: 
   weaponPrefab: {fileID: 8203073568141072114, guid: 6cd1ac9652a50da4485a86492f47c63d, type: 3}
+  weaponCost: 20
   primaryAttackStyle: 0
-  primaryDamage: 10
-  primaryRange: 3
-  primaryAtkSpeed: 0.2
+  primaryDamage: 4
+  primaryRange: 1.5
+  primaryAtkSpeed: 0.9
   primaryProjectile: {fileID: 0}
+  primaryCooldownImage: {fileID: 0}
   secondaryAttackStyle: 0
-  secondaryDamage: 30
-  secondaryRange: 10
-  secondaryAtkSpeed: 10
+  secondaryDamage: 10
+  secondaryRange: 2
+  secondaryAtkSpeed: 5
   secondaryProjectile: {fileID: 0}
+  secondaryCooldownImage: {fileID: 0}
