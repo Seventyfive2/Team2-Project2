@@ -57,4 +57,9 @@ public class PlayerStats : MonoBehaviour, IDamagable
             other.GetComponent<ICollectable>().Collected(gameObject);
         }
     }
+
+    public HealthSystem GetHealthSystem()
+    {
+        return healthSystem;
+    }
 }

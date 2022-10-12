@@ -1,10 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static AbilitySO;
 using static ItemSO;
-using static UnityEditor.PlayerSettings;
+using static PlayerMovement;
 using static UnityEngine.InputSystem.InputAction;
 
 public class PlayerAttack : MonoBehaviour
@@ -29,6 +30,38 @@ public class PlayerAttack : MonoBehaviour
     [Header("UI")]
     [SerializeField] private float uiRefreshRate = .167f;
     private PlayerUI ui;
+
+    //Events
+    public event EventHandler<PlayerAttackEventArgs> OnPlayerAttack;
+    public class PlayerAttackEventArgs : EventArgs
+    {
+        public WeaponSO weapon;
+
+        public PlayerAttackEventArgs(WeaponSO weapon)
+        {
+            this.weapon = weapon;
+        }
+    }
+
+    public event EventHandler<PlayerSpecialEventArgs> OnPlayerSpecial;
+    public class PlayerSpecialEventArgs : EventArgs
+    {
+        public AbilitySO ability;
+        public PlayerSpecialEventArgs(AbilitySO ability)
+        {
+            this.ability = ability;
+        }
+    }
+
+    public event EventHandler<PlayerItemEventArgs> OnPlayerItem;
+    public class PlayerItemEventArgs : EventArgs
+    {
+        public ItemSO item;
+        public PlayerItemEventArgs(ItemSO item)
+        {
+            this.item = item;
+        }
+    }
 
     //Cooldown Timers
     private float primaryCooldown;
@@ -66,6 +99,8 @@ public class PlayerAttack : MonoBehaviour
         {
             ui.ChangeItem(selectedItem.item.uiImage, selectedItem.amtHeld);
         }
+
+        //animation GetComponent<Animator>();
 
         StartCoroutine(UpdateCooldowns());
     }
@@ -150,6 +185,7 @@ public class PlayerAttack : MonoBehaviour
                         break;
                 }
 
+                if (OnPlayerSpecial != null) OnPlayerSpecial (this, new PlayerSpecialEventArgs(ability));
 
                 abilityCooldown = ability.cooldown / 1;
             }
@@ -178,6 +214,8 @@ public class PlayerAttack : MonoBehaviour
                         default:
                             break;
                     }
+
+                    if (OnPlayerItem != null) OnPlayerItem(this, new PlayerItemEventArgs(selectedItem.item));
                 }
             }
         }
@@ -187,24 +225,23 @@ public class PlayerAttack : MonoBehaviour
     {
         if (movement.isControllable)
         {
-
-        }
-        if (context.phase == InputActionPhase.Performed)
-        {
-            if(usingItem)
+            if (context.phase == InputActionPhase.Performed)
             {
-                usingItem = false;
-            }
+                if (usingItem)
+                {
+                    usingItem = false;
+                }
 
-            itemIndex++;
+                itemIndex++;
 
-            if(itemIndex >= items.Count)
-            {
-                itemIndex = 0;
+                if (itemIndex >= items.Count)
+                {
+                    itemIndex = 0;
+                }
+
+                selectedItem = items[itemIndex];
+                ui.ChangeItem(selectedItem.item.uiImage, selectedItem.amtHeld);
             }
-            
-            selectedItem = items[itemIndex];
-            ui.ChangeItem(selectedItem.item.uiImage, selectedItem.amtHeld);
         }
     }
 
@@ -256,6 +293,8 @@ public class PlayerAttack : MonoBehaviour
                 }
                 break;
         }
+
+        if (OnPlayerAttack != null) OnPlayerAttack(this, new PlayerAttackEventArgs(weapon));
     }
 
     public void ChangeWeapon(WeaponSO newWeapon, out WeaponSO oldWeapon)

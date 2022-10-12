@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,7 +13,6 @@ public class BaseEnemy : MonoBehaviour, IDamagable
 
     [SerializeField] private float stateRefreshRate = .5f;
     [SerializeField] private float targetRefreshRate = .5f;
-    [SerializeField] private float deathAnimLength = 1.67f;
 
     public enum State { Idle, Moving, Attacking }
     private State currentState = State.Idle;
@@ -37,15 +35,27 @@ public class BaseEnemy : MonoBehaviour, IDamagable
     [SerializeField] private TMP_Text enemyTextName;
     [SerializeField] private Slider healthSlider;
 
+    [Header("Animations")]
+    [SerializeField] private Animator enemyAnim;
+    [SerializeField] private string attackParameter = "Attack";
+    [SerializeField] private string damageParameter = "Damaged";
+    [SerializeField] private string deathParameter = "Dead";
+    [SerializeField] private float deathAnimLength = 1.67f;
+
+    private bool hasAttackAnimation = false;
+    private bool hasDamageAnimation = false;
+    private bool hasDeathAnimation = false;
+
     [Header("Components")]
     public EnemyMovement pathfinding;
-    [SerializeField] private Animator enemyAnim;
     public GameObject warning;
 
     void Awake()
     {
-
-        enemyAnim = GetComponent<Animator>();
+        if(enemyAnim == null)
+        {
+            enemyAnim = GetComponent<Animator>();
+        }
 
         healthSystem = new HealthSystem(maxHealth);
 
@@ -65,6 +75,10 @@ public class BaseEnemy : MonoBehaviour, IDamagable
         StartCoroutine(GetTarget());
         StartCoroutine(StateMachine());
         attackTime = attackSpeed;
+
+        hasAttackAnimation = enemyAnim.GetBool(attackParameter);
+        hasDamageAnimation = enemyAnim.GetBool(damageParameter);
+        hasDeathAnimation = enemyAnim.GetBool(deathParameter);
     }
 
     // Update is called once per frame
@@ -114,7 +128,10 @@ public class BaseEnemy : MonoBehaviour, IDamagable
 
                     if (enemyAnim != null)
                     {
-                        enemyAnim.SetBool("Attack", true);
+                        if(hasAttackAnimation)
+                        {
+                            enemyAnim.SetBool(attackParameter, true);
+                        }
                     }
                 }
                 else if (!targetInRange)
@@ -122,7 +139,10 @@ public class BaseEnemy : MonoBehaviour, IDamagable
                     currentState = State.Moving;
                     if (enemyAnim != null)
                     {
-                        enemyAnim.SetBool("Attack", false);
+                        if (hasAttackAnimation)
+                        {
+                            enemyAnim.SetBool(attackParameter, false);
+                        }
                     }
                 }
             }
@@ -130,7 +150,6 @@ public class BaseEnemy : MonoBehaviour, IDamagable
             yield return new WaitForSeconds(stateRefreshRate);
         }
     }
-
 
     public virtual IEnumerator GetTarget()
     {
@@ -225,9 +244,20 @@ public class BaseEnemy : MonoBehaviour, IDamagable
     {
         if (enemyAnim != null)
         {
-            enemyAnim.SetBool("Damaged", true);
+            if (hasDamageAnimation)
+            {
+                enemyAnim.SetBool(damageParameter, true);
+            }
         }
         healthSystem.Damage(damage);
+
+        if (enemyAnim != null)
+        {
+            if (hasDamageAnimation)
+            {
+                enemyAnim.SetBool(damageParameter, false);
+            }
+        }
     }
 
     public void Heal(int amt)
@@ -249,7 +279,10 @@ public class BaseEnemy : MonoBehaviour, IDamagable
 
             if (enemyAnim != null)
             {
-                enemyAnim.SetBool("Dead", true);
+                if (hasDeathAnimation)
+                {
+                    enemyAnim.SetBool(deathParameter, true);
+                }
             }
 
             if (LootManager.instance != null)
