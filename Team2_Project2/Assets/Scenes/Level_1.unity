@@ -21161,6 +21161,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1811148966819876258, guid: 13cc8f515ae4148459415aa149ca59f6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -13.71
+      objectReference: {fileID: 0}
     - target: {fileID: 3110170663442719212, guid: 13cc8f515ae4148459415aa149ca59f6, type: 3}
       propertyPath: m_Name
       value: WaveManager
@@ -21280,6 +21284,18 @@ PrefabInstance:
     - target: {fileID: 3110170663442719214, guid: 13cc8f515ae4148459415aa149ca59f6, type: 3}
       propertyPath: allWavesCompleted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050358066287729044, guid: 13cc8f515ae4148459415aa149ca59f6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -13.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6795743629128800402, guid: 13cc8f515ae4148459415aa149ca59f6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971686677136506184, guid: 13cc8f515ae4148459415aa149ca59f6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 14.48
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
