@@ -19,5 +19,5 @@ MonoBehaviour:
   damage: 10
   range: 2
   duration: 5
-  projectile: {fileID: 7844842254427921214, guid: 39c13463c70477248803242d22c309bf, type: 3}
+  prefab: {fileID: 7844842254427921214, guid: 39c13463c70477248803242d22c309bf, type: 3}
   doesDamage: 1

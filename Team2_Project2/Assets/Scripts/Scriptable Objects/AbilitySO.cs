@@ -1,5 +1,4 @@
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
 [CreateAssetMenu(menuName = "Scriptable Objects/New Ability")]
 public class AbilitySO : ScriptableObject
@@ -14,15 +13,18 @@ public class AbilitySO : ScriptableObject
     public int damage = 10;
     public float range = 2;
     public float duration = 5;
-    public GameObject projectile;
+    public GameObject prefab;
     public bool doesDamage = true;
 
-    public void UseAbility(Vector3 pos, string tag, int damage)
+    public void UseAbility(Vector3 pos, string tag, int damage, Transform parent = null)
     {
-        GameObject itemPrefab = Instantiate(projectile, pos, Quaternion.identity);
-        if (doesDamage)
+        GameObject itemPrefab = Instantiate(prefab, pos, Quaternion.identity);
+
+        if(parent != null)
         {
-            itemPrefab.GetComponent<ISetup>().Setup(tag, damage, range, true);
+            itemPrefab.transform.parent = parent;
         }
+
+        itemPrefab.GetComponent<ISetup>().Setup(tag, damage, range, duration, true);
     }
 }

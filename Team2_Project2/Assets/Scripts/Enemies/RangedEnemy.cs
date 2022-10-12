@@ -25,6 +25,8 @@ public class RangedEnemy : BaseEnemy
         projectileValues.transform.position = attackPos.position;
         projectileValues.transform.rotation = attackPos.rotation;
         projectileValues.Setup(tag, attackDamage);
+
+        GetAttackSpeed();
     }
 
     public override void OnDrawGizmosSelected()

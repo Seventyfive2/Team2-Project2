@@ -50,7 +50,7 @@ public class PlayerData : MonoBehaviour
 
         if (!stackItems)
         {
-            items.Add(new ItemStack(newItem, 1, maxAmt));
+            items.Add(new ItemStack(newItem, 1));
         }
         else
         {
@@ -68,7 +68,7 @@ public class PlayerData : MonoBehaviour
         levelsCompleted++;
     }
 
-    public void OnLevelWasLoaded(int level)
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Time.timeScale = 1;
     }

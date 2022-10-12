@@ -24,12 +24,13 @@ public class BaseEnemy : MonoBehaviour, IDamagable
     [SerializeField] private int maxHealth = 1;
     public int attackDamage = 2;
     public float attackRange = 1f;
-    [SerializeField] private float attackSpeed = 1f;
-    private float attackTime = 0f;
+    public float attackSpeed = 1f;
+    [HideInInspector] public float attackTime = 0f;
 
     [SerializeField] private bool prioritizeBuilding = false;
 
     public bool lockedInState;
+
 
     [Header("UI")]
     [SerializeField] private GameObject enemyCanvas;
@@ -39,6 +40,7 @@ public class BaseEnemy : MonoBehaviour, IDamagable
     [Header("Components")]
     public EnemyMovement pathfinding;
     [SerializeField] private Animator enemyAnim;
+    public GameObject warning;
 
     void Awake()
     {
@@ -66,16 +68,15 @@ public class BaseEnemy : MonoBehaviour, IDamagable
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         if(isAlive)
         {
             if (currentState == State.Attacking && attackTime <= 0)
             {
                 Attack();
-                attackTime = attackSpeed;
             }
-            else if (attackTime > 0 && currentState == State.Attacking)
+            else if (attackTime > 0 && currentState == State.Attacking && !lockedInState)
             {
                 attackTime -= Time.deltaTime;
             }
@@ -137,7 +138,7 @@ public class BaseEnemy : MonoBehaviour, IDamagable
         {
             Transform highestThreat = null;
 
-            Collider[] targets = Physics.OverlapSphere(transform.position, 50);
+            Collider[] targets = Physics.OverlapSphere(transform.position, 200);
             if (targets.Length != 0)
             {
                 for (int i = 0; i < targets.Length; i++)
@@ -187,6 +188,10 @@ public class BaseEnemy : MonoBehaviour, IDamagable
                     }
                 }
             }
+            else
+            {
+                highestThreat = GameObject.Find("PLayer").transform;
+            }
 
             pathfinding.SetTarget(highestThreat);
             yield return new WaitForSeconds(targetRefreshRate);
@@ -211,6 +216,8 @@ public class BaseEnemy : MonoBehaviour, IDamagable
                 }
             }
         }
+
+        GetAttackSpeed();
     }
 
     #region Health Functions
@@ -245,8 +252,14 @@ public class BaseEnemy : MonoBehaviour, IDamagable
                 enemyAnim.SetBool("Dead", true);
             }
 
-            LootManager.instance.GetStandardDrops(transform.position);
-            WaveManager.instance.EnemyDefeated();
+            if (LootManager.instance != null)
+            {
+                LootManager.instance.GetStandardDrops(transform.position);
+            }
+            if (WaveManager.instance != null)
+            {
+                WaveManager.instance.EnemyDefeated();
+            }
 
             pathfinding.GetAgent().ResetPath();
 
@@ -263,6 +276,11 @@ public class BaseEnemy : MonoBehaviour, IDamagable
     public Vector3 GetAttackPosition()
     {
         return transform.position + transform.forward * attackRange;
+    }
+
+    public float GetAttackSpeed()
+    {
+        return attackTime = attackSpeed;
     }
 
     public virtual void OnDrawGizmosSelected()

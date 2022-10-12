@@ -3,13 +3,14 @@ using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] private Transform target;
-    [SerializeField] private NavMeshAgent agent;
-
-    [SerializeField] private bool runFromPlayer;
-
     private BaseEnemy enemy;
     public bool canMove = true;
+
+    [SerializeField] private bool runFromPlayer;
+    [SerializeField] private float didtanceToRun = 4f;
+
+    [SerializeField] private Transform target;
+    [SerializeField] private NavMeshAgent agent;
 
     void Start()
     {
@@ -24,11 +25,20 @@ public class EnemyMovement : MonoBehaviour
             {
                 agent.destination = GetRandomPositionAround(target.position, 1f);
             }
+            else
+            {
+                float distance = Vector3.Distance(transform.position, target.position);
 
+                if(distance < didtanceToRun)
+                {
+                    Vector3 dirToPlayer = transform.position - target.position;
 
+                    Vector3 newPos = transform.position + dirToPlayer;
+
+                    agent.destination = newPos;
+                }
+            }
         }
-
-
     }
 
     public void SetTarget(Transform newTarget)
@@ -47,6 +57,11 @@ public class EnemyMovement : MonoBehaviour
     public Transform GetTarget()
     {
         return target;
+    }
+
+    public Vector3 GetTargetPosition()
+    {
+        return transform.position;
     }
 
     public NavMeshAgent GetAgent()

@@ -39,7 +39,11 @@ public class BaseBuilding : MonoBehaviour, IDamagable
             TakeDamage(buildingData.healthSystem.GetMissingHealth());
         }
 
-        TakeDamage(25);
+        Vector3 lookDir = Vector3.forward;
+        float angle = Mathf.Atan2(lookDir.x, lookDir.z) * Mathf.Rad2Deg;
+        Quaternion qt = Quaternion.AngleAxis(angle, Vector3.up);
+
+        buildingTextName.transform.parent.rotation = qt;
     }
 
     public bool GetBuildingState()

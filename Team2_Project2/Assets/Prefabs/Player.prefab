@@ -195,12 +195,16 @@ MonoBehaviour:
   weapon: {fileID: 11400000, guid: 3d60a3b5290f8e04bbc4ef0b3acf6826, type: 2}
   ability: {fileID: 0}
   selectedItem:
+    itemName: 
     item: {fileID: 0}
     amtHeld: 0
+    maxAmt: 0
   items: []
   attackPos: {fileID: 6693652902879828592}
   movement: {fileID: 6693652902418518196}
-  uiRefreshRate: 0.167
+  swingModel: {fileID: 4469753961807371192, guid: a2d979b4df095184f89a18a972def7c2, type: 3}
+  effectDuration: 0.1
+  uiRefreshRate: 0.1
 --- !u!143 &6693652902418518199
 CharacterController:
   m_ObjectHideFlags: 0

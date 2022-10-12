@@ -61,7 +61,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -85,6 +85,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102ea1c0e19a98a4abd7c82c641079ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 1
+  runFromPlayer: 1
+  didtanceToRun: 7
   target: {fileID: 0}
   agent: {fileID: 8026539220803201124}
 --- !u!114 &8026539220803201121
@@ -103,15 +106,18 @@ MonoBehaviour:
   isSpecialEnemy: 1
   stateRefreshRate: 0.5
   targetRefreshRate: 0.5
+  deathAnimLength: 1.67
   maxHealth: 20
   attackDamage: 2
   attackRange: 1
   attackSpeed: 2
   prioritizeBuilding: 0
+  lockedInState: 0
   enemyCanvas: {fileID: 8026539220844270454}
   enemyTextName: {fileID: 8026539221284994579}
   healthSlider: {fileID: 8026539222195501880}
   pathfinding: {fileID: 8026539220803201125}
+  enemyAnim: {fileID: 0}
   nbrOfCoins: 10
   nbrOfItems: 3
 --- !u!1001 &1951913061904217858

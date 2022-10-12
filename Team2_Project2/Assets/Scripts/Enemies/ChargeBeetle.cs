@@ -1,11 +1,13 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ChargeBeetle : BaseEnemy
 {
     [SerializeField] private Rigidbody rb;
     private bool isCharging = false;
+
+    [SerializeField] private Vector3 targetPosition;
+    [SerializeField] private Vector3 direction;
 
     [Header("Beetle Stats")]
     public float chargeStartup = .5f;
@@ -21,15 +23,14 @@ public class ChargeBeetle : BaseEnemy
     public override void Attack()
     {
         StartCoroutine(Charge());
+    }
+
+    public void FixedUpdate()
+    {
         if(isCharging)
         {
-            Vector3.MoveTowards(transform.position, transform.forward, attackRange);
+            rb.velocity = direction * chargeSpeed * Time.time;
         }
-
-        //Projectile projectileValues = Instantiate(projectile, attackPos.position, transform.rotation).GetComponent<Projectile>();
-        //projectileValues.transform.position = attackPos.position;
-        //projectileValues.transform.rotation = attackPos.rotation;
-        //projectileValues.Setup(tag, attackDamage);
     }
 
     IEnumerator Charge()
@@ -37,22 +38,25 @@ public class ChargeBeetle : BaseEnemy
         lockedInState = true;
         pathfinding.GetAgent().isStopped = true;
 
+        warning.SetActive(true);
+
         yield return new WaitForSeconds(chargeStartup);
 
-        /*
-        Vector3 direction = (pathfinding.GetTarget().position - transform.position).normalized;
-
-        rb.velocity = direction * chargeSpeed;
-        */
-
+        targetPosition = pathfinding.GetTargetPosition();
+        direction = (targetPosition - transform.position).normalized;
         isCharging = true;
+
         yield return new WaitForSeconds(chargeDuration);
+
         isCharging = false;
 
         yield return new WaitForSeconds(chargeRecovery);
 
         pathfinding.GetAgent().isStopped = false;
         lockedInState = false;
+        warning.SetActive(false);
+
+        GetAttackSpeed();
 
         yield return null;
     }

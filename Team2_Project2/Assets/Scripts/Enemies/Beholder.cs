@@ -12,6 +12,8 @@ public class Beholder : BaseEnemy
     [SerializeField] private float meleeRange = 1f;
     [SerializeField] private int meleeDamage = 10;
 
+    [SerializeField] private GameObject meleeWarning;
+
     public override Collider[] GetTargetsInRange()
     {
         return Physics.OverlapSphere(transform.position, attackRange);
@@ -36,13 +38,23 @@ public class Beholder : BaseEnemy
         else
         {
             ISetup setup = Instantiate(GalaxyRandom.GetRandomFromList(melee), transform.position, transform.rotation).GetComponent<ISetup>();
-            setup.Setup(tag, meleeDamage, meleeRange, true);
+            setup.Setup(tag, meleeDamage, meleeRange, activate: true);
         }
 
+        GetAttackSpeed();
+    }
+
+    public override void Update()
+    {
+        base.Update();
+
+        meleeWarning.SetActive(!(Vector3.Distance(transform.position, pathfinding.GetTarget().position) > meleeRange));
     }
 
     public override void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position, attackRange);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, meleeRange);
     }
 }

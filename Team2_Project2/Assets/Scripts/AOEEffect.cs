@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AOEEffect : MonoBehaviour, ISetup
@@ -24,7 +22,7 @@ public class AOEEffect : MonoBehaviour, ISetup
         Destroy(gameObject);
     }
 
-    public void Setup(string tag, int damage, float range = 2.5f, bool activate = false)
+    public void Setup(string tag, int damage, float range = 2.5f, float duration = 1, bool activate = false)
     {
         this.tag = tag;
         this.damage = damage;

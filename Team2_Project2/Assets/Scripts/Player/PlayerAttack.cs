@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using static AbilitySO;
 using static ItemSO;
+using static UnityEditor.PlayerSettings;
 using static UnityEngine.InputSystem.InputAction;
 
 public class PlayerAttack : MonoBehaviour
@@ -14,19 +15,25 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private ItemStack selectedItem;
     private int itemIndex;
     [SerializeField] private List<ItemStack> items;
-    [SerializeField] private Transform attackPos;
     private bool usingItem = false;
-
-    private float primaryCooldown;
-    private float secondaryCooldown;
-    private float abilityCooldown;
-
-    [SerializeField] private PlayerMovement movement;
+    
     private PlayerAttribute playerDamage;
+
+    [Header("Components")]
+    [SerializeField] private Transform attackPos;
+    [SerializeField] private PlayerMovement movement;
+    [Space]
+    [SerializeField] private GameObject swingModel;
+    [SerializeField] private float effectDuration = .1f;
 
     [Header("UI")]
     [SerializeField] private float uiRefreshRate = .167f;
     private PlayerUI ui;
+
+    //Cooldown Timers
+    private float primaryCooldown;
+    private float secondaryCooldown;
+    private float abilityCooldown;
 
     void Start()
     {
@@ -128,7 +135,7 @@ public class PlayerAttack : MonoBehaviour
                         ability.UseAbility(attackPos.position, tag, GetBoostedDamage(ability.damage));
                         break;
                     case HitDetectionStyle.AroundPlayer:
-                        ability.UseAbility(transform.position, tag, GetBoostedDamage(ability.damage));
+                        ability.UseAbility(transform.position, tag, GetBoostedDamage(ability.damage), transform);
                         break;
                     case HitDetectionStyle.AtCursor:
                         Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
@@ -218,6 +225,10 @@ public class PlayerAttack : MonoBehaviour
                         }
                     }
                 }
+                
+                GameObject swingPrefab = Instantiate(swingModel, GetAttackPositionOffset(range+ .75f), attackPos.rotation);
+                swingPrefab.GetComponent<ISetup>().Setup(tag, damage, range, effectDuration, true);
+
                 break;
             case WeaponSO.AttackStyle.Raycast:
                 RaycastHit[] raycastTargets = Physics.RaycastAll(attackPos.position, attackPos.forward, range);
@@ -382,15 +393,18 @@ public class PlayerAttack : MonoBehaviour
 [System.Serializable]
 public class ItemStack
 {
+    public string itemName;
     public ItemSO item;
     public int amtHeld;
     public int maxAmt;
 
-    public ItemStack(ItemSO item, int amtHeld, int maxAmt = 1)
+    public ItemStack(ItemSO item, int amtHeld)
     {
         this.item = item;
         this.amtHeld = amtHeld;
-        this.maxAmt = maxAmt;
+        this.maxAmt = item.maxHeld;
+
+        itemName = item.name;
     }
 
     public void StackChange(int amt)

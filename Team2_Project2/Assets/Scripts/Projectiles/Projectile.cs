@@ -4,9 +4,9 @@ public class Projectile : MonoBehaviour, ISetup
 {
     [HideInInspector] public int damage;
 
-    public virtual void Setup(string projectileTage, int projectileDamage, float range = 1, bool activate = false)
+    public virtual void Setup(string projectileTag, int projectileDamage, float range = 1, float duration = 1, bool activate = false)
     {
-        tag = projectileTage;
+        tag = projectileTag;
         damage = projectileDamage;
     }
 

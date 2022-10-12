@@ -66,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 0c9f368fc05cfab47ae135423ebe8e2b, type: 2}
     - target: {fileID: 919132149155446097, guid: dec25a75c3dd60848a539e80ba7d3c57, type: 3}
       propertyPath: m_Name
-      value: Slash
+      value: ColorSlash
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

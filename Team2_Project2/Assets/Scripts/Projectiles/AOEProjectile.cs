@@ -4,7 +4,7 @@ public class AOEProjectile : Projectile
 {
     [SerializeField] private GameObject aoeEffect;
 
-    public override void Setup(string projectileTage, int projectileDamage, float range, bool activate = false)
+    public override void Setup(string projectileTage, int projectileDamage, float range, float duration, bool activate = false)
     {
         base.Setup(projectileTage, projectileDamage, range);
         aoeEffect.tag = projectileTage;
