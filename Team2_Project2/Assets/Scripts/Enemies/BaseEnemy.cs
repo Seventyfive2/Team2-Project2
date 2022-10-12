@@ -16,7 +16,7 @@ public class BaseEnemy : MonoBehaviour, IDamagable
 
     public enum State { Idle, Moving, Attacking }
     private State currentState = State.Idle;
-    private bool isAlive = true;
+    [HideInInspector] public bool isAlive = true;
 
     [Header("Stats")]
     [SerializeField] private int maxHealth = 1;
@@ -128,7 +128,7 @@ public class BaseEnemy : MonoBehaviour, IDamagable
 
                     if (enemyAnim != null)
                     {
-                        if(hasAttackAnimation)
+                        if(!hasAttackAnimation)
                         {
                             enemyAnim.SetBool(attackParameter, true);
                         }
@@ -139,7 +139,7 @@ public class BaseEnemy : MonoBehaviour, IDamagable
                     currentState = State.Moving;
                     if (enemyAnim != null)
                     {
-                        if (hasAttackAnimation)
+                        if (!hasAttackAnimation)
                         {
                             enemyAnim.SetBool(attackParameter, false);
                         }
@@ -153,9 +153,11 @@ public class BaseEnemy : MonoBehaviour, IDamagable
 
     public virtual IEnumerator GetTarget()
     {
-        while (isAlive)
+        while (isAlive && pathfinding.GetTarget() == null)
         {
             Transform highestThreat = null;
+
+            List<Transform> equalThreats = new List<Transform>();
 
             Collider[] targets = Physics.OverlapSphere(transform.position, 200);
             if (targets.Length != 0)
@@ -172,7 +174,6 @@ public class BaseEnemy : MonoBehaviour, IDamagable
                                 continue;
                             }
                         }
-
 
                         if (highestThreat == null)
                         {
@@ -202,6 +203,11 @@ public class BaseEnemy : MonoBehaviour, IDamagable
                             if (tl > htl)
                             {
                                 highestThreat = targets[i].transform;
+                                equalThreats.Clear();
+                            }
+                            else if (tl == htl)
+                            {
+                                equalThreats.Add(targets[i].transform);
                             }
                         }
                     }
@@ -212,6 +218,26 @@ public class BaseEnemy : MonoBehaviour, IDamagable
                 highestThreat = GameObject.Find("PLayer").transform;
             }
 
+            if(equalThreats.Count > 0)
+            {
+                Debug.Log("Teest");
+                equalThreats.Add(highestThreat);
+
+                Transform closest = null;
+                float shortestDistance = Mathf.Infinity;
+
+                for (int i = 0; i < equalThreats.Count; i++)
+                {
+                    float distance = Vector3.Distance(transform.position, equalThreats[i].position);
+
+                    if (distance < shortestDistance)
+                    {
+                        closest = equalThreats[i];
+                    }
+                }
+
+                highestThreat = closest;
+            }
             pathfinding.SetTarget(highestThreat);
             yield return new WaitForSeconds(targetRefreshRate);
         }
@@ -244,7 +270,7 @@ public class BaseEnemy : MonoBehaviour, IDamagable
     {
         if (enemyAnim != null)
         {
-            if (hasDamageAnimation)
+            if (!hasDamageAnimation)
             {
                 enemyAnim.SetBool(damageParameter, true);
             }
@@ -253,7 +279,7 @@ public class BaseEnemy : MonoBehaviour, IDamagable
 
         if (enemyAnim != null)
         {
-            if (hasDamageAnimation)
+            if (!hasDamageAnimation)
             {
                 enemyAnim.SetBool(damageParameter, false);
             }
@@ -279,7 +305,7 @@ public class BaseEnemy : MonoBehaviour, IDamagable
 
             if (enemyAnim != null)
             {
-                if (hasDeathAnimation)
+                if (!hasDeathAnimation)
                 {
                     enemyAnim.SetBool(deathParameter, true);
                 }
@@ -319,5 +345,9 @@ public class BaseEnemy : MonoBehaviour, IDamagable
     public virtual void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(GetAttackPosition(), attackRange);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(transform.position, pathfinding.GetTargetPosition());
+        Gizmos.DrawWireSphere(pathfinding.GetTargetPosition(), .75f);
     }
 }

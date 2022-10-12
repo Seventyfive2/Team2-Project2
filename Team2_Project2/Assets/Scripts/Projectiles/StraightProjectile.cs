@@ -11,12 +11,24 @@ public class StraightProjectile : MonoBehaviour
 
     public Rigidbody rb;
 
+    public GameObject landposition;
+    public LayerMask targetMask;
+
     void OnEnable()
     {
         time = lifeTime;
         rb = GetComponent<Rigidbody>();
         rb.velocity = transform.forward * speed;
         Destroy(gameObject, time);
+
+        if(landposition != null)
+        {
+            if(Physics.Raycast(transform.position,transform.forward, out RaycastHit hit, targetMask))
+            {
+                Debug.Log(hit.transform.position);
+                Instantiate(landposition,hit.transform.position,Quaternion.identity);
+            }
+        }
     }
 
     public void OnDrawGizmos()

@@ -38,6 +38,7 @@ public class ChargeBeetle : BaseEnemy
         lockedInState = true;
         pathfinding.GetAgent().isStopped = true;
 
+        
         warning.SetActive(true);
 
         yield return new WaitForSeconds(chargeStartup);

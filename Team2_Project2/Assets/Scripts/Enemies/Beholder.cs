@@ -14,6 +14,11 @@ public class Beholder : BaseEnemy
 
     [SerializeField] private GameObject meleeWarning;
 
+    private void Start()
+    {
+        meleeWarning.transform.localScale = Vector3.one * meleeRange * 4;
+    }
+
     public override Collider[] GetTargetsInRange()
     {
         return Physics.OverlapSphere(transform.position, attackRange);
@@ -30,7 +35,7 @@ public class Beholder : BaseEnemy
 
         if (Vector3.Distance(transform.position, pathfinding.GetTarget().position) > meleeRange)
         {
-            Projectile projectileValues = Instantiate(GalaxyRandom.GetRandomFromList(projectiles), attackPos.position, transform.rotation).GetComponent<Projectile>();
+            Projectile projectileValues = Instantiate(GalaxyRandom.GetRandomFromList(projectiles), attackPos.position, attackPos.rotation).GetComponent<Projectile>();
             projectileValues.transform.position = attackPos.position;
             projectileValues.transform.rotation = attackPos.rotation;
             projectileValues.Setup(tag, attackDamage);
@@ -48,6 +53,15 @@ public class Beholder : BaseEnemy
     {
         base.Update();
 
+        if (Vector3.Distance(transform.position, pathfinding.GetTarget().position) > attackRange)
+        {
+            Vector3 direction = (pathfinding.GetTarget().position + Vector3.up * -.5f) - attackPos.position;
+
+            Vector3 newDirection = Vector3.RotateTowards(attackPos.forward, direction, 10 * Time.deltaTime, 0f);
+
+            attackPos.rotation = Quaternion.LookRotation(newDirection);
+        }
+
         meleeWarning.SetActive(!(Vector3.Distance(transform.position, pathfinding.GetTarget().position) > meleeRange));
     }
 
@@ -56,5 +70,7 @@ public class Beholder : BaseEnemy
         Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, meleeRange);
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawLine(attackPos.position, attackPos.position + attackPos.forward*attackRange);
     }
 }

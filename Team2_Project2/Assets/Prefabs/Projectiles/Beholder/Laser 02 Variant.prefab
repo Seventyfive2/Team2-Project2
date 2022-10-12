@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5832664492972630759, guid: 87b57e0af43ee7f4c843a2dc6fde8c38, type: 3}
       propertyPath: m_Name
-      value: Laser 02
+      value: Laser 02 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5832664492972630777, guid: 87b57e0af43ee7f4c843a2dc6fde8c38, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5832664492972630777, guid: 87b57e0af43ee7f4c843a2dc6fde8c38, type: 3}
       propertyPath: m_LocalPosition.x

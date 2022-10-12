@@ -26,6 +26,7 @@ public class PlayerAttack : MonoBehaviour
     [Space]
     [SerializeField] private GameObject swingModel;
     [SerializeField] private float effectDuration = .1f;
+    [SerializeField] private Transform heldWeapon;
 
     [Header("UI")]
     [SerializeField] private float uiRefreshRate = .167f;
@@ -308,6 +309,17 @@ public class PlayerAttack : MonoBehaviour
         secondaryCooldown = 0;
 
         ui.ChangeWeapon(newWeapon.primaryCooldownImage, newWeapon.secondaryCooldownImage);
+
+        if (newWeapon.weaponPrefab != null && heldWeapon != null)
+        {
+            for (int i = 0; i < heldWeapon.childCount; i++)
+            {
+                Destroy(heldWeapon.GetChild(i).gameObject);
+            }
+
+            Instantiate(newWeapon.weaponPrefab, heldWeapon).GetComponent<Collider>().enabled = false;
+            //, heldWeapon.position + Vector3.up, Quaternion.identity
+        }
     } 
 
     public void AddItem(ItemSO newItem, int amt)

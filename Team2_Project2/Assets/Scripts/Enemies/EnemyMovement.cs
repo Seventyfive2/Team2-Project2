@@ -6,7 +6,7 @@ public class EnemyMovement : MonoBehaviour
     private BaseEnemy enemy;
     public bool canMove = true;
 
-    [SerializeField] private bool runFromPlayer;
+    public bool runFromPlayer;
     [SerializeField] private float didtanceToRun = 4f;
 
     [SerializeField] private Transform target;
@@ -61,7 +61,12 @@ public class EnemyMovement : MonoBehaviour
 
     public Vector3 GetTargetPosition()
     {
-        return transform.position;
+        return target.position;
+    }
+
+    public Vector3 GetAgentDestination()
+    {
+        return agent.destination;
     }
 
     public NavMeshAgent GetAgent()
