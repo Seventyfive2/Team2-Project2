@@ -34,7 +34,7 @@ public class Mimic : BaseEnemy
                     GameObject generatedObject;
 
                     //Gets random transform values
-                    Vector3 randomPosition = GetRandomPositionAround(transform.position - (Vector3), 2f);
+                    Vector3 randomPosition = GetRandomPositionAround(transform.position - (Vector3.up), 2f);
                     //randomPosition += transform.position;
                     //Vector3 randomRotation = new Vector3(0, Random.Range(0, rotationRange), 0);
 
