@@ -1292,6 +1292,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2843389110478187261, guid: f0ac7a6b3ac5f19428e86828be600a90, type: 3}
+      propertyPath: attributes.Array.data[0].statIncreasePerLevel
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9215032413861336976, guid: f0ac7a6b3ac5f19428e86828be600a90, type: 3}
       propertyPath: m_Name
       value: DataHolder

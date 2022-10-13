@@ -346,8 +346,11 @@ public class BaseEnemy : MonoBehaviour, IDamagable
     {
         Gizmos.DrawWireSphere(GetAttackPosition(), attackRange);
 
-        Gizmos.color = Color.red;
-        Gizmos.DrawRay(transform.position, pathfinding.GetTargetPosition());
-        Gizmos.DrawWireSphere(pathfinding.GetTargetPosition(), .75f);
+        if(pathfinding.GetTargetPosition() != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawRay(transform.position, pathfinding.GetTargetPosition());
+            Gizmos.DrawWireSphere(pathfinding.GetTargetPosition(), .75f);
+        }
     }
 }
