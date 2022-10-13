@@ -10,7 +10,7 @@ public class WaveManager : MonoBehaviour
     public bool autoStart = true;
     private bool hasBoss = false;
     [SerializeField] private WaveDetails[] waveDetails;
-    private int waveIndex = 0;
+    public int waveIndex = 0;
 
     public event EventHandler<WaveSpawnedEventArgs> OnWaveSpawned;
 
