@@ -103,8 +103,17 @@ public class WaveManager : MonoBehaviour
         hasBoss = true;
     }
 
-    public void EnemyDefeated()
+    public void EnemyDefeated(GameObject enemy)
     {
+        if(currentBoss == enemy)
+        {
+            bossDefeated.Invoke();
+
+            if (PlayerData.instance != null)
+            {
+                PlayerData.instance.LevelEnded();
+            }
+        }
         enemiesLeft--;
         totalEnemies--;
 
@@ -131,7 +140,7 @@ public class WaveManager : MonoBehaviour
 
                     if (allWavesCompleted != null && hasBoss && currentBoss == null)
                     {
-                        bossDefeated.Invoke();
+                        //bossDefeated.Invoke();
 
                         if (PlayerData.instance != null)
                         {
