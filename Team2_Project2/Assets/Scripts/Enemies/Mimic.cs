@@ -34,7 +34,7 @@ public class Mimic : BaseEnemy
                     GameObject generatedObject;
 
                     //Gets random transform values
-                    Vector3 randomPosition = GetRandomPositionAround(transform.position, 2f);
+                    Vector3 randomPosition = GetRandomPositionAround(transform.position - (Vector3), 2f);
                     //randomPosition += transform.position;
                     //Vector3 randomRotation = new Vector3(0, Random.Range(0, rotationRange), 0);
 
@@ -43,12 +43,13 @@ public class Mimic : BaseEnemy
                     {
                         generatedObject = Instantiate(GalaxyRandom.GetRandomWeightedValue(eneimes), randomPosition, Quaternion.identity);
                     }
+
                 }
                 GetAttackSpeed();
                 break;
             case 2:
                 //Teleport
-                transform.position = GetRandomPositionAround(pathfinding.GetTargetPosition(), 1f);
+                transform.position = GetRandomPositionAround(pathfinding.GetTargetPosition(), 2f);
                 GetAttackSpeed();
                 break;
         }
