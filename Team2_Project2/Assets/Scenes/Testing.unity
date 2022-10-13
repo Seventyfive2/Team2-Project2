@@ -181,7 +181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5847963764061697156, guid: 18391c9274a99f34db79526f3d18cd0c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -244,7 +244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5847963764061697156, guid: 18391c9274a99f34db79526f3d18cd0c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -259,19 +259,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7090350950534244421, guid: 508f5cc1de346704ea14cdb4a4fc3c03, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.505
       objectReference: {fileID: 0}
     - target: {fileID: 7090350950534244421, guid: 508f5cc1de346704ea14cdb4a4fc3c03, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8335556636416523472, guid: 508f5cc1de346704ea14cdb4a4fc3c03, type: 3}
       propertyPath: m_Name
       value: Watch Tower 1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8335556636416523472, guid: 508f5cc1de346704ea14cdb4a4fc3c03, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8335556636416523501, guid: 508f5cc1de346704ea14cdb4a4fc3c03, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8335556636416523501, guid: 508f5cc1de346704ea14cdb4a4fc3c03, type: 3}
       propertyPath: m_LocalPosition.x
@@ -394,6 +398,10 @@ PrefabInstance:
     - target: {fileID: 4339709073324179959, guid: be7e2fdc822baf24e8389706ac63be35, type: 3}
       propertyPath: m_Name
       value: Beholder
+      objectReference: {fileID: 0}
+    - target: {fileID: 4339709073324179959, guid: be7e2fdc822baf24e8389706ac63be35, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8069758611656378339, guid: be7e2fdc822baf24e8389706ac63be35, type: 3}
       propertyPath: m_RootOrder
@@ -771,6 +779,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6693652902418518201, guid: cbb03597b97a014419d7cdb7727e3745, type: 3}
+      propertyPath: ability
+      value: 
+      objectReference: {fileID: 11400000, guid: d9bdea71c8cf4544d842d44e9a2c71d3, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: cbb03597b97a014419d7cdb7727e3745, type: 3}
@@ -897,6 +909,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Weapon Pickup
       objectReference: {fileID: 0}
+    - target: {fileID: 6476624819669131087, guid: 8b7f337a3d2947b45babb50fc1d88352, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6479606231601219189, guid: 8b7f337a3d2947b45babb50fc1d88352, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -954,7 +970,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5847963764061696888, guid: 18391c9274a99f34db79526f3d18cd0c, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5847963764061696888, guid: 18391c9274a99f34db79526f3d18cd0c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1002,7 +1018,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5847963764061697156, guid: 18391c9274a99f34db79526f3d18cd0c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -1080,15 +1096,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7090350950534244421, guid: 508f5cc1de346704ea14cdb4a4fc3c03, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.505
       objectReference: {fileID: 0}
     - target: {fileID: 7090350950534244421, guid: 508f5cc1de346704ea14cdb4a4fc3c03, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8335556636416523472, guid: 508f5cc1de346704ea14cdb4a4fc3c03, type: 3}
       propertyPath: m_Name
       value: Watch Tower 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335556636416523472, guid: 508f5cc1de346704ea14cdb4a4fc3c03, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8335556636416523501, guid: 508f5cc1de346704ea14cdb4a4fc3c03, type: 3}
       propertyPath: m_RootOrder
@@ -1359,7 +1379,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2101888174
 GameObject:
@@ -1453,7 +1473,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &2104192283
 PrefabInstance:
@@ -1465,19 +1485,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7090350950534244421, guid: 508f5cc1de346704ea14cdb4a4fc3c03, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.505
       objectReference: {fileID: 0}
     - target: {fileID: 7090350950534244421, guid: 508f5cc1de346704ea14cdb4a4fc3c03, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8335556636416523472, guid: 508f5cc1de346704ea14cdb4a4fc3c03, type: 3}
       propertyPath: m_Name
       value: Watch Tower 1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8335556636416523472, guid: 508f5cc1de346704ea14cdb4a4fc3c03, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8335556636416523501, guid: 508f5cc1de346704ea14cdb4a4fc3c03, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8335556636416523501, guid: 508f5cc1de346704ea14cdb4a4fc3c03, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1577,6 +1601,10 @@ PrefabInstance:
     - target: {fileID: 7288574261806964178, guid: cc63fd654b1f2114791eceb5900ef46e, type: 3}
       propertyPath: m_Name
       value: Final Boss Phase 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288574261806964178, guid: cc63fd654b1f2114791eceb5900ef46e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

@@ -220,7 +220,6 @@ public class BaseEnemy : MonoBehaviour, IDamagable
 
             if(equalThreats.Count > 0)
             {
-                Debug.Log("Teest");
                 equalThreats.Add(highestThreat);
 
                 Transform closest = null;
