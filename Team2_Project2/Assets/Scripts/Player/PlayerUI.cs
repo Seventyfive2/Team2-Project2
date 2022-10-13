@@ -34,7 +34,7 @@ public class PlayerUI : MonoBehaviour
     {
         UpdateCoins();
 
-        notificationTextColor = notificationText.color;
+        notificationTextColor = Color.black;
         notificationText.transform.parent.gameObject.SetActive(false);
     }
 
