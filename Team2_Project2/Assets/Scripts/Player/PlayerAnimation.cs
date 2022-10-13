@@ -65,20 +65,24 @@ public class PlayerAnimation : MonoBehaviour
     #region Combat
     private void Combat_OnPlayerAttack(object sender, PlayerAttack.PlayerAttackEventArgs e)
     {
-        if(!e.secondary)
+        if(e.weapon.name == "Bow")
         {
-            //Primary Attack Animation
-            Debug.Log("playing " + attack + " with " + e.weapon);
-            animator.ResetTrigger("attack");
-            animator.SetTrigger("attack");
+            animator.ResetTrigger("bow attack");
+            animator.SetTrigger("bow attack");
         }
-        else
+        if (e.weapon.name == "AXE")
         {
-            //Secondary Attack Animation
-
-
+            animator.ResetTrigger("axe attack");
+            animator.SetTrigger("axe attack");
         }
-
+        if (e.weapon.name == "Sword")
+        {
+            animator.ResetTrigger("sword attack");
+            animator.SetTrigger("sword attack");
+        }
+        Debug.Log("playing " + attack + " with " + e.weapon);
+        animator.ResetTrigger("attack");
+        animator.SetTrigger("attack");
     }
     private void Combat_OnPlayerSpecial(object sender, PlayerAttack.PlayerSpecialEventArgs e)
     {
