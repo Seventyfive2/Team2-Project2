@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class SpawnAfterEnemies : MonoBehaviour
@@ -28,7 +26,7 @@ public class SpawnAfterEnemies : MonoBehaviour
                 WaveManager.instance.autoStart = true;
                 WaveManager.instance.SpawnIndex(0);
 
-                go = true;
+                go = false;
             }
 
             yield return new WaitForSeconds(.1f);
