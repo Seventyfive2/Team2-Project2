@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83987d41321c32d45a54d33c71d7a0cf, type: 3}
   m_Name: Speed Potion
   m_EditorClassIdentifier: 
-  cost: 20
+  cost: 2
   maxHeld: 5
   damage: 2
   range: 1

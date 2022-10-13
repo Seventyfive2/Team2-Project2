@@ -1565,8 +1565,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 38211274}
   m_HandleRect: {fileID: 38211273}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 1
+  m_Value: 0
+  m_Size: 0.9999784
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1778,7 +1778,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000034230023}
+  m_AnchoredPosition: {x: 0, y: 0.00014936546}
   m_SizeDelta: {x: 0, y: 450}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1042271549
@@ -2131,6 +2131,18 @@ PrefabInstance:
     - target: {fileID: 2843389110478187261, guid: f0ac7a6b3ac5f19428e86828be600a90, type: 3}
       propertyPath: levelIndex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2843389110478187261, guid: f0ac7a6b3ac5f19428e86828be600a90, type: 3}
+      propertyPath: attributes.Array.data[0].costToUpgrade
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2843389110478187261, guid: f0ac7a6b3ac5f19428e86828be600a90, type: 3}
+      propertyPath: attributes.Array.data[1].costToUpgrade
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2843389110478187261, guid: f0ac7a6b3ac5f19428e86828be600a90, type: 3}
+      propertyPath: attributes.Array.data[2].costToUpgrade
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9215032413861336976, guid: f0ac7a6b3ac5f19428e86828be600a90, type: 3}
       propertyPath: m_Name

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38c97d7a118bf8b45ba037f53e94f3cc, type: 3}
   m_Name: Shield
   m_EditorClassIdentifier: 
-  cost: 50
+  cost: 15
   cooldown: 10
   cooldownImage: {fileID: 21300000, guid: d4c97b4c6e8d32e4785f8202cf0e699f, type: 3}
   hitDetectionStyle: 1

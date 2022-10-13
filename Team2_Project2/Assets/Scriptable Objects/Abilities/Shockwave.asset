@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38c97d7a118bf8b45ba037f53e94f3cc, type: 3}
   m_Name: Shockwave
   m_EditorClassIdentifier: 
-  cost: 50
+  cost: 15
   cooldown: 10
   cooldownImage: {fileID: 21300000, guid: 679f6783e0fc6ff458c1fb87da3fbc3d, type: 3}
   hitDetectionStyle: 1

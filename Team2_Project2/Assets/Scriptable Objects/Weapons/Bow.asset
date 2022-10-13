@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bow
   m_EditorClassIdentifier: 
   weaponPrefab: {fileID: 3317823749142253822, guid: d4958227484245e4592c41ab2c02ad22, type: 3}
-  weaponCost: 20
+  weaponCost: 10
   primaryAttackStyle: 2
   primaryDamage: 2
   primaryRange: 1
