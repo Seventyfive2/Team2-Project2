@@ -179,7 +179,7 @@ Transform:
   - {fileID: 6693652901819909539}
   - {fileID: 268855279}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4639817824028251307
 MonoBehaviour:
@@ -256,6 +256,7 @@ MonoBehaviour:
   movement: {fileID: 6693652902418518196}
   swingModel: {fileID: 4469753961807371192, guid: a2d979b4df095184f89a18a972def7c2, type: 3}
   effectDuration: 0.1
+  heldWeapon: {fileID: 0}
   uiRefreshRate: 0.1
 --- !u!114 &6693652902418518200
 MonoBehaviour:
@@ -271,7 +272,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerDiedEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   movement: {fileID: 6693652902418518196}
 --- !u!143 &6693652902418518199
 CharacterController:

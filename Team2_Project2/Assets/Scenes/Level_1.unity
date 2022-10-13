@@ -934,6 +934,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 628371997}
   m_SourcePrefab: {fileID: 100100000, guid: 6ca58e4c1e8826b4da03291909150b16, type: 3}
+--- !u!1 &78743705 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2617074558880172957, guid: 441ae625bab0e5040bd28023b80ef30a, type: 3}
+  m_PrefabInstance: {fileID: 2617074559588091084}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &79177682
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6796,10 +6801,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6693652902418518201, guid: cbb03597b97a014419d7cdb7727e3745, type: 3}
-      propertyPath: weapon
+    - target: {fileID: 6693652902418518200, guid: cbb03597b97a014419d7cdb7727e3745, type: 3}
+      propertyPath: playerDiedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693652902418518200, guid: cbb03597b97a014419d7cdb7727e3745, type: 3}
+      propertyPath: playerDiedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 11400000, guid: 3d60a3b5290f8e04bbc4ef0b3acf6826, type: 2}
+      objectReference: {fileID: 78743705}
+    - target: {fileID: 6693652902418518200, guid: cbb03597b97a014419d7cdb7727e3745, type: 3}
+      propertyPath: playerDiedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693652902418518200, guid: cbb03597b97a014419d7cdb7727e3745, type: 3}
+      propertyPath: playerDiedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693652902418518200, guid: cbb03597b97a014419d7cdb7727e3745, type: 3}
+      propertyPath: playerDiedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693652902418518200, guid: cbb03597b97a014419d7cdb7727e3745, type: 3}
+      propertyPath: playerDiedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: cbb03597b97a014419d7cdb7727e3745, type: 3}
