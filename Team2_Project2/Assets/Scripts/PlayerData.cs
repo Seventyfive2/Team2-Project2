@@ -63,9 +63,10 @@ public class PlayerData : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    public void LevelEnded()
+    public void LevelEnded(int index)
     {
-        levelsCompleted++;
+        levelsCompleted = index;
+        Debug.Log(levelsCompleted);
     }
 
     public void OnLevelWasLoaded(int level)

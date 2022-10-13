@@ -55,7 +55,7 @@ public class Mimic : BaseEnemy
 
         attackIndex++;
         Debug.Log(attackIndex);
-        if(attackIndex <= 3)
+        if(attackIndex >= 3)
         {
             attackIndex = 0;
         }

@@ -5874,6 +5874,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 701371339}
     - target: {fileID: 3110170663442719214, guid: 13cc8f515ae4148459415aa149ca59f6, type: 3}
+      propertyPath: nextLevelIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110170663442719214, guid: 13cc8f515ae4148459415aa149ca59f6, type: 3}
       propertyPath: waveDetails.Array.size
       value: 4
       objectReference: {fileID: 0}

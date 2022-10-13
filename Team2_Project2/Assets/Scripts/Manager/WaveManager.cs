@@ -12,6 +12,8 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private WaveDetails[] waveDetails;
     public int waveIndex = 0;
 
+    public int nextLevelIndex = 0;
+
     public event EventHandler<WaveSpawnedEventArgs> OnWaveSpawned;
 
     public class WaveSpawnedEventArgs : EventArgs
@@ -111,7 +113,7 @@ public class WaveManager : MonoBehaviour
 
             if (PlayerData.instance != null)
             {
-                PlayerData.instance.LevelEnded();
+                PlayerData.instance.LevelEnded(nextLevelIndex);
             }
         }
         enemiesLeft--;
@@ -134,7 +136,7 @@ public class WaveManager : MonoBehaviour
 
                         if (PlayerData.instance != null)
                         {
-                            PlayerData.instance.LevelEnded();
+                            PlayerData.instance.LevelEnded(nextLevelIndex);
                         }
                     }
 
@@ -144,7 +146,7 @@ public class WaveManager : MonoBehaviour
 
                         if (PlayerData.instance != null)
                         {
-                            PlayerData.instance.LevelEnded();
+                            PlayerData.instance.LevelEnded(nextLevelIndex);
                         }
                     }
                 }
