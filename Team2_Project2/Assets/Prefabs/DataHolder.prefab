@@ -59,18 +59,18 @@ MonoBehaviour:
     upgradeAmt: 0
     maxUpgradeAmt: 5
     statIncreasePerLevel: 1
-    costToUpgrade: 25
+    costToUpgrade: 3
     shopSprite: {fileID: 0}
   - name: Damage
     upgradeAmt: 0
     maxUpgradeAmt: 5
     statIncreasePerLevel: 2
-    costToUpgrade: 25
+    costToUpgrade: 3
     shopSprite: {fileID: 0}
   - name: Speed
     upgradeAmt: 0
     maxUpgradeAmt: 5
     statIncreasePerLevel: 1
-    costToUpgrade: 25
+    costToUpgrade: 3
     shopSprite: {fileID: 0}
   buildingStatus: []
