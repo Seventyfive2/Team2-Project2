@@ -14,6 +14,10 @@ public class Beholder : BaseEnemy
 
     [SerializeField] private GameObject meleeWarning;
 
+    [Header("Animations")]
+    [SerializeField] private Animator beholdAnim;
+
+
     private void Start()
     {
         meleeWarning.transform.localScale = Vector3.one * meleeRange * 4;
@@ -35,6 +39,8 @@ public class Beholder : BaseEnemy
 
         if (Vector3.Distance(transform.position, pathfinding.GetTarget().position) > meleeRange)
         {
+            beholdAnim.SetBool("Attack", true);
+            
             Projectile projectileValues = Instantiate(GalaxyRandom.GetRandomFromList(projectiles), attackPos.position, attackPos.rotation).GetComponent<Projectile>();
             projectileValues.transform.position = attackPos.position;
             projectileValues.transform.rotation = attackPos.rotation;
@@ -42,6 +48,8 @@ public class Beholder : BaseEnemy
         }
         else
         {
+            beholdAnim.ResetTrigger("melee");
+            beholdAnim.SetTrigger("melee");
             ISetup setup = Instantiate(GalaxyRandom.GetRandomFromList(melee), transform.position, transform.rotation).GetComponent<ISetup>();
             setup.Setup(tag, meleeDamage, meleeRange, activate: true);
         }
