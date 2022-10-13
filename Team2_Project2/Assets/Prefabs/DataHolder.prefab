@@ -49,6 +49,7 @@ MonoBehaviour:
   currentAbility: {fileID: 0}
   levelsCompleted: 0
   selectedItem:
+    itemName: 
     item: {fileID: 0}
     amtHeld: 0
     maxAmt: 0
@@ -57,33 +58,19 @@ MonoBehaviour:
   - name: Health
     upgradeAmt: 0
     maxUpgradeAmt: 5
-    statIncreasePerLevel: 10
+    statIncreasePerLevel: 1
     costToUpgrade: 25
     shopSprite: {fileID: 0}
   - name: Damage
     upgradeAmt: 0
     maxUpgradeAmt: 5
-    statIncreasePerLevel: 5
+    statIncreasePerLevel: 2
     costToUpgrade: 25
     shopSprite: {fileID: 0}
   - name: Speed
     upgradeAmt: 0
     maxUpgradeAmt: 5
     statIncreasePerLevel: 1
-    costToUpgrade: 25
-    shopSprite: {fileID: 0}
-  damage:
-    name: 
-    upgradeAmt: 0
-    maxUpgradeAmt: 5
-    statIncreasePerLevel: 5
-    costToUpgrade: 25
-    shopSprite: {fileID: 0}
-  speed:
-    name: 
-    upgradeAmt: 0
-    maxUpgradeAmt: 5
-    statIncreasePerLevel: 5
     costToUpgrade: 25
     shopSprite: {fileID: 0}
   buildingStatus: []
