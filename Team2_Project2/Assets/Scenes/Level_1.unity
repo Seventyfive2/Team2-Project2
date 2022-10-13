@@ -6796,6 +6796,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6693652902418518200, guid: cbb03597b97a014419d7cdb7727e3745, type: 3}
+      propertyPath: playerDiedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2617074559588091085}
+    - target: {fileID: 6693652902418518200, guid: cbb03597b97a014419d7cdb7727e3745, type: 3}
+      propertyPath: playerDiedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: cbb03597b97a014419d7cdb7727e3745, type: 3}
@@ -21560,6 +21568,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 441ae625bab0e5040bd28023b80ef30a, type: 3}
+--- !u!1 &2617074559588091085 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2617074558880172957, guid: 441ae625bab0e5040bd28023b80ef30a, type: 3}
+  m_PrefabInstance: {fileID: 2617074559588091084}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7037437490952784234
 PrefabInstance:
   m_ObjectHideFlags: 0
