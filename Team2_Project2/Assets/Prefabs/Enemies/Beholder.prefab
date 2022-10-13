@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 3755351573313485732}
   - component: {fileID: 2018844271227292107}
   - component: {fileID: 4761216929867902639}
+  - component: {fileID: 426214794254491570}
   m_Layer: 0
   m_Name: Beholder
   m_TagString: Enemy
@@ -167,6 +168,27 @@ MonoBehaviour:
   meleeRange: 2.5
   meleeDamage: 2
   meleeWarning: {fileID: 5331720684246038402}
+  beholdAnim: {fileID: 426214794254491570}
+--- !u!95 &426214794254491570
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4339709073324179959}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 41168f2cb28cd9b42a90510cf32a0271, type: 3}
+  m_Controller: {fileID: 9100000, guid: da87119d9b38a8c43ba68ba3bc543378, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5331720684246038402
 GameObject:
   m_ObjectHideFlags: 0
