@@ -25,6 +25,7 @@ public class PlayerAnimation : MonoBehaviour
 
     void Start()
     {
+        //animator = GetComponent<Animator>();
         //Player Movement
         movement.OnPlayerMove += Movement_OnPlayerMove;
         //Player Combat
@@ -49,6 +50,8 @@ public class PlayerAnimation : MonoBehaviour
             case PlayerMovement.PlayerMoveEventArgs.moveDirection.Foward:
             default:
                 Debug.Log("playing " + moveFoward);
+                animator.ResetTrigger("move");
+                animator.SetTrigger("move");
                 break;
             case PlayerMovement.PlayerMoveEventArgs.moveDirection.Backward:
                 Debug.Log("playing " + moveBackward);
@@ -63,10 +66,14 @@ public class PlayerAnimation : MonoBehaviour
     private void Combat_OnPlayerAttack(object sender, PlayerAttack.PlayerAttackEventArgs e)
     {
         Debug.Log("playing " + attack + " with " + e.weapon);
+        animator.ResetTrigger("attack");
+        animator.SetTrigger("attack");
     }
     private void Combat_OnPlayerSpecial(object sender, PlayerAttack.PlayerSpecialEventArgs e)
     {
         Debug.Log("playing " + special + " with " + e.ability);
+        animator.ResetTrigger("special");
+        animator.SetTrigger("special");
     }
     private void Combat_OnPlayerItem(object sender, PlayerAttack.PlayerItemEventArgs e)
     {
