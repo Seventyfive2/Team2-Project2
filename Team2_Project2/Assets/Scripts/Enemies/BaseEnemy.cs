@@ -317,7 +317,7 @@ public class BaseEnemy : MonoBehaviour, IDamagable
             }
             if (WaveManager.instance != null)
             {
-                WaveManager.instance.EnemyDefeated();
+                WaveManager.instance.EnemyDefeated(gameObject);
             }
 
             pathfinding.GetAgent().ResetPath();
@@ -346,7 +346,7 @@ public class BaseEnemy : MonoBehaviour, IDamagable
     {
         Gizmos.DrawWireSphere(GetAttackPosition(), attackRange);
 
-        if(pathfinding.GetTargetPosition() != null)
+        if(pathfinding.GetTarget() != null)
         {
             Gizmos.color = Color.red;
             Gizmos.DrawRay(transform.position, pathfinding.GetTargetPosition());
