@@ -76,8 +76,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   origin: {fileID: 0}
   speed: 7
-  lifeTime: 5
+  lifeTime: 1.25
   rb: {fileID: 2425951846556365000}
+  landposition: {fileID: 0}
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!54 &2425951846556365000
 Rigidbody:
   m_ObjectHideFlags: 0

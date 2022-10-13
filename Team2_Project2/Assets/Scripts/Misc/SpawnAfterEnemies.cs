@@ -25,7 +25,7 @@ public class SpawnAfterEnemies : MonoBehaviour
             {
                 WaveManager.instance.autoStart = true;
                 WaveManager.instance.SpawnIndex(0);
-
+                WaveManager.instance.waveIndex++;
                 go = false;
             }
 
