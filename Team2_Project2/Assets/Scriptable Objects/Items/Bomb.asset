@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83987d41321c32d45a54d33c71d7a0cf, type: 3}
   m_Name: Bomb
   m_EditorClassIdentifier: 
-  cost: 20
+  cost: 5
   maxHeld: 2
   damage: 20
   range: 2.5
