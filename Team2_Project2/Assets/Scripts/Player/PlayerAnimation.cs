@@ -65,9 +65,20 @@ public class PlayerAnimation : MonoBehaviour
     #region Combat
     private void Combat_OnPlayerAttack(object sender, PlayerAttack.PlayerAttackEventArgs e)
     {
-        Debug.Log("playing " + attack + " with " + e.weapon);
-        animator.ResetTrigger("attack");
-        animator.SetTrigger("attack");
+        if(!e.secondary)
+        {
+            //Primary Attack Animation
+            Debug.Log("playing " + attack + " with " + e.weapon);
+            animator.ResetTrigger("attack");
+            animator.SetTrigger("attack");
+        }
+        else
+        {
+            //Secondary Attack Animation
+
+
+        }
+
     }
     private void Combat_OnPlayerSpecial(object sender, PlayerAttack.PlayerSpecialEventArgs e)
     {

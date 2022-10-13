@@ -37,10 +37,12 @@ public class PlayerAttack : MonoBehaviour
     public class PlayerAttackEventArgs : EventArgs
     {
         public WeaponSO weapon;
+        public bool secondary = true;
 
-        public PlayerAttackEventArgs(WeaponSO weapon)
+        public PlayerAttackEventArgs(WeaponSO weapon, bool secondary)
         {
             this.weapon = weapon;
+            this.secondary = secondary;
         }
     }
 
@@ -142,7 +144,7 @@ public class PlayerAttack : MonoBehaviour
                 }
                 else if (primaryCooldown <= 0 && weapon != null)
                 {
-                    DoAttack(weapon.primaryAttackStyle, GetBoostedDamage(weapon.primaryDamage), weapon.primaryRange, weapon.primaryProjectile);
+                    DoAttack(weapon.primaryAttackStyle, GetBoostedDamage(weapon.primaryDamage), weapon.primaryRange, weapon.primaryProjectile, false);
 
                     primaryCooldown = weapon.primaryAtkSpeed / 1;
                 }
@@ -156,7 +158,7 @@ public class PlayerAttack : MonoBehaviour
         {
             if (secondaryCooldown <= 0 && context.phase == InputActionPhase.Performed && weapon != null)
             {
-                DoAttack(weapon.secondaryAttackStyle, GetBoostedDamage(weapon.secondaryDamage), weapon.secondaryRange, weapon.secondaryProjectile);
+                DoAttack(weapon.secondaryAttackStyle, GetBoostedDamage(weapon.secondaryDamage), weapon.secondaryRange, weapon.secondaryProjectile, true);
 
                 secondaryCooldown = weapon.secondaryAtkSpeed / 1;
             }
@@ -251,7 +253,7 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    public void DoAttack(WeaponSO.AttackStyle style, int damage, float range, GameObject projectile = null)
+    public void DoAttack(WeaponSO.AttackStyle style, int damage, float range, GameObject projectile = null, bool isSecondary = false)
     {
         switch (style)
         {
@@ -300,7 +302,7 @@ public class PlayerAttack : MonoBehaviour
                 break;
         }
 
-        if (OnPlayerAttack != null) OnPlayerAttack(this, new PlayerAttackEventArgs(weapon));
+        if (OnPlayerAttack != null) OnPlayerAttack(this, new PlayerAttackEventArgs(weapon, isSecondary));
     }
 
     public void ChangeWeapon(WeaponSO newWeapon, out WeaponSO oldWeapon)

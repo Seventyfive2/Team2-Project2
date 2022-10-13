@@ -2971,6 +2971,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 2264601361210527270, guid: 9fd5407fc31f5be45b1d76ad0a1b91d2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6929745371635584424, guid: 9fd5407fc31f5be45b1d76ad0a1b91d2, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -3116,6 +3120,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 284409422}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &285536582 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6693652901819909539, guid: cbb03597b97a014419d7cdb7727e3745, type: 3}
+  m_PrefabInstance: {fileID: 2057832026}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &289546362
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6002,6 +6011,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3110170663442719213, guid: 13cc8f515ae4148459415aa149ca59f6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110170663442719214, guid: 13cc8f515ae4148459415aa149ca59f6, type: 3}
+      propertyPath: autoStart
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -12915,6 +12928,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1364439791}
+  - component: {fileID: 1364439792}
   m_Layer: 0
   m_Name: Enemememeys
   m_TagString: Untagged
@@ -12964,6 +12978,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1364439792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364439790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05da96d9b7712034c8a513dee34b1d7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  go: 1
 --- !u!4 &1375411498 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 365567047420307160, guid: afbe62810745fff4e83f26098cd5493e, type: 3}
@@ -16305,6 +16332,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2843389110478187261, guid: f0ac7a6b3ac5f19428e86828be600a90, type: 3}
+      propertyPath: attributes.Array.data[0].upgradeAmt
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 9215032413861336976, guid: f0ac7a6b3ac5f19428e86828be600a90, type: 3}
       propertyPath: m_Name
       value: DataHolder
@@ -18291,6 +18322,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4639817824028251307, guid: cbb03597b97a014419d7cdb7727e3745, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6693652902418518192, guid: cbb03597b97a014419d7cdb7727e3745, type: 3}
       propertyPath: m_Name
       value: Player
@@ -18339,6 +18374,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6693652902418518196, guid: cbb03597b97a014419d7cdb7727e3745, type: 3}
+      propertyPath: model
+      value: 
+      objectReference: {fileID: 285536582}
     - target: {fileID: 6693652902418518200, guid: cbb03597b97a014419d7cdb7727e3745, type: 3}
       propertyPath: playerDiedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
