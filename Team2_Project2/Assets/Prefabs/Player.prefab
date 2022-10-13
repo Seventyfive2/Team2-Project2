@@ -179,7 +179,7 @@ Transform:
   - {fileID: 6693652901819909539}
   - {fileID: 268855279}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4639817824028251307
 MonoBehaviour:
@@ -708,6 +708,14 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 5279fa686f4191f4a8685b8624e7d0fb, type: 2}
+    - target: {fileID: 13700002, guid: f293cd003cf71d6409af1c1025485f47, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a34ffd8251f52174b89ec7c4e3d78e21, type: 2}
+    - target: {fileID: 13700004, guid: f293cd003cf71d6409af1c1025485f47, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a34ffd8251f52174b89ec7c4e3d78e21, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 400082, guid: f293cd003cf71d6409af1c1025485f47, type: 3}
