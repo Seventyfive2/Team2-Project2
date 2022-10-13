@@ -139,6 +139,7 @@ MonoBehaviour:
   isSpecialEnemy: 1
   stateRefreshRate: 0.5
   targetRefreshRate: 0.5
+  isAlive: 1
   maxHealth: 50
   attackDamage: 2
   attackRange: 7
@@ -164,7 +165,7 @@ MonoBehaviour:
   - {fileID: 8795951393423490385, guid: a00d89587ab930744b1f1182d3737eaf, type: 3}
   attackPos: {fileID: 2749662427919949611}
   meleeRange: 2.5
-  meleeDamage: 10
+  meleeDamage: 2
   meleeWarning: {fileID: 5331720684246038402}
 --- !u!1 &5331720684246038402
 GameObject:
