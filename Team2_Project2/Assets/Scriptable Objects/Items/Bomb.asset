@@ -16,7 +16,7 @@ MonoBehaviour:
   maxHeld: 2
   damage: 20
   range: 2.5
-  uiImage: {fileID: 0}
+  uiImage: {fileID: 21300000, guid: ec2a11472889a374d853669284b3a58c, type: 3}
   gameObject: {fileID: 6564869033399343972, guid: 7ac3311b884f3b3499abe563e69f0d6e, type: 3}
   activationMethod: 1
   doesDamage: 1

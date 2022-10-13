@@ -94,6 +94,7 @@ MonoBehaviour:
   isSpecialEnemy: 1
   stateRefreshRate: 0.5
   targetRefreshRate: 0.5
+  isAlive: 1
   maxHealth: 30
   attackDamage: 2
   attackRange: 2
@@ -117,7 +118,7 @@ MonoBehaviour:
   chargeStartup: 1
   chargeRecovery: 0.5
   chargeDuration: 1
-  chargeSpeed: 5
+  chargeSpeed: 52222
 --- !u!54 &1416278482075351925
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -232,6 +232,7 @@ public class BaseEnemy : MonoBehaviour, IDamagable
                     if (distance < shortestDistance)
                     {
                         closest = equalThreats[i];
+                        shortestDistance = distance;
                     }
                 }
 
