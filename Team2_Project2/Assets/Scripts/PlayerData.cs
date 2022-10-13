@@ -68,7 +68,7 @@ public class PlayerData : MonoBehaviour
         levelsCompleted++;
     }
 
-    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    public void OnLevelWasLoaded(int level)
     {
         Time.timeScale = 1;
     }
