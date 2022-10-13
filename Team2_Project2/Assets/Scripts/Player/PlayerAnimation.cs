@@ -65,6 +65,21 @@ public class PlayerAnimation : MonoBehaviour
     #region Combat
     private void Combat_OnPlayerAttack(object sender, PlayerAttack.PlayerAttackEventArgs e)
     {
+        if(e.weapon.name == "Bow")
+        {
+            animator.ResetTrigger("bow attack");
+            animator.SetTrigger("bow attack");
+        }
+        if (e.weapon.name == "AXE")
+        {
+            animator.ResetTrigger("axe attack");
+            animator.SetTrigger("axe attack");
+        }
+        if (e.weapon.name == "Sword")
+        {
+            animator.ResetTrigger("sword attack");
+            animator.SetTrigger("sword attack");
+        }
         Debug.Log("playing " + attack + " with " + e.weapon);
         animator.ResetTrigger("attack");
         animator.SetTrigger("attack");
