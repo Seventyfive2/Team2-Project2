@@ -8,6 +8,7 @@ public class PlayerData : MonoBehaviour
 
     public int coins;
     [Header("Player Equipment")]
+    public WeaponSO defalutWeapon;
     public WeaponSO currentWeapon;
     public AbilitySO currentAbility;
 
@@ -92,7 +93,7 @@ public class PlayerData : MonoBehaviour
         coins = 0;
         levelsCompleted = 0;
 
-        currentWeapon = null;
+        currentWeapon = defalutWeapon;
         currentAbility = null;
         items.Clear();
         selectedItem = null;
