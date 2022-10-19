@@ -25,7 +25,7 @@ public class PlayerUI : MonoBehaviour
 
     [Header("Notification")]
     [SerializeField] private TMP_Text notificationText = null;
-    private Color notificationTextColor;
+    private Color notificationTextColor = Color.black;
 
     private Vector3 startVector;
     private Vector3 targetVector;
@@ -34,7 +34,7 @@ public class PlayerUI : MonoBehaviour
     {
         UpdateCoins();
 
-        notificationTextColor = Color.black;
+        notificationTextColor = notificationText.color;
         notificationText.transform.parent.gameObject.SetActive(false);
     }
 
