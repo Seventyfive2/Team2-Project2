@@ -23,6 +23,6 @@ MonoBehaviour:
   secondaryAttackStyle: 0
   secondaryDamage: 10
   secondaryRange: 2
-  secondaryAtkSpeed: 5
+  secondaryAtkSpeed: 6
   secondaryProjectile: {fileID: 0}
   secondaryCooldownImage: {fileID: 21300000, guid: e0b269b47012ca6459cc3b786518283a, type: 3}

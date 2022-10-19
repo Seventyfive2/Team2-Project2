@@ -17,12 +17,12 @@ MonoBehaviour:
   primaryAttackStyle: 2
   primaryDamage: 2
   primaryRange: 1
-  primaryAtkSpeed: 0.4
+  primaryAtkSpeed: 0.45
   primaryProjectile: {fileID: 5047748523163412243, guid: 61ae91f7ea1fbbd48bbfc1db2315a3c6, type: 3}
   primaryCooldownImage: {fileID: 21300000, guid: 495f2acae716e2f4e940980361b9ec65, type: 3}
   secondaryAttackStyle: 2
   secondaryDamage: 5
   secondaryRange: 15
-  secondaryAtkSpeed: 5
+  secondaryAtkSpeed: 4
   secondaryProjectile: {fileID: 6089667417269744202, guid: bb517250ffe0df74eaf64eb1c257540f, type: 3}
   secondaryCooldownImage: {fileID: 21300000, guid: d7a6438da55c29a43ababe9da7852a2d, type: 3}

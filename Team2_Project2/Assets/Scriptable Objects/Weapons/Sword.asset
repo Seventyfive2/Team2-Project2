@@ -15,14 +15,14 @@ MonoBehaviour:
   weaponPrefab: {fileID: 355312524381552382, guid: b84d7ca3927758646a65731cc107aa76, type: 3}
   weaponCost: 10
   primaryAttackStyle: 0
-  primaryDamage: 1
-  primaryRange: 1.5
-  primaryAtkSpeed: 0.2
+  primaryDamage: 2
+  primaryRange: 1
+  primaryAtkSpeed: 0.5
   primaryProjectile: {fileID: 0}
   primaryCooldownImage: {fileID: 21300000, guid: 2d4492d5924b5184fb865740a454dca5, type: 3}
   secondaryAttackStyle: 0
-  secondaryDamage: 3
+  secondaryDamage: 7
   secondaryRange: 2
-  secondaryAtkSpeed: 3
+  secondaryAtkSpeed: 5
   secondaryProjectile: {fileID: 0}
   secondaryCooldownImage: {fileID: 21300000, guid: ba3e738c8cc1e834e9f0e18567107fc2, type: 3}

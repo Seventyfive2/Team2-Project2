@@ -106,6 +106,7 @@ MonoBehaviour:
   isSpecialEnemy: 1
   stateRefreshRate: 0.5
   targetRefreshRate: 0.5
+  isAlive: 1
   maxHealth: 20
   attackDamage: 2
   attackRange: 1
@@ -123,7 +124,7 @@ MonoBehaviour:
   deathAnimLength: 1.67
   pathfinding: {fileID: 8026539220803201125}
   warning: {fileID: 0}
-  nbrOfCoins: 10
+  nbrOfCoins: 7
   nbrOfItems: 3
 --- !u!1001 &1951913061904217858
 PrefabInstance:
