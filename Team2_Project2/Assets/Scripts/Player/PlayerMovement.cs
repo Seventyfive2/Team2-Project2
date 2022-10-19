@@ -32,14 +32,21 @@ public class PlayerMovement : MonoBehaviour
 
     public event EventHandler<PlayerMoveEventArgs> OnPlayerMove;
 
+    public TMPro.TMP_Text debugText;
+
+    public enum MoveDirection { Idle, Foward, Backward, Right, Left }
+    public MoveDirection curDirection;
+
     public class PlayerMoveEventArgs : EventArgs
     {
-        public enum moveDirection { Foward, Backward, Sideways }
-        public moveDirection curDirection;
+        public Vector2 moveDirection;
+        public MoveDirection curDirection;
 
-        public PlayerMoveEventArgs(Vector2 direction)
+        public PlayerMoveEventArgs(Vector2 input, MoveDirection dir)
         {
-            
+            moveDirection = input;
+
+            curDirection = dir;
         }
     }
 
@@ -128,10 +135,79 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isControllable)
         {
+            Vector3 lastPostion = transform.position;
+
             controller.Move(moveInput * speed * Time.deltaTime + new Vector3(0.0f, velocity.y, 0.0f));
 
+            Vector2 faceDirection = new Vector2(model.forward.z, model.forward.x);
+
+            Vector3 dir = (transform.position - lastPostion)*10;
+
             Vector2 moveDirection = Vector2.zero;
-            if (OnPlayerMove != null) OnPlayerMove(this, new PlayerMoveEventArgs(moveDirection));
+
+            float temp = faceDirection.x + faceDirection.y;
+
+            if(temp > 0)
+            {
+                if (faceDirection.x > faceDirection.y)
+                {
+                    //North
+                    moveDirection = new Vector2(dir.z, dir.x);
+                }
+                else if (faceDirection.x < faceDirection.y)
+                {
+                    //East
+                    moveDirection = new Vector2(dir.x, dir.z);
+                }
+            }
+            else if(temp < 0)
+            {
+                if (faceDirection.x > faceDirection.y)
+                {
+                    //South
+                    moveDirection = new Vector2(dir.x, dir.z) * -1;
+                }
+                else if (faceDirection.x < faceDirection.y)
+                {
+                    //West
+                    moveDirection = new Vector2(dir.z, dir.x) * -1;
+                }
+            }
+
+            #region temp
+            if (moveDirection.magnitude <= 0)
+            {
+                curDirection = MoveDirection.Idle;
+            }
+            if (moveDirection.x > 0 && moveDirection.y == 0)
+            {
+                curDirection = MoveDirection.Foward;
+            }
+            if (moveDirection.x < 0 && moveDirection.y == 0)
+            {
+                curDirection = MoveDirection.Backward;
+            }
+            if (moveDirection.x == 0 && moveDirection.y < 0)
+            {
+                curDirection = MoveDirection.Left;
+            }
+            if(moveDirection.x == 0 && moveDirection.y > 0)
+            {
+                curDirection = MoveDirection.Right;
+            }
+            #endregion
+
+            DebugText(curDirection + "\nMove Direction:" + moveDirection + "\nFacing Direction:" + faceDirection + "\nTest: " + (faceDirection.x + faceDirection.y));
+
+            if (OnPlayerMove != null) OnPlayerMove(this, new PlayerMoveEventArgs(moveDirection, curDirection));
+        }
+    }
+
+    public void DebugText(string text)
+    {
+        if (debugText != null)
+        {
+            debugText.text = text;
         }
     }
 

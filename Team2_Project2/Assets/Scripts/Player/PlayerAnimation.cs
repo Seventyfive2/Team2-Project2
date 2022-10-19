@@ -7,6 +7,7 @@ public class PlayerAnimation : MonoBehaviour
     [SerializeField] private Animator animator;
 
     [Header("Animation Names")]
+    [SerializeField] private string Idle;
     [SerializeField] private string moveFoward;
     [SerializeField] private string moveBackward;
     [SerializeField] private string moveSideways;
@@ -47,16 +48,20 @@ public class PlayerAnimation : MonoBehaviour
     {
         switch (e.curDirection)
         {
-            case PlayerMovement.PlayerMoveEventArgs.moveDirection.Foward:
+            case PlayerMovement.MoveDirection.Idle:
             default:
+                Debug.Log("playing " + Idle);
+                break;
+            case PlayerMovement.MoveDirection.Foward:
                 Debug.Log("playing " + moveFoward);
                 animator.ResetTrigger("move");
                 animator.SetTrigger("move");
                 break;
-            case PlayerMovement.PlayerMoveEventArgs.moveDirection.Backward:
+            case PlayerMovement.MoveDirection.Backward:
                 Debug.Log("playing " + moveBackward);
                 break;
-            case PlayerMovement.PlayerMoveEventArgs.moveDirection.Sideways:
+            case PlayerMovement.MoveDirection.Right:
+            case PlayerMovement.MoveDirection.Left:
                 Debug.Log("playing " + moveSideways);
                 break;
         }
