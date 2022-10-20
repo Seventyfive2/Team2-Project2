@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class BaseBuilding : MonoBehaviour, IDamagable
@@ -22,6 +23,9 @@ public class BaseBuilding : MonoBehaviour, IDamagable
     [SerializeField] private new Collider collider;
     [SerializeField] private NavMeshObstacle obstacle;
 
+    public UnityEvent damaged;
+    public UnityEvent destroyed;
+
     public virtual void Start()
     {
         buildingTextName.text = buildingName;
@@ -32,7 +36,7 @@ public class BaseBuilding : MonoBehaviour, IDamagable
         healthSystem.OnHealthChanged += HealthSystem_OnHealthChanged;
         healthSlider.value = healthSystem.GetHealthPercent();
 
-        FindBuildingStatus();
+        //FindBuildingStatus();
 
         if(buildingData != null)
         {
@@ -59,6 +63,10 @@ public class BaseBuilding : MonoBehaviour, IDamagable
     public void TakeDamage(int damage)
     {
         healthSystem.Damage(damage);
+        if(damaged!= null)
+        {
+            damaged.Invoke();
+        }
     }
 
     private void HealthSystem_OnHealthChanged(object sender, System.EventArgs e)
@@ -72,6 +80,11 @@ public class BaseBuilding : MonoBehaviour, IDamagable
         model.SetActive(false);
         obstacle.enabled = false;
         collider.enabled = false;
+
+        if(destroyed != null)
+        {
+            destroyed.Invoke();
+        }
     }
 
     public void FindBuildingStatus()

@@ -49,7 +49,7 @@ public class Mimic : BaseEnemy
                 break;
             case 2:
                 //Teleport
-                transform.position = GetRandomPositionAround(pathfinding.GetTargetPosition(), 2f);
+                transform.position = GetRandomPositionAround(pathfinding.GetTargetPosition(), 5f);
                 GetAttackSpeed();
                 break;
         }
