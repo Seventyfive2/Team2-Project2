@@ -33,6 +33,7 @@ public class PauseResume : MonoBehaviour
     }
     public void ResumeGame()
     {
+        Debug.Log("l");
         GamePaused = false;
         PauseScreen.SetActive(false);
         Time.timeScale = 1;

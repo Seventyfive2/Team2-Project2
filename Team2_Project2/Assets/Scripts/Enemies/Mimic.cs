@@ -18,9 +18,13 @@ public class Mimic : BaseEnemy
 
     private int attackIndex = 0;
 
+    public GameObject endScreen;
+
     public void Start()
     {
         defaultAttackRange = attackRange;
+
+        endScreen = GameObject.Find("Menu Canvas");
     }
 
     public override void Attack()
@@ -98,5 +102,11 @@ public class Mimic : BaseEnemy
         }
 
         return new Vector3(center.x + xOffset, center.y, center.z + zOffset);
+    }
+
+    public override void HealthSystem_OnDeath(object sender, System.EventArgs e)
+    {
+        base.HealthSystem_OnDeath(sender, e);
+        endScreen.SetActive(true);
     }
 }
