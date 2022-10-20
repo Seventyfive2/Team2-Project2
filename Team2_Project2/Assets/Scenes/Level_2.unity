@@ -9026,6 +9026,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 355312525403409050, guid: cbb03597b97a014419d7cdb7727e3745, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6693652902418518192, guid: cbb03597b97a014419d7cdb7727e3745, type: 3}
       propertyPath: m_Name
       value: Player
@@ -9086,6 +9090,10 @@ PrefabInstance:
       propertyPath: weapon
       value: 
       objectReference: {fileID: 11400000, guid: 532539f3de7abc04da44fa13f2420035, type: 2}
+    - target: {fileID: 8203073567138316339, guid: cbb03597b97a014419d7cdb7727e3745, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: cbb03597b97a014419d7cdb7727e3745, type: 3}
@@ -10662,10 +10670,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Menu Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 2617074560367833142, guid: 441ae625bab0e5040bd28023b80ef30a, type: 3}
-      propertyPath: deathMenu
-      value: 
-      objectReference: {fileID: 1402839778}
     m_RemovedComponents: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2617074560367833138, guid: 441ae625bab0e5040bd28023b80ef30a, type: 3}
