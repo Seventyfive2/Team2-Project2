@@ -3,9 +3,9 @@ using UnityEngine;
 public class AOEEffect : MonoBehaviour, ISetup
 {
     [HideInInspector] public int damage;
-    [SerializeField] private float range = 2.5f;
+    [HideInInspector] public float range = 2.5f;
 
-    public void Activate()
+    public virtual void Activate()
     {
         Collider[] targets = Physics.OverlapSphere(transform.position, range);
         if (targets.Length != 0)

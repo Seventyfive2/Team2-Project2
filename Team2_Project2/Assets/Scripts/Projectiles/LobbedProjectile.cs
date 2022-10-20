@@ -28,7 +28,7 @@ public class LobbedProjectile : MonoBehaviour
         }
         else
         {
-            Activate(startingPosition, endingPosition);
+            Activate(transform.position, endingPosition);
         }
     }
 

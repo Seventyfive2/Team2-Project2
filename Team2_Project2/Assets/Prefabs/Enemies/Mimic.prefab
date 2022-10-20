@@ -36,7 +36,7 @@ Transform:
   - {fileID: 1879701180346815463}
   - {fileID: 3574081870402316364}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!136 &1879701180572674289
 CapsuleCollider:
@@ -126,16 +126,24 @@ MonoBehaviour:
   deathAnimLength: 1.67
   pathfinding: {fileID: 1879701180572674291}
   warning: {fileID: 0}
-  tacticChangeTime: 1.5
+  velocity: {x: 0, y: 0, z: 0}
+  gravity: -9.81
+  fallMultiplier: 1.5
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 8
+  feetPos: {fileID: 3574081870402316364}
+  groundCheckRadius: 0.4
+  spawnAttackRange: 3
+  spawnArea: 3
   spawnCount: 5
   layersToBlockClipping:
     serializedVersion: 2
     m_Bits: 2147483647
-  eneimes:
-  - weight: 1
-    returnValue: {fileID: 1090219386143568, guid: a817c29ea6847604bb2c6c51d9a74bf1, type: 3}
-  - weight: 9
-    returnValue: {fileID: 1975194375736644, guid: 128a80094e00bf34fa2555766a7eea0e, type: 3}
+  enemyEgg: {fileID: 7545919449711975777, guid: 2abf9899d667611428c10fd58bf763e1, type: 3}
+  teleportAttackRange: 10
+  teleportMaxDistance: 7
+  teleportMinDistance: 3
 --- !u!95 &154952693532886939
 Animator:
   serializedVersion: 4
