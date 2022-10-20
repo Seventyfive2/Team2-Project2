@@ -35,7 +35,7 @@ Transform:
   - {fileID: 8276518068925816521}
   - {fileID: 5928450722989431008}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!136 &8276518069119100383
 CapsuleCollider:
@@ -85,6 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102ea1c0e19a98a4abd7c82c641079ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
   canMove: 1
   runFromPlayer: 1
   didtanceToRun: 7
@@ -124,6 +125,14 @@ MonoBehaviour:
   deathAnimLength: 1.67
   pathfinding: {fileID: 8276518069119100381}
   warning: {fileID: 0}
+  velocity: {x: 0, y: 0, z: 0}
+  gravity: -9.81
+  fallMultiplier: 1.5
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 8
+  feetPos: {fileID: 8276518069119100382}
+  groundCheckRadius: 0.4
   nbrOfCoins: 10
   nbrOfItems: 3
   tacticChangeTime: 1.5

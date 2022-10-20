@@ -85,6 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102ea1c0e19a98a4abd7c82c641079ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
   canMove: 1
   runFromPlayer: 1
   didtanceToRun: 7
@@ -123,7 +124,15 @@ MonoBehaviour:
   deathParameter: Dead
   deathAnimLength: 1.67
   pathfinding: {fileID: 8026539220803201125}
-  warning: {fileID: 0}
+  warning: {fileID: 6829400544549702586}
+  velocity: {x: 0, y: 0, z: 0}
+  gravity: -9.81
+  fallMultiplier: 1.5
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 8
+  feetPos: {fileID: 6829400544549345242}
+  groundCheckRadius: 0.4
   nbrOfCoins: 7
   nbrOfItems: 3
 --- !u!1001 &1951913061904217858
@@ -193,6 +202,11 @@ Animator:
 --- !u!4 &6829400544549345242 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5030645071562137816, guid: 379cfb6848589a948b84691a4df3bed9, type: 3}
+  m_PrefabInstance: {fileID: 1951913061904217858}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6829400544549702586 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5030645071561653432, guid: 379cfb6848589a948b84691a4df3bed9, type: 3}
   m_PrefabInstance: {fileID: 1951913061904217858}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3645162895947315098

@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102ea1c0e19a98a4abd7c82c641079ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
   canMove: 1
   runFromPlayer: 0
   didtanceToRun: 4
@@ -158,6 +159,14 @@ MonoBehaviour:
   deathAnimLength: 1.67
   pathfinding: {fileID: 2018844271227292107}
   warning: {fileID: 5331720684246038402}
+  velocity: {x: 0, y: 0, z: 0}
+  gravity: -9.81
+  fallMultiplier: 1.5
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 8
+  feetPos: {fileID: 7812085247792643837}
+  groundCheckRadius: 0.4
   projectiles:
   - {fileID: 2713197397289134470, guid: 21614baed533c194788c45a84734d6c0, type: 3}
   - {fileID: 3250977957859116897, guid: bc895b8161297e2418c7a4f4675a6e24, type: 3}

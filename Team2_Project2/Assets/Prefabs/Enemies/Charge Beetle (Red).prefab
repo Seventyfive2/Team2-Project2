@@ -73,6 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102ea1c0e19a98a4abd7c82c641079ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy: {fileID: 0}
   canMove: 1
   runFromPlayer: 0
   didtanceToRun: 4
@@ -112,6 +113,14 @@ MonoBehaviour:
   deathAnimLength: 1.67
   pathfinding: {fileID: 8399656083028395980}
   warning: {fileID: 8799608995694636495}
+  velocity: {x: 0, y: 0, z: 0}
+  gravity: -9.81
+  fallMultiplier: 1.5
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 8
+  feetPos: {fileID: 3723185025063224839}
+  groundCheckRadius: 0.4
   rb: {fileID: 1416278482075351925}
   targetPosition: {x: 0, y: 0, z: 0}
   direction: {x: 0, y: 0, z: 0}
@@ -119,6 +128,7 @@ MonoBehaviour:
   chargeRecovery: 0.5
   chargeDuration: 1
   chargeSpeed: 52222
+  chargeDecel: 2.5
 --- !u!54 &1416278482075351925
 Rigidbody:
   m_ObjectHideFlags: 0
