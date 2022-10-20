@@ -24,7 +24,7 @@ public class Mimic : BaseEnemy
     {
         defaultAttackRange = attackRange;
 
-        endScreen = GameObject.Find("Menu Canvas");
+        endScreen = GameObject.Find("End Screne");
     }
 
     public override void Attack()

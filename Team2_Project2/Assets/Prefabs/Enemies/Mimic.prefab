@@ -89,7 +89,7 @@ MonoBehaviour:
   enemy: {fileID: 0}
   canMove: 1
   runFromPlayer: 0
-  didtanceToRun: 4
+  distanceToRun: 4
   target: {fileID: 0}
   agent: {fileID: 1879701180572674290}
 --- !u!114 &1879701180572674295
@@ -109,9 +109,9 @@ MonoBehaviour:
   stateRefreshRate: 0.5
   targetRefreshRate: 0.5
   isAlive: 1
-  maxHealth: 100
+  maxHealth: 65
   attackDamage: 1
-  attackRange: 2
+  attackRange: 1
   attackSpeed: 2
   attackTime: 0
   prioritizeBuilding: 0
@@ -144,6 +144,7 @@ MonoBehaviour:
   teleportAttackRange: 10
   teleportMaxDistance: 7
   teleportMinDistance: 3
+  endScreen: {fileID: 0}
 --- !u!95 &154952693532886939
 Animator:
   serializedVersion: 4
