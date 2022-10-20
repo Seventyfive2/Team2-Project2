@@ -7,7 +7,7 @@ public class EnemyMovement : MonoBehaviour
     public bool canMove = true;
 
     public bool runFromPlayer;
-    [SerializeField] private float didtanceToRun = 4f;
+    [SerializeField] private float distanceToRun = 4f;
 
     [SerializeField] private Transform target;
     [SerializeField] private NavMeshAgent agent;
@@ -19,17 +19,17 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-        if (enemy.GetEnemyState() == BaseEnemy.State.Moving && target != null && canMove && !agent.hasPath)
+        if (enemy.GetEnemyState() == BaseEnemy.State.Moving && target != null && canMove)
         {
-            if (!runFromPlayer)
+            if (!runFromPlayer && GetDistanceFromDes() > 1.0f)
             {
                 agent.destination = GetRandomPositionAround(target.position, 1f);
             }
-            else
+            else if(runFromPlayer && GetDistanceFromDes() < distanceToRun)
             {
                 float distance = Vector3.Distance(transform.position, target.position);
 
-                if (distance < didtanceToRun)
+                if (distance < distanceToRun)
                 {
                     Vector3 dirToPlayer = transform.position - target.position;
 
@@ -67,6 +67,11 @@ public class EnemyMovement : MonoBehaviour
     public Vector3 GetAgentDestination()
     {
         return agent.destination;
+    }
+
+    public float GetDistanceFromDes()
+    {
+        return Vector3.Distance(agent.destination, target.position);
     }
 
     public NavMeshAgent GetAgent()

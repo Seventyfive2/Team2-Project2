@@ -44,7 +44,11 @@ public class MusicPlayer : MonoBehaviour
 
     public AudioClip GetRandomAudioClip()
     {
-        return musicList[Random.Range(0, musicList.Length)];
+        if(musicList.Length > 0)
+        {
+            return musicList[Random.Range(0, musicList.Length)];
+        }
+        return null;
     }
 
     public void SetAudioClip(int index)
