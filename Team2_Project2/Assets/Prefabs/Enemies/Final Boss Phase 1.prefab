@@ -104,13 +104,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f20a537b51805594f94c0264c7fde528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyName: Treassure Mob
+  enemyName: Looty Booty
   isSpecialEnemy: 1
   stateRefreshRate: 0.5
   targetRefreshRate: 0.5
   isAlive: 1
   maxHealth: 100
-  attackDamage: 2
+  attackDamage: 1
   attackRange: 1
   attackSpeed: 2
   attackTime: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
   nbrOfCoins: 10
   nbrOfItems: 3
   tacticChangeTime: 1.5
-  secondPhase: {fileID: 0}
+  secondPhase: {fileID: 1879701180572675852, guid: 180577b85e060004690a529d2113deb0, type: 3}
 --- !u!1001 &2143686692473169777
 PrefabInstance:
   m_ObjectHideFlags: 0
