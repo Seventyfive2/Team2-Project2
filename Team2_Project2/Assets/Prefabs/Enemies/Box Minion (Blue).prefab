@@ -89,8 +89,8 @@ MonoBehaviour:
   enemy: {fileID: 0}
   canMove: 1
   runFromPlayer: 0
-  didtanceToRun: 4
-  target: {fileID: 4400498677366172882}
+  distanceToRun: 4
+  target: {fileID: 0}
   agent: {fileID: 5847963764061696890}
 --- !u!114 &5847963764061696895
 MonoBehaviour:

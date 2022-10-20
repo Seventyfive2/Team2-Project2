@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Movement values")]
     [SerializeField] private float speed = 7f;
+    private float speedInc;
+    private float speedTime;
 
     //Input Holder
     public enum InputDevice { Keyboard, Gamepad }
@@ -82,6 +84,10 @@ public class PlayerMovement : MonoBehaviour
         {
             cam = Camera.main;
         }
+
+        PlayerAttribute playerSpeed = PlayerData.instance.GetAttribute("Speed");
+
+        speed += playerSpeed.GetStatIncrease();
     }
 
     private void Update()
@@ -129,6 +135,16 @@ public class PlayerMovement : MonoBehaviour
         {
             velocity.y += gravity * (fallMultiplier - 1) * Time.deltaTime;
         }
+
+        if(speedTime > 0)
+        {
+            speedTime -= Time.deltaTime;
+        }
+        else
+        {
+            speedInc = 0;
+            speedTime = 0;
+        }
     }
 
     void FixedUpdate()
@@ -137,7 +153,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector3 lastPostion = transform.position;
 
-            controller.Move(moveInput * speed * Time.deltaTime + new Vector3(0.0f, velocity.y, 0.0f));
+            controller.Move(moveInput * (speed + speedInc) * Time.deltaTime + new Vector3(0.0f, velocity.y, 0.0f));
 
             Vector2 faceDirection = new Vector2(model.forward.z, model.forward.x);
 
@@ -210,6 +226,12 @@ public class PlayerMovement : MonoBehaviour
         {
             debugText.text = text;
         }
+    }
+
+    public void SpeedBoost(float amt, float time)
+    {
+        speedInc = amt;
+        speedTime = time;
     }
 
     private void OnDrawGizmos()

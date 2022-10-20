@@ -34,5 +34,9 @@ public class TreasureBoss : TreasureMob
         }
     }
 
-
+    public override void HealthSystem_OnDeath(object sender, System.EventArgs e)
+    {
+        Instantiate(secondPhase, transform.position, Quaternion.identity);
+        base.HealthSystem_OnDeath(sender, e);
+    }
 }

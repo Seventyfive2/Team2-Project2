@@ -109,9 +109,9 @@ MonoBehaviour:
   stateRefreshRate: 0.5
   targetRefreshRate: 0.5
   isAlive: 1
-  maxHealth: 120
-  attackDamage: 2
-  attackRange: 1
+  maxHealth: 100
+  attackDamage: 1
+  attackRange: 2
   attackSpeed: 2
   attackTime: 0
   prioritizeBuilding: 0

@@ -72,7 +72,7 @@ public class ShopManager : MonoBehaviour
             case 3:
                 for (int i = 0; i < playerData.attributes.Length; i++)
                 {
-                    CreateUpgradeEntry(playerData.attributes[i].shopSprite, playerData.attributes[i].name, playerData.attributes[i].costToUpgrade, playerData.attributes[i]);
+                    CreateUpgradeEntry(playerData.attributes[i].shopSprite, playerData.attributes[i].name, playerData.attributes[i].GetCost(), playerData.attributes[i]);
                 }
                 break;
             case 4:
@@ -215,10 +215,10 @@ public class ShopManager : MonoBehaviour
 
     public void BuyUpgrade(PlayerAttribute attribute)
     {
-        if(playerData.coins >= attribute.costToUpgrade && attribute.upgradeAmt < attribute.maxUpgradeAmt)
+        if(playerData.coins >= attribute.GetCost() && attribute.upgradeAmt < attribute.maxUpgradeAmt)
         {
+            playerData.coins -= attribute.GetCost();
             attribute.upgradeAmt++;
-            playerData.coins -= attribute.costToUpgrade;
             CoinsChanged();
             ShowTab(3);
         }

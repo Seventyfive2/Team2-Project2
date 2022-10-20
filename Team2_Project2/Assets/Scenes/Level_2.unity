@@ -3070,7 +3070,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &415408292
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12553,7 +12553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPoint: {fileID: 678074597}
-  cartSpeed: 10
+  cartSpeed: 1.5
   stopDistance: 1
   damageWait: 2.5
   checkpos: {fileID: 1801205715}
@@ -12643,22 +12643,6 @@ MonoBehaviour:
   threatLevel: 8
   priorityIncrease: 15
   isBuilding: 1
---- !u!54 &1606947778
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1606947770}
-  serializedVersion: 2
-  m_Mass: 1000
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 58
-  m_CollisionDetection: 0
 --- !u!1001 &1632375200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16006,6 +15990,10 @@ PrefabInstance:
     - target: {fileID: 6677800893096610614, guid: 3b774b376e8083d478c3a82e434b537b, type: 3}
       propertyPath: m_Name
       value: CartGrown
+      objectReference: {fileID: 0}
+    - target: {fileID: 6677800893096610614, guid: 3b774b376e8083d478c3a82e434b537b, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
