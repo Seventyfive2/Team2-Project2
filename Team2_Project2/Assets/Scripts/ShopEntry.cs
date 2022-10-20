@@ -26,5 +26,10 @@ public class ShopEntry : MonoBehaviour
         {
             slider.gameObject.SetActive(true);
         }
+
+        if(itemImage.sprite == null)
+        {
+            itemImage.enabled = false;
+        }
     }
 }

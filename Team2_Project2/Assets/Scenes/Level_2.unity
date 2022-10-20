@@ -15991,6 +15991,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CartGrown
       objectReference: {fileID: 0}
+    - target: {fileID: 6677800893096610614, guid: 3b774b376e8083d478c3a82e434b537b, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6334172296172736908, guid: 3b774b376e8083d478c3a82e434b537b, type: 3}
