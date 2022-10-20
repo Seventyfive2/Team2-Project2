@@ -3229,6 +3229,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 5220034969276190195, guid: 9fd5407fc31f5be45b1d76ad0a1b91d2, type: 3}
+      propertyPath: randomMusicOnStartup
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6929745371635584424, guid: 9fd5407fc31f5be45b1d76ad0a1b91d2, type: 3}
       propertyPath: m_RootOrder
       value: 24
@@ -20779,6 +20783,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 355312525403409050, guid: cbb03597b97a014419d7cdb7727e3745, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6693652902418518192, guid: cbb03597b97a014419d7cdb7727e3745, type: 3}
       propertyPath: m_Name
       value: Player
@@ -20838,7 +20846,11 @@ PrefabInstance:
     - target: {fileID: 6693652902418518201, guid: cbb03597b97a014419d7cdb7727e3745, type: 3}
       propertyPath: weapon
       value: 
-      objectReference: {fileID: 11400000, guid: 532539f3de7abc04da44fa13f2420035, type: 2}
+      objectReference: {fileID: 11400000, guid: 3d60a3b5290f8e04bbc4ef0b3acf6826, type: 2}
+    - target: {fileID: 8203073567138316339, guid: cbb03597b97a014419d7cdb7727e3745, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: cbb03597b97a014419d7cdb7727e3745, type: 3}
