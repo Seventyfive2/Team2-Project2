@@ -3070,7 +3070,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &415408292
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12553,7 +12553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPoint: {fileID: 678074597}
-  cartSpeed: 10
+  cartSpeed: 1.5
   stopDistance: 1
   damageWait: 2.5
   checkpos: {fileID: 1801205715}
