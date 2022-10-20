@@ -15475,6 +15475,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2617074559105288030, guid: 441ae625bab0e5040bd28023b80ef30a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2617074559222041730, guid: 441ae625bab0e5040bd28023b80ef30a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2617074560367833138, guid: 441ae625bab0e5040bd28023b80ef30a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -15563,6 +15571,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Menu Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2617074560367833142, guid: 441ae625bab0e5040bd28023b80ef30a, type: 3}
+      propertyPath: deathMenu
+      value: 
+      objectReference: {fileID: 883761467}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 441ae625bab0e5040bd28023b80ef30a, type: 3}
