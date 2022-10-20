@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform attackParent = null;
     [SerializeField] private Camera cam = null;
 
-    Vector3 velocity;
+    [SerializeField] Vector3 velocity;
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private float fallMultiplier = 1.5f;
     private bool isGrounded;
@@ -216,5 +216,6 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.color = Color.red;
         //Gizmos.DrawRay(model.position, aimInput);
         //Gizmos.DrawWireSphere(aimInput, .5f);
+        Gizmos.DrawWireSphere(feetPos.position, groundCheckRadius);
     }
 }

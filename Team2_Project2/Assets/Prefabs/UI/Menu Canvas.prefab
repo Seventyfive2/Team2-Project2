@@ -1981,6 +1981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f91103fd5c85e445beb36b844c7e6ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathMenu: {fileID: 0}
 --- !u!114 &2617074560367833141
 MonoBehaviour:
   m_ObjectHideFlags: 0

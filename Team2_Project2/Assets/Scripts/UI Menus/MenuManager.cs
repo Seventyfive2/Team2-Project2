@@ -7,6 +7,8 @@ public class MenuManager: MonoBehaviour
 {
     //public AudioSource clickNoise;
 
+    public GameObject deathMenu;
+
     public void OnPlayButtonClick()
     {
         //ButtonClick();
@@ -46,17 +48,15 @@ public class MenuManager: MonoBehaviour
     }
     public void OnRestartButtonClick()
     {
+        Time.timeScale = 1;
         //ButtonClick();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-      
-
     }
-    public void OnLoseRestartButtonClick()
+
+    public void PlayerLose()
     {
-        //ButtonClick();
-        SceneManager.LoadScene("Level3");
-
-
+        deathMenu.SetActive(true);
+        Time.timeScale = 0;
     }
 
     /*private void ButtonClick()

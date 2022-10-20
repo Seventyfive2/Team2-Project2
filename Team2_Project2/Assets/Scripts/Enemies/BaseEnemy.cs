@@ -14,7 +14,7 @@ public class BaseEnemy : MonoBehaviour, IDamagable
     [SerializeField] private float stateRefreshRate = .5f;
     [SerializeField] private float targetRefreshRate = .5f;
 
-    public enum State { Idle, Moving, Attacking }
+    public enum State { Idle, Moving, Attacking, NeedAgent }
     private State currentState = State.Idle;
     [HideInInspector] public bool isAlive = true;
 
@@ -215,7 +215,7 @@ public class BaseEnemy : MonoBehaviour, IDamagable
             }
             else
             {
-                highestThreat = GameObject.Find("PLayer").transform;
+                highestThreat = GameObject.Find("Player").transform;
             }
 
             if(equalThreats.Count > 0)
