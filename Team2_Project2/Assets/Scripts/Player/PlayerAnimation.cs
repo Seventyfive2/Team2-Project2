@@ -10,7 +10,8 @@ public class PlayerAnimation : MonoBehaviour
     [SerializeField] private string Idle;
     [SerializeField] private string moveFoward;
     [SerializeField] private string moveBackward;
-    [SerializeField] private string moveSideways;
+    [SerializeField] private string moveLeft;
+    [SerializeField] private string moveRight;
     [Space]
     [SerializeField] private string attack;
     [SerializeField] private string special;
@@ -50,19 +51,29 @@ public class PlayerAnimation : MonoBehaviour
         {
             case PlayerMovement.MoveDirection.Idle:
             default:
+                animator.ResetTrigger("Idle");
+                animator.SetTrigger("Idle");
                 Debug.Log("playing " + Idle);
                 break;
             case PlayerMovement.MoveDirection.Foward:
+                animator.ResetTrigger("moveFoward");
+                animator.SetTrigger("moveFoward");
                 Debug.Log("playing " + moveFoward);
-                animator.ResetTrigger("move");
-                animator.SetTrigger("move");
+
                 break;
             case PlayerMovement.MoveDirection.Backward:
+                animator.ResetTrigger("moveBackward");
+                animator.SetTrigger("moveBackward");
                 Debug.Log("playing " + moveBackward);
                 break;
             case PlayerMovement.MoveDirection.Right:
+                animator.ResetTrigger("moveRight");
+                animator.SetTrigger("moveRight");
+                break;
             case PlayerMovement.MoveDirection.Left:
-                Debug.Log("playing " + moveSideways);
+                animator.ResetTrigger("moveLeft");
+                animator.SetTrigger("moveLeft");
+                Debug.Log("playing " + moveLeft);
                 break;
         }
     }

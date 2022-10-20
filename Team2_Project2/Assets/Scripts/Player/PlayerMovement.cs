@@ -178,6 +178,7 @@ public class PlayerMovement : MonoBehaviour
             if (moveDirection.magnitude <= 0)
             {
                 curDirection = MoveDirection.Idle;
+                
             }
             if (moveDirection.x > 0 && moveDirection.y == 0)
             {
