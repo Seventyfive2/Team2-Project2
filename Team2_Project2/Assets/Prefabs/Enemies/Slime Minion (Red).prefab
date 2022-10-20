@@ -120,7 +120,7 @@ MonoBehaviour:
   enemyCanvas: {fileID: 541210161501775850}
   enemyTextName: {fileID: 541210162277534351}
   healthSlider: {fileID: 541210161243426724}
-  enemyAnim: {fileID: 0}
+  enemyAnim: {fileID: 5392731269698351938}
   attackParameter: Attack
   damageParameter: Damaged
   deathParameter: Dead
