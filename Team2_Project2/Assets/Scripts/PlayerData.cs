@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -128,10 +129,10 @@ public class PlayerAttribute
     public string name;
     public int upgradeAmt = 0;
     public int maxUpgradeAmt = 5;
-
     public int statIncreasePerLevel = 5;
 
     public int costToUpgrade = 25;
+    public int priceIncreasePerLevel = 2;
     public Sprite shopSprite;
 
     public string UpgradeLevel()
@@ -142,6 +143,11 @@ public class PlayerAttribute
     public bool IsMaxed()
     {
         return upgradeAmt >= maxUpgradeAmt;
+    }
+
+    public int GetCost()
+    {
+        return costToUpgrade + (upgradeAmt * priceIncreasePerLevel);
     }
 
     public int GetStatIncrease()

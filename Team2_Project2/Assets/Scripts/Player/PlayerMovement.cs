@@ -82,6 +82,10 @@ public class PlayerMovement : MonoBehaviour
         {
             cam = Camera.main;
         }
+
+        PlayerAttribute playerSpeed = PlayerData.instance.GetAttribute("Speed");
+
+        speed += playerSpeed.GetStatIncrease();
     }
 
     private void Update()
