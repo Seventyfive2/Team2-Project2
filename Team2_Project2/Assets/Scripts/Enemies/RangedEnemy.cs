@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RangedEnemy : BaseEnemy
 {
+    [Header("Ranged Values")]
     [SerializeField] private GameObject projectile;
     [SerializeField] private Transform attackPos;
 

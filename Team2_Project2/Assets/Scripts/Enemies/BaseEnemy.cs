@@ -50,6 +50,15 @@ public class BaseEnemy : MonoBehaviour, IDamagable
     public EnemyMovement pathfinding;
     public GameObject warning;
 
+    [Header("Gravity")]
+    [SerializeField] Vector3 velocity;
+    [SerializeField] private float gravity = -9.81f;
+    [SerializeField] private float fallMultiplier = 1.5f;
+    private bool isGrounded;
+    [SerializeField] private LayerMask whatIsGround;
+    [SerializeField] private Transform feetPos = null;
+    [SerializeField] float groundCheckRadius = .4f;
+
     void Awake()
     {
         if(enemyAnim == null)
@@ -86,6 +95,13 @@ public class BaseEnemy : MonoBehaviour, IDamagable
     {
         if(isAlive)
         {
+            Vector3 aim = pathfinding.GetTarget().position;
+            Vector3 vectorToTarget = aim - transform.position;
+            float angle = Mathf.Atan2(vectorToTarget.x, vectorToTarget.z) * Mathf.Rad2Deg;
+            Quaternion qt = Quaternion.AngleAxis(angle, Vector3.up);
+
+            transform.rotation = qt;
+
             if (currentState == State.Attacking && attackTime <= 0)
             {
                 Attack();
@@ -98,11 +114,18 @@ public class BaseEnemy : MonoBehaviour, IDamagable
             if (enemyCanvas.activeInHierarchy)
             {
                 Vector3 lookDir = Vector3.forward;
-                float angle = Mathf.Atan2(lookDir.x, lookDir.z) * Mathf.Rad2Deg;
-                Quaternion qt = Quaternion.AngleAxis(angle, Vector3.up);
+                float uiAngle = Mathf.Atan2(lookDir.x, lookDir.z) * Mathf.Rad2Deg;
+                Quaternion uiQT = Quaternion.AngleAxis(uiAngle, Vector3.up);
 
-                enemyCanvas.transform.rotation = qt;
+                enemyCanvas.transform.rotation = uiQT;
             }
+        }
+
+        isGrounded = Physics.CheckSphere(feetPos.position, groundCheckRadius, whatIsGround);
+
+        if (!isGrounded)
+        {
+            velocity.y += gravity * (fallMultiplier - 1) * Time.deltaTime;
         }
     }
 
