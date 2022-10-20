@@ -89,7 +89,7 @@ MonoBehaviour:
   enemy: {fileID: 0}
   canMove: 1
   runFromPlayer: 1
-  didtanceToRun: 7
+  distanceToRun: 4
   target: {fileID: 0}
   agent: {fileID: 8276518069119100380}
 --- !u!114 &8276518069119100377
@@ -135,7 +135,7 @@ MonoBehaviour:
   feetPos: {fileID: 8276518069119100382}
   groundCheckRadius: 0.4
   nbrOfCoins: 10
-  nbrOfItems: 3
+  nbrOfItems: 0
   tacticChangeTime: 1.5
   secondPhase: {fileID: 1879701180572675852, guid: 180577b85e060004690a529d2113deb0, type: 3}
 --- !u!1001 &2143686692473169777
